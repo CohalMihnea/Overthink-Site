@@ -26,7 +26,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 /* ---------- About Section ---------- */
 .about{display:flex;flex-wrap:wrap;padding:40px 20px;align-items:center;justify-content:center;}
 .about .logo{flex:1;min-width:250px;text-align:center;}
-.about .logo img{max-width:400px;}
+.about .logo img{max-width:400px;width:100%;height:auto;}
 .about .text{flex:1;min-width:250px;padding:20px;text-align:left;background:#222;border-radius:10px;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;}
 
 /* ---------- Countdown Section ---------- */
@@ -57,12 +57,20 @@ footer a:hover{color:white;}
 
 /* ---------- Responsive ---------- */
 @media(max-width:768px){
+  .topbar{flex-direction:column;height:auto;padding:10px;}
+  .topbar img{margin-bottom:5px;}
+
+  .animated-text{font-size:2rem;padding:0 10px;}
+
   .about{flex-direction:column;text-align:center;}
-  .about .text{text-align:center;}
-  .countdown .timer-container{gap:10px;}
+  .about .text{height:auto;font-size:0.95rem;}
+
+  .countdown h3{font-size:1.5rem;}
   .time{font-size:2.5rem;}
   .label{font-size:1rem;}
-  .gallery .slides img{width:100%;height:auto;margin:0 5px;}
+
+  .gallery{padding:20px;}
+  .gallery .slides img{width:90%;height:auto;margin:0 auto;}
 }
 </style>
 </head>
