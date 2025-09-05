@@ -52,75 +52,32 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 .department h3{color:#920404;margin-bottom:10px;}
 .department ul{list-style:circle inside;}
 
-/* ---------- Layout Creativ / Cast / Producție ---------- */
-.department.creativ, .department.cast, .department.producție{
+/* ---------- Layout Departamente ---------- */
+.department.creativ, .department.cast, .department.producție, .department.tehnic{
   display:flex;
   flex-wrap:wrap;
-  align-items:center;
+  align-items:flex-start;
   justify-content:space-between;
 }
-.department.creativ .text, .department.cast .text, .department.producție .text{
+.department .text{
   flex:1;
   min-width:250px;
   padding-right:20px;
 }
 
-/* ---------- Departament Tehnic ---------- */
-.department.tehnic{
+/* ---------- Images ---------- */
+.department .images{
   display:flex;
   flex-wrap:wrap;
-  align-items:center;
-  justify-content:flex-start;
-  gap:20px;
-}
-.department.tehnic .images{
+  gap:10px;
   flex:1;
   min-width:250px;
-  max-height:280px; 
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
 }
-.department.tehnic .images img{
-  width:100%;
-  max-height:100%;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.6);
-  object-fit:contain;
-}
-.department.tehnic .text{
-  flex:1;
-  min-width:250px;
-  padding:0;
-  box-sizing:border-box;
-}
-
-/* ---------- Images Layout ---------- */
-.department.creativ .images, .department.cast .images, .department.producție .images{
-  flex:1;
-  min-width:250px;
-  position:relative;
-  height:300px;
-}
-.department.creativ .images img, .department.cast .images img, .department.producție .images img{
-  position:absolute;
+.department .images img{
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.6);
   object-fit:cover;
 }
-
-/* Creativ */
-.department.creativ .images img:first-child{width:70%; height:80%; top:0; left:15%; z-index:1;}
-.department.creativ .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
-
-/* Cast */
-.department.cast .images img:first-child{width:70%; height:80%; top:0; right:15%; z-index:1;}
-.department.cast .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
-
-/* Producție */
-.department.producție .images img:first-child{width:65%; height:75%; top:5%; left:10%; z-index:1;}
-.department.producție .images img:last-child{width:65%; height:75%; bottom:5%; right:10%; z-index:2; transform:rotate(-2deg);}
 
 /* ---------- Footer ---------- */
 footer{padding:20px;background:#111;font-size:0.9rem;text-align:center;}
@@ -139,24 +96,16 @@ footer a:hover{color:white;}
   .hero h1{font-size:2rem;}
   .hero p{font-size:1rem;line-height:1.4;}
 
-  /* Content și departamente: text deasupra pozelor, imagini sub text */
+  /* Content și departamente: text deasupra pozelor */
   .content{padding:80px 15px 50px 15px;}
-  .department.creativ,.department.tehnic,.department.cast,.department.producție{flex-direction:column;}
-  .department.creativ .text,.department.tehnic .text,.department.cast .text,.department.producție .text{padding:0;margin-bottom:15px;}
-  .department.creativ .images,.department.tehnic .images,.department.cast .images,.department.producție .images{
-    height:auto;
-    max-height:250px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-  }
-  .department.creativ .images img,.department.cast .images img,.department.producție .images img,.department.tehnic .images img{
-    position:relative;
-    transform:none;
-    top:auto; left:auto; right:auto; bottom:auto;
-    width:48%; /* două imagini per rând, dacă există */
-    height:auto;
-    margin-bottom:10px;
+  .department{flex-direction:column;}
+  .department .text{padding:0;margin-bottom:15px;}
+  .department .images{flex-wrap:wrap;justify-content:space-between;}
+  .department .images img{width:48%;margin-bottom:10px;position:relative;transform:none;top:auto;left:auto;right:auto;bottom:auto;}
+
+  /* Ecrane foarte mici: pozele 100% */
+  @media(max-width:480px){
+    .department .images img{width:100%;}
   }
 }
 </style>
@@ -211,6 +160,7 @@ footer a:hover{color:white;}
     </div>
     <div class="images">
       <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
+      <!-- A doua poză optională, las-o doar dacă ai -->
     </div>
   </div>
 
