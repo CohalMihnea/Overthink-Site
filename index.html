@@ -57,20 +57,38 @@ footer a:hover{color:white;}
 
 /* ---------- Responsive ---------- */
 @media(max-width:768px){
-  .topbar{flex-direction:column;height:auto;padding:10px;}
-  .topbar img{margin-bottom:5px;}
+  /* topbar pe mobil: logo stanga, buton dreapta */
+  .topbar{flex-direction:row;justify-content:space-between;height:50px;padding:0 15px;}
+  .topbar img{margin:0;}
 
+  /* hero text mai mic */
   .animated-text{font-size:2rem;padding:0 10px;}
 
+  /* hero video să se scaleze pe mobil */
+  .hero{height:70vh;}
+  .hero video,
+  .hero .background-img{width:100%;height:100%;object-fit:cover;}
+
+  /* about pe o singură coloană */
   .about{flex-direction:column;text-align:center;}
   .about .text{height:auto;font-size:0.95rem;}
 
-  .countdown h3{font-size:1.5rem;}
-  .time{font-size:2.5rem;}
-  .label{font-size:1rem;}
+  /* countdown pe un singur rând cu scroll */
+  .timer-container{flex-wrap:nowrap;overflow-x:auto;gap:10px;}
+  .time-block{flex:0 0 auto;min-width:80px;padding:15px;}
 
+  .countdown h3{font-size:1.4rem;}
+  .time{font-size:2rem;}
+  .label{font-size:0.9rem;}
+
+  /* galerie: poze 16:9 mai mici */
   .gallery{padding:20px;}
-  .gallery .slides img{width:90%;height:auto;margin:0 auto;}
+  .gallery .slides img{
+    width:90%;
+    aspect-ratio:16/9;
+    height:auto;
+    margin:0 auto;
+  }
 }
 </style>
 </head>
@@ -121,7 +139,6 @@ footer a:hover{color:white;}
       <img src="Foto/WhatsApp Image 2025-08-30 at 19.26.03.jpeg" alt="Poza 2">
       <img src="Foto/WhatsApp Image 2025-08-30 at 19.26.25.jpeg" alt="Poza 3">
       <img src="Foto/WhatsApp Image 2025-08-30 at 19.29.11.jpeg" alt="Poza 4">
-      <!-- ... restul imaginilor ... -->
     </div>
     <button class="prev" onclick="moveGallery(-1)">&#10094;</button>
     <button class="next" onclick="moveGallery(1)">&#10095;</button>
@@ -168,7 +185,7 @@ function updateCountdown(){
 }
 setInterval(updateCountdown,1000);
 
-// GALLERY cu efect de loop + autoplay
+// GALLERY autoplay + loop
 const gallerySlides = document.getElementById("gallerySlides");
 const prevBtn = document.querySelector(".gallery .prev");
 const nextBtn = document.querySelector(".gallery .next");
@@ -201,4 +218,3 @@ setInterval(() => moveGallery(1), 4000);
 
 </body>
 </html>
-
