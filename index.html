@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clubul de Film Liceeni</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:black;color:white;}
+
+/* ---------- Top Bar ---------- */
+.topbar{position:fixed;top:0;left:0;width:100%;height:50px;background:#222;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;}
+.topbar img{height:35px;}
+.topbar a{color:#920404;text-decoration:none;font-weight:bold;transition:0.3s;}
+.topbar a:hover{color:white;}
+
+/* ---------- Hero Section ---------- */
+.hero{position:relative;height:90vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;z-index:1;transition:opacity 1s ease;}
+.hero .background-img{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;object-fit:cover;transform:translate(-50%,-50%);opacity:0;transition:opacity 1.2s ease;z-index:1;}
+.hero .overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,0.6);opacity:0;transition:opacity 1s ease;z-index:2;}
+.hero .overlay.show{opacity:1;}
+.animated-text{font-size:4rem;color:#920404;text-align:center;opacity:0;transform:translateY(50px);}
+@keyframes fadeSlideIn{to{opacity:1;transform:translateY(0);}}
+
+/* ---------- About Section ---------- */
+.about{display:flex;flex-wrap:wrap;padding:40px 20px;align-items:center;justify-content:center;}
+.about .logo{flex:1;min-width:250px;text-align:center;}
+.about .logo img{max-width:400px;}
+.about .text{flex:1;min-width:250px;padding:20px;text-align:left;background:#222;border-radius:10px;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;}
+
+/* ---------- Countdown Section ---------- */
+.countdown{padding:40px 20px;text-align:center;min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
+.countdown h3{margin-bottom:40px;font-size:2.2rem;}
+.timer-container{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:30px;}
+.time-block{background:#222;padding:20px 30px;border-radius:10px;min-width:100px;}
+.time{font-size:4rem;font-weight:bold;}
+.label{font-size:1.2rem;margin-top:5px;}
+.countdown .btn{display:inline-block;padding:10px 18px;background:#920404;color:white;text-decoration:none;font-weight:bold;border-radius:6px;transition:0.3s;margin:auto;margin-top:20px;text-align:center;font-size:1rem;}
+.countdown .btn:hover{opacity:0.8;}
+
+/* ---------- Gallery Section ---------- */
+.gallery{padding:20px 50px;text-align:center;min-height:80vh;}
+.gallery h3{margin-bottom:20px;font-size:1.8rem;}
+.gallery .slider{position:relative;max-width:900px;margin:0 auto;overflow:hidden;}
+.gallery .slides{display:flex;transition:transform 1s ease;}
+.gallery .slides img{width:300px;height:250px;object-fit:cover;margin-right:10px;border-radius:10px;transition:transform 0.5s ease,opacity 0.5s ease;}
+.gallery .slides img:hover{transform:scale(1.05);opacity:0.9;}
+.gallery button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);color:white;border:none;font-size:2rem;padding:10px;cursor:pointer;z-index:10;}
+.gallery .prev{left:25px;}
+.gallery .next{right:25px;}
+
+/* ---------- Footer ---------- */
+footer{padding:20px;background:#111;font-size:0.9rem;text-align:center;}
+footer a{color:#920404;margin:0 10px;text-decoration:none;}
+footer a:hover{color:white;}
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+  .about{flex-direction:column;text-align:center;}
+  .about .text{text-align:center;}
+  .countdown .timer-container{gap:10px;}
+  .time{font-size:2.5rem;}
+  .label{font-size:1rem;}
+  .gallery .slides img{width:100%;height:auto;margin:0 5px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Bara sus -->
+<div class="topbar">
+  <img src="LOGOtaiat.svg" alt="Logo">
+  <a href="despre.html">Despre Noi</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <video id="heroVideo" autoplay muted>
+    <source src="intro index htmlUntitled.mp4" type="video/mp4">
+    Browserul tău nu suportă video.
+  </video>
+  <img src="logo 1 blurv2.png" class="background-img" id="heroBackground" alt="Background">
+  <div class="overlay" id="heroOverlay">
+    <h1 class="animated-text">CLUBUL DE FILM OVERTHINK JR.</h1>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about">
+  <div class="logo"><img src="LOGO2-removebg-preview.png" alt="Despre noi"></div>
+  <div class="text"><p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în trei departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p></div>
+</section>
+
+<!-- Countdown -->
+<section class="countdown">
+  <h3>A mai rămas până la recrutări:</h3>
+  <div class="timer-container" id="timer">
+    <div class="time-block"><div class="time" id="days">00</div><div class="label">Zile</div></div>
+    <div class="time-block"><div class="time" id="hours">00</div><div class="label">Ore</div></div>
+    <div class="time-block"><div class="time" id="minutes">00</div><div class="label">Minute</div></div>
+    <div class="time-block"><div class="time" id="seconds">00</div><div class="label">Secunde</div></div>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsU9ZqNG_rwJyKK-ABgAkmMhF6mumjMvi_7Tsdf92DIoW4Gw/viewform?usp=header" class="btn" target="_blank">Înscrie-te</a>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <h3>GALERIE</h3>
+  <div class="slider">
+    <div class="slides" id="gallerySlides">
+      <img src="WhatsApp Image 2025-08-30 at 19.25.33.jpeg" alt="Poza 1">
+      <img src="WhatsApp Image 2025-08-30 at 19.26.03.jpeg" alt="Poza 2">
+      <img src="WhatsApp Image 2025-08-30 at 19.26.25.jpeg" alt="Poza 3">
+      <img src="WhatsApp Image 2025-08-30 at 19.29.11.jpeg" alt="Poza 4">
+      <!-- ... restul imaginilor ... -->
+    </div>
+    <button class="prev" onclick="moveGallery(-1)">&#10094;</button>
+    <button class="next" onclick="moveGallery(1)">&#10095;</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Clubul de Film Overthink JR. | 
+     <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> | 
+     <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a>
+  </p>
+</footer>
+
+<script>
+// HERO cinematic
+const video = document.getElementById('heroVideo');
+const overlay = document.getElementById('heroOverlay');
+const animatedText = overlay.querySelector('.animated-text');
+const bgImage = document.getElementById('heroBackground');
+
+video.addEventListener('ended', () => {
+  video.style.transition = 'opacity 1.5s ease';
+  video.style.opacity = 0;
+  setTimeout(() => {
+    bgImage.style.opacity = 1;
+    overlay.style.opacity = 1;
+    animatedText.style.animation = 'none';
+    void animatedText.offsetWidth;
+    animatedText.style.animation = 'fadeSlideIn 1s forwards';
+  }, 1500);
+});
+
+// COUNTDOWN
+function updateCountdown(){
+  const endDate=new Date("2025-10-10T23:59:59").getTime();
+  const now=new Date().getTime();
+  const diff=endDate-now;
+  if(diff<0)return;
+  document.getElementById("days").textContent=Math.floor(diff/(1000*60*60*24));
+  document.getElementById("hours").textContent=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("minutes").textContent=Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById("seconds").textContent=Math.floor((diff%(1000*60))/1000);
+}
+setInterval(updateCountdown,1000);
+
+// GALLERY cu efect de loop + autoplay
+const gallerySlides = document.getElementById("gallerySlides");
+const prevBtn = document.querySelector(".gallery .prev");
+const nextBtn = document.querySelector(".gallery .next");
+let galleryIndex = 0;
+const slideWidth = 310;
+
+// Clone pentru efect loop
+gallerySlides.innerHTML += gallerySlides.innerHTML;
+
+function showGallerySlide() {
+  gallerySlides.style.transition = "transform 0.8s ease";
+  gallerySlides.style.transform = `translateX(${-galleryIndex * slideWidth}px)`;
+  if (galleryIndex >= gallerySlides.children.length / 2) {
+    setTimeout(() => { gallerySlides.style.transition = "none"; galleryIndex = 0; gallerySlides.style.transform = `translateX(0px)`; }, 850);
+  }
+  if (galleryIndex < 0) {
+    setTimeout(() => { gallerySlides.style.transition = "none"; galleryIndex = gallerySlides.children.length / 2 - 1; gallerySlides.style.transform = `translateX(${-galleryIndex * slideWidth}px)`; }, 850);
+  }
+}
+
+function moveGallery(step) {
+  galleryIndex += step;
+  showGallerySlide();
+}
+
+nextBtn.addEventListener("click", () => moveGallery(1));
+prevBtn.addEventListener("click", () => moveGallery(-1));
+setInterval(() => moveGallery(1), 4000);
+</script>
+
+</body>
+</html>

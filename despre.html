@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Despre Noi - Clubul de Film Overthink JR.</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:black;color:white;}
+
+/* ---------- Top Bar ---------- */
+.topbar{position:fixed;top:0;left:0;width:100%;height:50px;background:#222;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;}
+.topbar img{height:35px;}
+.topbar a{color:#920404;text-decoration:none;font-weight:bold;}
+.topbar a:hover{color:white;}
+
+/* ---------- Hero Section ---------- */
+.hero{
+  position:relative;height:70vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:#111 url('WhatsApp Image 2025-09-05 at 12.53.59.jpeg') no-repeat center/cover;
+}
+.hero h1{
+  color:#920404;
+  font-size:3rem;
+  text-align:center;
+  opacity:0;
+  animation: fadeInText 1.2s forwards;
+}
+.hero p{
+  max-width:800px;
+  margin-top:20px;
+  text-align:center;
+  line-height:1.6;
+  font-size:1.1rem;
+  opacity:0;
+  animation: fadeInText 1.2s forwards 0.5s;
+}
+
+/* ---------- Fade-in Hero Animation ---------- */
+@keyframes fadeInText{
+  to{opacity:1;}
+}
+
+/* ---------- Content Section ---------- */
+.content{padding:40px 20px 50px 20px;max-width:1000px;margin:0 auto;}
+.content h2{font-size:2rem;margin-bottom:20px;color:#920404;text-align:center;}
+.content p{margin-bottom:20px;line-height:1.6;text-align:justify;}
+.content ul{margin-bottom:30px;line-height:1.6;list-style:disc inside;}
+
+/* ---------- Department Boxes ---------- */
+.department{background:#222;padding:20px;border-radius:10px;margin-bottom:30px;}
+.department h3{color:#920404;margin-bottom:10px;}
+.department ul{list-style:circle inside;}
+
+/* ---------- Layout Creativ / Cast / Producție ---------- */
+.department.creativ, .department.cast, .department.producție{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+}
+.department.creativ .text, .department.cast .text, .department.producție .text{
+  flex:1;
+  min-width:250px;
+  padding-right:20px;
+}
+
+/* ---------- Departament Tehnic ---------- */
+.department.tehnic{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-start;
+  gap:20px;
+}
+.department.tehnic .images{
+  flex:1;
+  min-width:250px;
+  height:300px; /* fixăm înălțimea */
+  position:relative;
+  overflow:hidden; /* ascunde orice depășire */
+}
+.department.tehnic .images img{
+  width:100%;
+  height:100%; /* ocupă tot containerul */
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.6);
+  object-fit:cover;
+  position:relative;
+}
+.department.tehnic .text{
+  flex:1;
+  min-width:250px;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ---------- Images Layout ---------- */
+.department.creativ .images, .department.cast .images, .department.producție .images{
+  flex:1;
+  min-width:250px;
+  position:relative;
+  height:300px;
+}
+.department.creativ .images img, .department.cast .images img, .department.producție .images img{
+  position:absolute;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.6);
+  object-fit:cover;
+}
+
+/* Creativ */
+.department.creativ .images img:first-child{width:70%; height:80%; top:0; left:15%; z-index:1;}
+.department.creativ .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
+
+/* Cast */
+.department.cast .images img:first-child{width:70%; height:80%; top:0; right:15%; z-index:2;}
+.department.cast .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:1; transform:rotate(-2deg);}
+
+/* Producție */
+.department.producție .images img:first-child{width:70%; height:80%; top:0; left:15%; z-index:1;}
+.department.producție .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
+
+/* ---------- Footer ---------- */
+footer{padding:20px;background:#111;font-size:0.9rem;text-align:center;}
+footer a{color:#920404;margin:0 10px;text-decoration:none;}
+footer a:hover{color:white;}
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+  .topbar{flex-direction:column;height:auto;padding:10px;}
+  .hero h1{font-size:2rem;}
+  .hero p{font-size:1rem;}
+  .content{padding:80px 15px 50px 15px;}
+  .department.creativ,.department.tehnic,.department.cast,.department.producție{flex-direction:column;}
+  .department.creativ .text,.department.tehnic .text,.department.cast .text,.department.producție .text{padding:0;margin-bottom:20px;}
+  .department.creativ .images,.department.tehnic .images,.department.cast .images,.department.producție .images{height:250px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <img src="LOGOtaiat.svg" alt="Logo">
+  <a href="index.html">Acasă</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Despre Noi</h1>
+  <p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în trei departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p>
+</section>
+
+<!-- Content -->
+<section class="content">
+
+  <!-- Departament Creativ -->
+  <div class="department creativ">
+    <div class="text">
+      <h3>Departamentul Creativ 🎬</h3>
+      <p>Se ocupă de concepte vizuale și crearea lor. Dacă ești o persoană creativă pasionată de scris sau orice formă de bricolaj de la modelat, pictat, cusut etc., te așteptăm să faci parte din echipă.</p>
+      <ul>
+        <li>Regie</li>
+        <li>Scenariu</li>
+        <li>Scenografie</li>
+        <li>Costume</li>
+        <li>Machiaj</li>
+      </ul>
+    </div>
+    <div class="images">
+      <img src="Timeline 1_01_00_54_15.jpg" alt="Creativ 1">
+      <img src="WhatsApp Image 2025-08-30 at 19.31.41.jpeg" alt="Creativ 2">
+    </div>
+  </div>
+
+  <!-- Departament Tehnic -->
+  <div class="department tehnic">
+    <div class="images">
+      <img src="tehnicfrjpg.jpg" alt="Tehnic">
+    </div>
+    <div class="text">
+      <h3>Departamentul Tehnic 📹</h3>
+      <p>Transformă viziunea artistică în realitate. Aici tot ce înseamnă partea vizuală și audio trece prin mâinile tale. Dacă ești pasionat de filmare, editare video, sunet și fotografie, te așteptăm să faci parte din acest departament.</p>
+      <ul>
+        <li>Imagine</li>
+        <li>Lumini</li>
+        <li>Sunet</li>
+        <li>Montaj</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Departament Cast -->
+  <div class="department cast">
+    <div class="text">
+      <h3>Departamentul Cast 🎭</h3>
+      <p>Aduce personajele la viață prin talent actoricesc cu ajutorul mentorului nostru în actorie, doamna profesoară Frânculescu Cristina.</p>
+      <ul>
+        <li>Actori</li>
+      </ul>
+    </div>
+    <div class="images">
+      <img src="cast1.jpeg" alt="Cast 1">
+      <img src="cast2.jpeg" alt="Cast 2">
+    </div>
+  </div>
+
+  <!-- Departament Producție / Logistică -->
+  <div class="department producție">
+    <div class="images">
+      <img src="logistica2.jpg" alt="Logistica 2">
+      <img src="logistica1.jpeg" alt="Logistica 1">
+    </div>
+    <div class="text">
+      <h3>Departamentul Producție</h3>
+      <p>Este motorul practic al clubului de film, coordonând organizarea și logistica fiecărui proiect. De la planificarea filmărilor până la gestionarea resurselor, aici se transformă ideile creative în pași concreți. Este echipa care se asigură că visul cinematografic prinde viață în cele mai bune condiții.</p>
+      <ul>
+        <li>Logistica</li>
+        <li>Resurse</li>
+        <li>Casting</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Clubul de Film Overthink JR. | <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> | <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a></p>
+</footer>
+
+</body>
+</html>
