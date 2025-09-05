@@ -76,7 +76,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 .department.tehnic .images{
   flex:1;
   min-width:250px;
-  max-height:280px; /* limităm înălțimea */
+  max-height:280px; 
   position:relative;
   display:flex;
   justify-content:center;
@@ -127,17 +127,37 @@ footer{padding:20px;background:#111;font-size:0.9rem;text-align:center;}
 footer a{color:#920404;margin:0 10px;text-decoration:none;}
 footer a:hover{color:white;}
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive Mobile ---------- */
 @media(max-width:768px){
-  .topbar{flex-direction:column;height:auto;padding:10px;}
-  .hero{height:60vh;padding:20px;text-align:center;}
+  /* Topbar: logo stânga, link acasă dreapta */
+  .topbar{flex-direction:row;height:50px;padding:0 10px;justify-content:space-between;}
+  .topbar img{margin:0;}
+  .topbar a{margin:0;}
+
+  /* Hero: titlu vizibil, text încadrat */
+  .hero{height:60vh;padding:20px;text-align:center;background-size:cover;}
   .hero h1{font-size:2rem;}
-  .hero p{font-size:1rem;}
+  .hero p{font-size:1rem;line-height:1.4;}
+
+  /* Content și departamente: text deasupra pozelor, imagini sub text */
   .content{padding:80px 15px 50px 15px;}
   .department.creativ,.department.tehnic,.department.cast,.department.producție{flex-direction:column;}
-  .department.creativ .text,.department.tehnic .text,.department.cast .text,.department.producție .text{padding:0;margin-bottom:20px;}
-  .department.creativ .images,.department.tehnic .images,.department.cast .images,.department.producție .images{height:auto;max-height:250px;}
-  .department.creativ .images img,.department.cast .images img,.department.producție .images img{position:relative;transform:none;top:auto;left:auto;right:auto;bottom:auto;width:100%;height:auto;margin-bottom:10px;}
+  .department.creativ .text,.department.tehnic .text,.department.cast .text,.department.producție .text{padding:0;margin-bottom:15px;}
+  .department.creativ .images,.department.tehnic .images,.department.cast .images,.department.producție .images{
+    height:auto;
+    max-height:250px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .department.creativ .images img,.department.cast .images img,.department.producție .images img,.department.tehnic .images img{
+    position:relative;
+    transform:none;
+    top:auto; left:auto; right:auto; bottom:auto;
+    width:48%; /* două imagini per rând, dacă există */
+    height:auto;
+    margin-bottom:10px;
+  }
 }
 </style>
 </head>
@@ -179,9 +199,6 @@ footer a:hover{color:white;}
 
   <!-- Departament Tehnic -->
   <div class="department tehnic">
-    <div class="images">
-      <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
-    </div>
     <div class="text">
       <h3>Departamentul Tehnic 📹</h3>
       <p>Transformă viziunea artistică în realitate. Aici tot ce înseamnă partea vizuală și audio trece prin mâinile tale. Dacă ești pasionat de filmare, editare video, sunet și fotografie, te așteptăm să faci parte din acest departament.</p>
@@ -191,6 +208,9 @@ footer a:hover{color:white;}
         <li>Sunet</li>
         <li>Montaj</li>
       </ul>
+    </div>
+    <div class="images">
+      <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
     </div>
   </div>
 
@@ -211,10 +231,6 @@ footer a:hover{color:white;}
 
   <!-- Departament Producție / Logistică -->
   <div class="department producție">
-    <div class="images">
-      <img src="Foto/logistica2.jpg" alt="Logistica 2">
-      <img src="Foto/logistica1.jpeg" alt="Logistica 1">
-    </div>
     <div class="text">
       <h3>Departamentul Producție</h3>
       <p>Este motorul practic al clubului de film, coordonând organizarea și logistica fiecărui proiect. De la planificarea filmărilor până la gestionarea resurselor, aici se transformă ideile creative în pași concreți. Este echipa care se asigură că visul cinematografic prinde viață în cele mai bune condiții.</p>
@@ -223,6 +239,10 @@ footer a:hover{color:white;}
         <li>Resurse</li>
         <li>Casting</li>
       </ul>
+    </div>
+    <div class="images">
+      <img src="Foto/logistica2.jpg" alt="Logistica 2">
+      <img src="Foto/logistica1.jpeg" alt="Logistica 1">
     </div>
   </div>
 
