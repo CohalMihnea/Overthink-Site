@@ -43,7 +43,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 .gallery{padding:20px 50px;text-align:center;min-height:80vh;margin-top:10px;}
 .gallery h3{margin-bottom:20px;font-size:1.8rem;}
 .gallery .slider{position:relative;max-width:900px;margin:0 auto;overflow:hidden;}
-.gallery .slides{display:flex;transition:transform 1s ease;}
+.gallery .slides{display:flex;transition:transform 0.8s ease;}
 .gallery .slides img{width:300px;height:169px;object-fit:cover;margin-right:10px;border-radius:10px;transition:transform 0.5s ease,opacity 0.5s ease;}
 .gallery .slides img:hover{transform:scale(1.05);opacity:0.9;}
 .gallery button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);color:white;border:none;font-size:2rem;padding:10px;cursor:pointer;z-index:10;}
@@ -198,53 +198,49 @@ function updateCountdown(){
 }
 setInterval(updateCountdown,1000);
 
-// GALLERY
-const gallerySlides = document.getElementById("gallerySlides");
+// GALLERY LOOP
+const slides = document.getElementById("gallerySlides");
 const prevBtn = document.querySelector(".gallery .prev");
 const nextBtn = document.querySelector(".gallery .next");
-let galleryIndex = 0;
 const slideWidth = 310;
-const isMobile = window.matchMedia("(max-width: 768px)").matches;
+let index = 1;
+let allowShift = true;
 
-if (!isMobile) {
-  // ---------- DESKTOP: loop infinit ----------
-  gallerySlides.innerHTML += gallerySlides.innerHTML;
+// Clonăm primul și ultimul element
+const firstClone = slides.children[0].cloneNode(true);
+const lastClone = slides.children[slides.children.length-1].cloneNode(true);
+slides.appendChild(firstClone);
+slides.insertBefore(lastClone, slides.children[0]);
 
-  function showGallerySlide() {
-    gallerySlides.style.transition = "transform 0.8s ease";
-    gallerySlides.style.transform = `translateX(${-galleryIndex * slideWidth}px)`;
+// Setăm poziția inițială
+slides.style.transform = `translateX(${-slideWidth * index}px)`;
 
-    if (galleryIndex >= gallerySlides.children.length / 2) {
-      setTimeout(() => {
-        gallerySlides.style.transition = "none";
-        galleryIndex = 0;
-        gallerySlides.style.transform = `translateX(0px)`;
-      }, 850);
-    }
-    if (galleryIndex < 0) {
-      setTimeout(() => {
-        gallerySlides.style.transition = "none";
-        galleryIndex = gallerySlides.children.length / 2 - 1;
-        gallerySlides.style.transform = `translateX(${-galleryIndex * slideWidth}px)`;
-      }, 850);
-    }
-  }
-
-  function moveGallery(step) {
-    galleryIndex += step;
-    showGallerySlide();
-  }
-
-  nextBtn.addEventListener("click", () => moveGallery(1));
-  prevBtn.addEventListener("click", () => moveGallery(-1));
-  setInterval(() => moveGallery(1), 4000);
-} else {
-  // ---------- MOBIL: scroll manual ----------
-  prevBtn.style.display = "none";
-  nextBtn.style.display = "none";
+function moveSlide(step){
+  if(!allowShift) return;
+  allowShift = false;
+  index += step;
+  slides.style.transition = "transform 0.8s ease";
+  slides.style.transform = `translateX(${-slideWidth * index}px)`;
 }
+
+slides.addEventListener("transitionend", ()=>{
+  if(slides.children[index].alt === firstClone.alt){
+    slides.style.transition = "none";
+    index = 1;
+    slides.style.transform = `translateX(${-slideWidth * index}px)`;
+  }
+  if(slides.children[index].alt === lastClone.alt){
+    slides.style.transition = "none";
+    index = slides.children.length-2;
+    slides.style.transform = `translateX(${-slideWidth * index}px)`;
+  }
+  allowShift = true;
+});
+
+nextBtn.addEventListener("click", ()=>moveSlide(1));
+prevBtn.addEventListener("click", ()=>moveSlide(-1));
+setInterval(()=>moveSlide(1),4000);
 </script>
 
 </body>
 </html>
-
