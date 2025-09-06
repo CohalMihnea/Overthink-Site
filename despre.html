@@ -52,7 +52,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 .department h3{color:#920404;margin-bottom:10px;}
 .department ul{list-style:circle inside;}
 
-/* ---------- Layout Creativ / Cast / Producție Desktop ---------- */
+/* ---------- Layout Creativ / Cast / Producție ---------- */
 .department.creativ, .department.cast, .department.producție{
   display:flex;
   flex-wrap:wrap;
@@ -65,7 +65,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   padding-right:20px;
 }
 
-/* ---------- Departament Tehnic Desktop ---------- */
+/* ---------- Departament Tehnic ---------- */
 .department.tehnic{
   display:flex;
   flex-wrap:wrap;
@@ -134,21 +134,33 @@ footer a:hover{color:white;}
   .hero h1{font-size:2rem;}
   .hero p{font-size:1rem;}
   .content{padding:80px 15px 50px 15px;}
-  .department.creativ,.department.tehnic,.department.cast,.department.producție{flex-direction:column;}
-  .department.creativ .text,.department.tehnic .text,.department.cast .text,.department.producție .text{padding:0;margin-bottom:20px;}
   
-  /* imaginile pe mobil = stacked, 100% width */
+  /* pe mobil text → poze pentru toate departamentele */
+  .department.creativ,
+  .department.tehnic,
+  .department.cast,
+  .department.producție{
+    flex-direction:column;
+  }
+  .department.creativ .text,
+  .department.tehnic .text,
+  .department.cast .text,
+  .department.producție .text{
+    padding:0;
+    margin-bottom:10px;
+  }
   .department.creativ .images,
+  .department.tehnic .images,
   .department.cast .images,
-  .department.producție .images,
-  .department.tehnic .images {
+  .department.producție .images{
     height:auto;
     position:static;
+    margin-top:10px;
   }
   .department.creativ .images img,
+  .department.tehnic .images img,
   .department.cast .images img,
-  .department.producție .images img,
-  .department.tehnic .images img {
+  .department.producție .images img{
     position:relative;
     width:100%;
     height:auto;
