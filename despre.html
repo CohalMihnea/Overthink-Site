@@ -129,4 +129,122 @@ footer a:hover{color:white;}
 
 /* ---------- Responsive Mobile ---------- */
 @media(max-width:768px){
-  .top
+  .topbar{flex-direction:column;height:auto;padding:10px;}
+  .hero{height:60vh;padding:20px;text-align:center;}
+  .hero h1{font-size:2rem;}
+  .hero p{font-size:1rem;}
+  .content{padding:80px 15px 50px 15px;}
+
+  /* pe mobil: toate pozele centrate sub text, una sub alta */
+  .department.creativ,
+  .department.tehnic,
+  .department.cast,
+  .department.producție{
+    flex-direction:column;
+  }
+  .department.creativ .text,
+  .department.tehnic .text,
+  .department.cast .text,
+  .department.producție .text{
+    padding:0;
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .department.creativ .images,
+  .department.tehnic .images,
+  .department.cast .images,
+  .department.producție .images{
+    height:auto;
+    position:static;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+  }
+  .department.creativ .images img,
+  .department.tehnic .images img,
+  .department.cast .images img,
+  .department.producție .images img{
+    position:relative;
+    width:90%;
+    height:auto;
+    transform:none;
+    margin:0 auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <img src="Foto/LOGOtaiat.svg" alt="Logo">
+  <a href="index.html">Acasă</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Despre Noi</h1>
+  <p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în trei departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p>
+</section>
+
+<!-- Content -->
+<section class="content">
+
+  <!-- Departament Creativ -->
+  <div class="department creativ">
+    <div class="text">
+      <h3>Departamentul Creativ 🎬</h3>
+      <p>Se ocupă de concepte vizuale și crearea lor. Dacă ești o persoană creativă pasionată de scris sau orice formă de bricolaj de la modelat, pictat, cusut etc., te așteptăm să faci parte din echipă.</p>
+      <ul>
+        <li>Regie</li>
+        <li>Scenariu</li>
+        <li>Scenografie</li>
+        <li>Costume</li>
+        <li>Machiaj</li>
+      </ul>
+    </div>
+    <div class="images">
+      <img src="Foto/Timeline 1_01_00_54_15.jpg" alt="Creativ 1">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.41.jpeg" alt="Creativ 2">
+    </div>
+  </div>
+
+  <!-- Departament Tehnic -->
+  <div class="department tehnic">
+    <div class="images">
+      <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
+    </div>
+    <div class="text">
+      <h3>Departamentul Tehnic 📹</h3>
+      <p>Transformă viziunea artistică în realitate. Aici tot ce înseamnă partea vizuală și audio trece prin mâinile tale. Dacă ești pasionat de filmare, editare video, sunet și fotografie, te așteptăm să faci parte din acest departament.</p>
+      <ul>
+        <li>Imagine</li>
+        <li>Lumini</li>
+        <li>Sunet</li>
+        <li>Montaj</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Departament Cast -->
+  <div class="department cast">
+    <div class="text">
+      <h3>Departamentul Cast 🎭</h3>
+      <p>Aduce personajele la viață prin talent actoricesc cu ajutorul mentorului nostru în actorie, doamna profesoară Frânculescu Cristina.</p>
+      <ul>
+        <li>Actori</li>
+      </ul>
+    </div>
+    <div class="images">
+      <img src="Foto/cast1.jpeg" alt="Cast 1">
+      <img src="Foto/cast2.jpeg" alt="Cast 2">
+    </div>
+  </div>
+
+  <!-- Departament Producție / Logistică -->
+  <div class="department producție">
+    <div class="images">
+      <img src="Foto/logistica2.jpg" alt="Logistica 2">
+      <img src="Foto/logistica1.jpeg
