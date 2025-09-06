@@ -52,58 +52,107 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 .department h3{color:#920404;margin-bottom:10px;}
 .department ul{list-style:circle inside;}
 
-/* ---------- Layout Departamente ---------- */
-.department.creativ, .department.cast, .department.producție, .department.tehnic{
+/* ---------- Layout Creativ / Cast / Producție ---------- */
+.department.creativ, .department.cast, .department.producție{
   display:flex;
   flex-wrap:wrap;
-  align-items:flex-start;
+  align-items:center;
   justify-content:space-between;
 }
-.department .text{
+.department.creativ .text, .department.cast .text, .department.producție .text{
   flex:1;
   min-width:250px;
   padding-right:20px;
 }
 
-/* ---------- Images (Desktop) ---------- */
-.department .images{
+/* ---------- Departament Tehnic ---------- */
+.department.tehnic{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  align-items:center;
+  justify-content:flex-start;
+  gap:20px;
+}
+.department.tehnic .images{
   flex:1;
   min-width:250px;
+  max-height:280px;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
-.department .images img{
-  width:48%;        /* două imagini pe rând */
-  height:auto;
+.department.tehnic .images img{
+  width:100%;
+  max-height:100%;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.6);
+  object-fit:contain;
+}
+.department.tehnic .text{
+  flex:1;
+  min-width:250px;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ---------- Images Layout Desktop ---------- */
+.department.creativ .images, .department.cast .images, .department.producție .images{
+  flex:1;
+  min-width:250px;
+  position:relative;
+  height:300px;
+}
+.department.creativ .images img, .department.cast .images img, .department.producție .images img{
+  position:absolute;
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.6);
   object-fit:cover;
 }
+
+/* Creativ */
+.department.creativ .images img:first-child{width:70%; height:80%; top:0; left:15%; z-index:1;}
+.department.creativ .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
+
+/* Cast */
+.department.cast .images img:first-child{width:70%; height:80%; top:0; right:15%; z-index:1;}
+.department.cast .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
+
+/* Producție */
+.department.producție .images img:first-child{width:65%; height:75%; top:5%; left:10%; z-index:1;}
+.department.producție .images img:last-child{width:65%; height:75%; bottom:5%; right:10%; z-index:2; transform:rotate(-2deg);}
 
 /* ---------- Footer ---------- */
 footer{padding:20px;background:#111;font-size:0.9rem;text-align:center;}
 footer a{color:#920404;margin:0 10px;text-decoration:none;}
 footer a:hover{color:white;}
 
-/* ---------- Responsive Mobile ---------- */
+/* ---------- Responsive ---------- */
 @media(max-width:768px){
-  .topbar{flex-direction:row;height:50px;padding:0 10px;justify-content:space-between;}
-  .topbar img{margin:0;}
-  .topbar a{margin:0;}
-
-  .hero{height:60vh;padding:20px;text-align:center;background-size:cover;}
+  .topbar{flex-direction:column;height:auto;padding:10px;}
+  .hero{height:60vh;padding:20px;text-align:center;}
   .hero h1{font-size:2rem;}
-  .hero p{font-size:1rem;line-height:1.4;}
-
+  .hero p{font-size:1rem;}
   .content{padding:80px 15px 50px 15px;}
-  .department{flex-direction:column;}
-  .department .text{padding:0;margin-bottom:15px;}
-  .department .images{flex-wrap:wrap;justify-content:space-between;}
-  .department .images img{width:48%;margin-bottom:10px;}
-
-  @media(max-width:480px){
-    .department .images img{width:100%;}
+  .department.creativ,.department.tehnic,.department.cast,.department.producție{flex-direction:column;}
+  .department.creativ .text,.department.tehnic .text,.department.cast .text,.department.producție .text{padding:0;margin-bottom:20px;}
+  
+  /* imaginile pe mobil = stacked, 100% width */
+  .department.creativ .images,
+  .department.cast .images,
+  .department.producție .images {
+    height:auto;
+    position:static;
+  }
+  .department.creativ .images img,
+  .department.cast .images img,
+  .department.producție .images img {
+    position:relative;
+    width:100%;
+    height:auto;
+    top:auto; left:auto; right:auto; bottom:auto;
+    transform:none;
+    margin-bottom:10px;
   }
 }
 </style>
@@ -119,7 +168,7 @@ footer a:hover{color:white;}
 <!-- Hero Section -->
 <section class="hero">
   <h1>Despre Noi</h1>
-  <p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în patru departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p>
+  <p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în trei departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p>
 </section>
 
 <!-- Content -->
@@ -146,6 +195,9 @@ footer a:hover{color:white;}
 
   <!-- Departament Tehnic -->
   <div class="department tehnic">
+    <div class="images">
+      <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
+    </div>
     <div class="text">
       <h3>Departamentul Tehnic 📹</h3>
       <p>Transformă viziunea artistică în realitate. Aici tot ce înseamnă partea vizuală și audio trece prin mâinile tale. Dacă ești pasionat de filmare, editare video, sunet și fotografie, te așteptăm să faci parte din acest departament.</p>
@@ -155,9 +207,6 @@ footer a:hover{color:white;}
         <li>Sunet</li>
         <li>Montaj</li>
       </ul>
-    </div>
-    <div class="images">
-      <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
     </div>
   </div>
 
@@ -176,8 +225,12 @@ footer a:hover{color:white;}
     </div>
   </div>
 
-  <!-- Departament Producție -->
+  <!-- Departament Producție / Logistică -->
   <div class="department producție">
+    <div class="images">
+      <img src="Foto/logistica2.jpg" alt="Logistica 2">
+      <img src="Foto/logistica1.jpeg" alt="Logistica 1">
+    </div>
     <div class="text">
       <h3>Departamentul Producție</h3>
       <p>Este motorul practic al clubului de film, coordonând organizarea și logistica fiecărui proiect. De la planificarea filmărilor până la gestionarea resurselor, aici se transformă ideile creative în pași concreți. Este echipa care se asigură că visul cinematografic prinde viață în cele mai bune condiții.</p>
@@ -186,10 +239,6 @@ footer a:hover{color:white;}
         <li>Resurse</li>
         <li>Casting</li>
       </ul>
-    </div>
-    <div class="images">
-      <img src="Foto/logistica2.jpg" alt="Logistica 2">
-      <img src="Foto/logistica1.jpeg" alt="Logistica 1">
     </div>
   </div>
 
