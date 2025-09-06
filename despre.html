@@ -65,7 +65,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   padding-right:20px;
 }
 
-/* ---------- Images ---------- */
+/* ---------- Images (Desktop) ---------- */
 .department .images{
   display:flex;
   flex-wrap:wrap;
@@ -74,6 +74,8 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   min-width:250px;
 }
 .department .images img{
+  width:48%;        /* două imagini pe rând */
+  height:auto;
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.6);
   object-fit:cover;
@@ -86,24 +88,20 @@ footer a:hover{color:white;}
 
 /* ---------- Responsive Mobile ---------- */
 @media(max-width:768px){
-  /* Topbar: logo stânga, link acasă dreapta */
   .topbar{flex-direction:row;height:50px;padding:0 10px;justify-content:space-between;}
   .topbar img{margin:0;}
   .topbar a{margin:0;}
 
-  /* Hero: titlu vizibil, text încadrat */
   .hero{height:60vh;padding:20px;text-align:center;background-size:cover;}
   .hero h1{font-size:2rem;}
   .hero p{font-size:1rem;line-height:1.4;}
 
-  /* Content și departamente: text deasupra pozelor */
   .content{padding:80px 15px 50px 15px;}
   .department{flex-direction:column;}
   .department .text{padding:0;margin-bottom:15px;}
   .department .images{flex-wrap:wrap;justify-content:space-between;}
-  .department .images img{width:48%;margin-bottom:10px;position:relative;transform:none;top:auto;left:auto;right:auto;bottom:auto;}
+  .department .images img{width:48%;margin-bottom:10px;}
 
-  /* Ecrane foarte mici: pozele 100% */
   @media(max-width:480px){
     .department .images img{width:100%;}
   }
@@ -160,7 +158,6 @@ footer a:hover{color:white;}
     </div>
     <div class="images">
       <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
-      <!-- A doua poză optională, las-o doar dacă ai -->
     </div>
   </div>
 
@@ -179,7 +176,7 @@ footer a:hover{color:white;}
     </div>
   </div>
 
-  <!-- Departament Producție / Logistică -->
+  <!-- Departament Producție -->
   <div class="department producție">
     <div class="text">
       <h3>Departamentul Producție</h3>
@@ -205,4 +202,3 @@ footer a:hover{color:white;}
 
 </body>
 </html>
-
