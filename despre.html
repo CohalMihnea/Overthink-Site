@@ -36,9 +36,33 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   animation: fadeInText 1.2s forwards 0.5s;
 }
 
-/* ---------- Fade-in Hero Animation ---------- */
+/* ---------- Fade-in Animation ---------- */
 @keyframes fadeInText{
   to{opacity:1;}
+}
+
+/* ---------- Origini Section ---------- */
+.origini {
+  background:#000;
+  padding:40px 20px;
+  max-width:1000px;
+  margin:0 auto;
+  text-align:center;
+}
+.origini h2 {
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#920404;
+  opacity:0;
+  animation: fadeInText 1.2s forwards;
+}
+.origini p {
+  font-size:1.1rem;
+  line-height:1.6;
+  margin:0 auto;
+  max-width:900px;
+  opacity:0;
+  animation: fadeInText 1.2s forwards 0.5s;
 }
 
 /* ---------- Content Section ---------- */
@@ -135,6 +159,8 @@ footer a:hover{color:white;}
   .hero p{font-size:1rem;}
   .content{padding:80px 15px 50px 15px;}
 
+  .origini p {font-size:1rem;padding:0 10px;}
+
   /* mobil: text + poze fiecare sub departament, centrate */
   .department.creativ,
   .department.tehnic,
@@ -187,6 +213,12 @@ footer a:hover{color:white;}
 <section class="hero">
   <h1>Despre Noi</h1>
   <p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în patru departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p>
+</section>
+
+<!-- Origini Section -->
+<section class="origini">
+  <h2>Origini</h2>
+  <p>Înainte de noi, a fost echipa Overthink (sau cum o mai numim, Overthink-ul Mare) fondată de Matei Elesei și Răzvan Marin în C.N. „Vasile Alecsandri” Bacău. Totul a început cu o idee, o ambiție de a face ceva nou și inedit în cadrul unei campanii antidrog, unde în loc de o poză sau un afiș, Matei a decis să facă un film. După, aceștia au continuat să creeze scurtmetraje din ce în ce mai ambițioase, de la cascadorii călare sau chiar aviatice alături de o echipă schimbătoare, dar cu același nucleu. În prezent, sub îndrumarea acestora, dar mai ales a lui Matei, noi ne creăm propria poveste spunând-o pe a lor.</p>
 </section>
 
 <!-- Content -->
@@ -269,4 +301,3 @@ footer a:hover{color:white;}
 
 </body>
 </html>
-
