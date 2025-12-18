@@ -8,11 +8,53 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,sans-serif;background:black;color:white;}
 
-/* ---------- Top Bar ---------- */
-.topbar{position:fixed;top:0;left:0;width:100%;height:50px;background:#222;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;}
-.topbar img{height:35px;}
-.topbar a{color:#920404;text-decoration:none;font-weight:bold;transition:0.3s;}
-.topbar a:hover{color:white;}
+/* 📌 FIX: Am mutat elementul de navigație într-un tag  separat pentru o grupare mai bună */
+
+/* ---------- Top Bar (Modificat) ---------- */
+.topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:50px;
+  background:#222;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0; 
+  z-index:1000;
+}
+
+/* Adăugăm spațiere DOAR pe elementele din topbar, menținând logo-ul la marginea 0 */
+.topbar img{
+  height:35px;
+  margin-right: 70%; /* Adaugă spațiu doar în jurul logo-ului */
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 15px;
+  margin-right: 20px; /* Adaugă spațiu doar în jurul link-urilor */
+}
+/* ... restul codului CSS pentru .topbar-nav a este OK ... */
+
+/* Container pentru link-urile din bara de sus */
+.topbar-nav {
+  display: flex; /* Face ca link-urile să fie aliniate orizontal */
+  gap: 15px; /* Adaugă spațiu între link-uri */
+}
+
+.topbar-nav a{ /* Selectăm link-urile din noul container */
+  color:white;
+  background:#920404;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+  display:inline-block;
+  border-radius:6px;
+  padding:4px 10px;
+}
+
 
 /* ---------- Hero Section ---------- */
 .hero{position:relative;height:90vh;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;}
@@ -36,7 +78,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
 .time-block{background:#222;padding:20px 30px;border-radius:10px;min-width:100px;}
 .time{font-size:4rem;font-weight:bold;}
 .label{font-size:1.2rem;margin-top:5px;}
-.countdown .btn{display:inline-block;padding:10px 18px;background:#920404;color:white;text-decoration:none;font-weight:bold;border-radius:6px;transition:0.3s;margin:auto;margin-top:10px;text-align:center;font-size:1rem;}
+.countdown .btn{display:inline-block;padding:20px 34px;background:#920404;color:white;text-decoration:none;font-weight:bold;border-radius:6px;transition:0.3s;margin:auto;margin-top:10px;text-align:center;font-size:1rem;}
 .countdown .btn:hover{opacity:0.8;}
 
 /* ---------- Gallery Section ---------- */
@@ -92,8 +134,12 @@ footer a:hover{color:white;}
 
 <!-- Bara sus -->
 <div class="topbar">
-  <img src="Foto/LOGOtaiat.svg" alt="Logo">
-  <a href="despre.html">Despre Noi</a>
+    <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+
+    <nav class="topbar-nav">
+    <a href="despre.html">Despre Noi</a>
+    <a href="promo.html">Promo-uri</a>
+  </nav>
 </div>
 
 <!-- Hero Section -->
@@ -105,22 +151,19 @@ footer a:hover{color:white;}
   <img src="Foto/logo 1 blurv2.png" class="background-img" id="heroBackground" alt="Background">
   <div class="overlay" id="heroOverlay">
     <h1 class="animated-text">CLUBUL DE FILM OVERTHINK JR.</h1>
-    <p class="hero-subtitle">
-      Recrutări pe data 26.09.2025 și 27.09.2025 <br>
-      pe terenul de sport de la C.N. "Vasile Alexandri".
-    </p>
+
   </div>
 </section>
 
 <!-- About -->
 <section class="about">
   <div class="logo"><img src="Foto/LOGO2-removebg-preview.png" alt="Despre noi"></div>
-  <div class="text"><p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în patru departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill și întreprindere poate fi căpătată alături de noi.</p></div>
+  <div class="text"><p>Overthink jr. este un club de film înființat în Bacău de liceeni ce își propun să crească importanța cinematografiei în comunitatea lor prin aducerea propriilor idei la viață și înscrierea lor la concursuri și festivaluri de film naționale sau chiar internaționale. În prezent, colaborăm cu colegiile din orașul nostru și alte instanțe culturale locale. Suntem coordonați de doamna profesoară Cristina Frânculescu și îndrumați de Matei Elesei, intemeietorul clubului original.</p></div>
 </section>
 
 <!-- Countdown -->
 <section class="countdown">
-  <h3>A mai rămas până la recrutări:</h3>
+  <h3>A mai rămas până la Anul Nou:</h3>
   <div class="timer-container" id="timer">
     <div class="time-block"><div class="time" id="days">00</div><div class="label">Zile</div></div>
     <div class="time-block"><div class="time" id="hours">00</div><div class="label">Ore</div></div>
@@ -168,7 +211,7 @@ footer a:hover{color:white;}
 <!-- Footer -->
 <footer>
   <p>© 2025 Clubul de Film Overthink JR. | 
-     <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> | 
+     <a href="https://www.facebook.com/share/1WUv8meLtA/" target="_blank">Facebook</a> | 
      <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a>
   </p>
 </footer>
@@ -191,7 +234,7 @@ video.addEventListener('ended', () => {
 
 // COUNTDOWN
 function updateCountdown(){
-  const endDate=new Date("2025-09-26T15:30:00").getTime();
+  const endDate=new Date("2025-12-31T00:00:00").getTime();
   const now=new Date().getTime();
   const diff=endDate-now;
   if(diff<0)return;
@@ -244,4 +287,3 @@ if(window.innerWidth > 768){
 
 </body>
 </html>
-
