@@ -22,9 +22,7 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   z-index:1000;
 }
 
-.topbar img{
-  height:35px;
-}
+.topbar img{ height:35px; }
 
 .topbar-nav{
   display:flex;
@@ -39,13 +37,12 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   border-radius:6px;
   padding:6px 12px;
   transition:0.3s;
+  white-space:nowrap;
 }
 
-.topbar-nav a:hover{
-  background:#b00606;
-}
+.topbar-nav a:hover{ background:#b00606; }
 
-/* ---------- HERO (titlul mai sus) ---------- */
+/* ---------- HERO (titlul mai sus + mai vizibil) ---------- */
 .hero{
   height:70vh;
   background:#111 url('Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg') no-repeat center/cover;
@@ -55,17 +52,35 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   padding-top:100px;
 }
 
+/* Titlu mai mare, mai gros, pe doua randuri, cu umbra discreta */
 .hero h1{
   width:100%;
   text-align:center;
-  font-size:3rem;
+
+  /* responsive fara exagerari */
+  font-size:clamp(2.1rem, 5vw, 3.6rem);
+  line-height:1.05;
+
+  font-weight:900;
+  letter-spacing:0.02em;
   color:#920404;
+
+  /* sa se citeasca pe fundal */
+  text-shadow:0 3px 18px rgba(0,0,0,0.85);
+
   animation:fadeIn 1.2s forwards;
+  opacity:0;
+  padding:0 12px;
+}
+
+/* fiecare rand centrat */
+.hero h1 span{
+  display:block;
 }
 
 @keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
+  from{opacity:0; transform:translateY(6px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 /* ---------- ZONA VIDEO (neagra) ---------- */
@@ -113,33 +128,28 @@ footer a{
   margin:0 10px;
 }
 
-footer a:hover{
-  color:white;
-}
+footer a:hover{ color:white; }
 
 /* ---------- RESPONSIVE MOBIL ---------- */
 @media(max-width:768px){
-
   .topbar{
     flex-wrap:wrap;
     justify-content:center;
     gap:10px;
   }
 
-  .topbar img{
-    height:30px;
-  }
+  .topbar img{ height:30px; }
 
   .hero{
     height:60vh;
     padding-top:90px;
   }
 
+  /* putin mai strans pe mobil ca sa nu para prea mare */
   .hero h1{
-    font-size:2rem;
-    padding:0 10px;
+    font-size:clamp(1.9rem, 7vw, 2.6rem);
+    line-height:1.08;
   }
-
 }
 </style>
 </head>
@@ -157,7 +167,10 @@ footer a:hover{
 
 <!-- HERO -->
 <section class="hero">
-  <h1>MATERIALE PROMOTIONALE</h1>
+  <h1>
+    <span>MATERIALE</span>
+    <span>PROMOTIONALE</span>
+  </h1>
 </section>
 
 <!-- VIDEO (sub poza, pe fundal negru) -->
