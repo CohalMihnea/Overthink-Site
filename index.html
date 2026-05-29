@@ -93,19 +93,20 @@ body{
   background-attachment:fixed;
 }
 
-/* lumină cinematică roșie, dar mai subtilă */
+/* Glow cinematic pe fundal */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 50% 45%, rgba(146,4,4,0.28), transparent 32%),
+    radial-gradient(circle at 50% 46%, rgba(146,4,4,0.38), transparent 30%),
+    radial-gradient(circle at 50% 52%, rgba(146,4,4,0.18), transparent 44%),
     radial-gradient(circle at 20% 70%, rgba(255,255,255,0.04), transparent 24%);
   z-index:1;
   pointer-events:none;
 }
 
-/* vignette */
+/* Vignette */
 .hero::after{
   content:"";
   position:absolute;
@@ -137,23 +138,32 @@ body{
 .animated-text{
   font-family:'Bebas Neue', Impact, sans-serif;
   font-size:clamp(4rem, 13vw, 10rem);
-  line-height:0.86;
-  letter-spacing:0.04em;
+  line-height:0.9;
+  letter-spacing:0.035em;
   color:white;
   text-transform:uppercase;
+  white-space:nowrap;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:0.08em;
   text-shadow:
-    0 0 12px rgba(146,4,4,0.65),
-    0 0 28px rgba(146,4,4,0.28),
-    0 8px 35px rgba(0,0,0,0.95);
+    0 0 10px rgba(255,255,255,0.18),
+    0 0 20px rgba(146,4,4,0.78),
+    0 0 42px rgba(146,4,4,0.52),
+    0 0 82px rgba(146,4,4,0.25),
+    0 10px 38px rgba(0,0,0,0.95);
   animation:titleReveal 1.3s ease forwards;
 }
 
 .animated-text span{
-  color:#b80606;
+  color:#c51212;
+  display:inline-block;
   text-shadow:
-    0 0 8px rgba(184,6,6,0.45),
-    0 0 18px rgba(146,4,4,0.28),
-    0 5px 24px rgba(0,0,0,0.95);
+    0 0 5px rgba(255,255,255,0.1),
+    0 0 13px rgba(197,18,18,0.5),
+    0 0 26px rgba(146,4,4,0.35),
+    0 6px 24px rgba(0,0,0,0.95);
 }
 
 .hero-motto{
@@ -194,7 +204,7 @@ body{
 .hero-btn.primary{
   background:#b80606;
   color:white;
-  box-shadow:0 0 24px rgba(184,6,6,0.32);
+  box-shadow:0 0 24px rgba(184,6,6,0.36);
 }
 
 .hero-btn.secondary{
@@ -258,39 +268,32 @@ body{
   text-align:center;
   display:flex;
   justify-content:center;
+  align-items:center;
 }
 
-.logo-frame{
-  position:relative;
-  width:min(430px, 90vw);
-  aspect-ratio:1.28 / 1;
-  padding:10px;
-  border-radius:24px;
+.logo-circle{
+  width:min(360px, 80vw);
+  aspect-ratio:1/1;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(146,4,4,0.35), rgba(255,255,255,0.05));
+    radial-gradient(circle, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 48%, transparent 72%);
   box-shadow:
-    0 0 45px rgba(146,4,4,0.24),
-    0 25px 80px rgba(0,0,0,0.55);
-  overflow:hidden;
+    0 0 32px rgba(146,4,4,0.28),
+    0 0 80px rgba(146,4,4,0.18);
+  padding:12px;
 }
 
-.logo-frame::before{
-  content:"";
-  position:absolute;
-  inset:1px;
-  border-radius:23px;
-  border:1px solid rgba(255,255,255,0.08);
-  pointer-events:none;
-  z-index:3;
-}
-
-.logo-frame img{
+.logo-circle img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  border-radius:18px;
-  filter:brightness(0.88) contrast(1.08);
+  object-fit:contain;
   display:block;
+  filter:
+    drop-shadow(0 0 12px rgba(255,255,255,0.08))
+    drop-shadow(0 0 20px rgba(146,4,4,0.22));
 }
 
 .about .text{
@@ -555,8 +558,10 @@ footer a:hover{
   }
 
   .animated-text{
-    font-size:clamp(4.2rem, 21vw, 6.4rem);
-    line-height:0.88;
+    font-size:clamp(2.9rem, 13vw, 4.8rem);
+    line-height:0.95;
+    gap:0.05em;
+    white-space:nowrap;
   }
 
   .hero-motto{
@@ -587,8 +592,8 @@ footer a:hover{
     gap:28px;
   }
 
-  .logo-frame{
-    width:min(360px, 92vw);
+  .logo-circle{
+    width:min(290px, 78vw);
   }
 
   .about .text{
@@ -664,6 +669,22 @@ footer a:hover{
     bottom:18px;
   }
 }
+
+@media(max-width:430px){
+  .animated-text{
+    font-size:clamp(2.55rem, 12.5vw, 3.7rem);
+    letter-spacing:0.02em;
+    gap:0.04em;
+  }
+
+  .hero-label{
+    font-size:0.68rem;
+  }
+
+  .hero-motto{
+    font-size:0.9rem;
+  }
+}
 </style>
 </head>
 
@@ -704,8 +725,8 @@ footer a:hover{
 <!-- About -->
 <section class="about reveal" id="about">
   <div class="logo">
-    <div class="logo-frame">
-      <img src="Foto/LOGO2-removebg-preview.png" alt="Despre noi">
+    <div class="logo-circle">
+      <img src="Foto/LOGO Overthink 2.svg" alt="Logo Overthink">
     </div>
   </div>
 
