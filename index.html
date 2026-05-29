@@ -44,32 +44,99 @@ body{
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.topbar img{
+.topbar-logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.topbar-logo img{
   height:36px;
   width:auto;
+  display:block;
+  transition:0.3s ease;
 }
 
-.topbar-nav{
-  display:flex;
-  gap:14px;
-  align-items:center;
+.topbar-logo:hover img{
+  opacity:0.85;
+  transform:scale(1.03);
 }
 
-.topbar-nav a{
+/* Dropdown menu */
+.menu-wrapper{
+  position:relative;
+}
+
+.menu-toggle{
+  border:none;
+  outline:none;
+  cursor:pointer;
   color:white;
   background:rgba(146,4,4,0.9);
-  text-decoration:none;
-  font-weight:700;
-  transition:0.3s;
-  display:inline-block;
+  font-family:'Inter', Arial, sans-serif;
+  font-weight:800;
+  font-size:0.92rem;
   border-radius:999px;
-  padding:7px 14px;
-  font-size:0.9rem;
+  padding:9px 18px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:0.3s ease;
+  box-shadow:0 0 20px rgba(146,4,4,0.2);
 }
 
-.topbar-nav a:hover{
+.menu-toggle:hover{
   background:#c00606;
   transform:translateY(-2px);
+}
+
+.menu-arrow{
+  font-size:0.8rem;
+  transition:0.3s ease;
+}
+
+.menu-wrapper.open .menu-arrow{
+  transform:rotate(180deg);
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:calc(100% + 12px);
+  right:0;
+  min-width:210px;
+  padding:10px;
+  border-radius:18px;
+  background:rgba(15,15,15,0.92);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55),
+    0 0 35px rgba(146,4,4,0.18);
+  opacity:0;
+  transform:translateY(-10px) scale(0.96);
+  pointer-events:none;
+  transition:0.25s ease;
+}
+
+.menu-wrapper.open .dropdown-menu{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+.dropdown-menu a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  padding:12px 14px;
+  border-radius:12px;
+  transition:0.25s ease;
+}
+
+.dropdown-menu a:hover{
+  background:rgba(146,4,4,0.78);
+  transform:translateX(3px);
 }
 
 /* ---------- Hero Section ---------- */
@@ -93,7 +160,6 @@ body{
   background-attachment:fixed;
 }
 
-/* Glow cinematic pe fundal */
 .hero::before{
   content:"";
   position:absolute;
@@ -106,7 +172,6 @@ body{
   pointer-events:none;
 }
 
-/* Vignette */
 .hero::after{
   content:"";
   position:absolute;
@@ -258,8 +323,8 @@ body{
   justify-content:center;
   gap:55px;
   background:
-    radial-gradient(circle at 25% 45%, rgba(146,4,4,0.16), transparent 28%),
-    linear-gradient(180deg, #000 0%, #080808 100%);
+    radial-gradient(circle at center, rgba(146,4,4,0.22), transparent 35%),
+    #000;
 }
 
 .about .logo{
@@ -273,7 +338,7 @@ body{
 
 .about-logo-glow{
   position:relative;
-  width:min(390px, 82vw);
+  width:min(520px, 42vw);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -282,12 +347,12 @@ body{
 .about-logo-glow::before{
   content:"";
   position:absolute;
-  width:115%;
-  height:115%;
+  width:105%;
+  height:105%;
   border-radius:50%;
   background:
     radial-gradient(circle, rgba(146,4,4,0.34) 0%, rgba(146,4,4,0.16) 38%, transparent 68%);
-  filter:blur(18px);
+  filter:blur(20px);
   z-index:0;
 }
 
@@ -300,7 +365,7 @@ body{
   display:block;
   filter:
     drop-shadow(0 0 10px rgba(255,255,255,0.08))
-    drop-shadow(0 0 28px rgba(146,4,4,0.28));
+    drop-shadow(0 0 30px rgba(146,4,4,0.28));
 }
 
 .about .text{
@@ -539,17 +604,18 @@ footer a:hover{
     gap:10px;
   }
 
-  .topbar img{
+  .topbar-logo img{
     height:32px;
   }
 
-  .topbar-nav{
-    gap:8px;
+  .menu-toggle{
+    padding:8px 14px;
+    font-size:0.82rem;
   }
 
-  .topbar-nav a{
-    font-size:0.78rem;
-    padding:5px 9px;
+  .dropdown-menu{
+    min-width:190px;
+    right:0;
   }
 
   .hero{
@@ -600,8 +666,8 @@ footer a:hover{
   }
 
   .about-logo-glow{
-  width:min(300px, 78vw);
-}
+    width:min(360px, 86vw);
+  }
 
   .about .text{
     height:auto;
@@ -699,12 +765,20 @@ footer a:hover{
 
 <!-- Bara sus -->
 <div class="topbar">
-  <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+  <a href="index.html" class="topbar-logo" aria-label="Înapoi la pagina principală">
+    <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+  </a>
 
-  <nav class="topbar-nav">
-    <a href="despre.html">Despre Noi</a>
-    <a href="promo.html">Promo-uri</a>
-  </nav>
+  <div class="menu-wrapper" id="menuWrapper">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Deschide meniul">
+      Meniu <span class="menu-arrow">▾</span>
+    </button>
+
+    <nav class="dropdown-menu" id="dropdownMenu">
+      <a href="despre.html">Despre Noi</a>
+      <a href="promo.html">Promo-uri</a>
+    </nav>
+  </div>
 </div>
 
 <!-- Hero Section -->
@@ -732,10 +806,10 @@ footer a:hover{
 <!-- About -->
 <section class="about reveal" id="about">
   <div class="logo">
-  <div class="about-logo-glow">
-    <img src="Foto/LOGO Overthink 2.svg" alt="Logo Overthink">
+    <div class="about-logo-glow">
+      <img src="Foto/LOGO Overthink 2.svg" alt="Logo Overthink">
+    </div>
   </div>
-</div>
 
   <div class="text">
     <p>
@@ -822,6 +896,27 @@ footer a:hover{
 </footer>
 
 <script>
+// DROPDOWN MENU
+const menuWrapper = document.getElementById("menuWrapper");
+const menuToggle = document.getElementById("menuToggle");
+
+menuToggle.addEventListener("click", (event) => {
+  event.stopPropagation();
+  menuWrapper.classList.toggle("open");
+});
+
+document.addEventListener("click", (event) => {
+  if(!menuWrapper.contains(event.target)){
+    menuWrapper.classList.remove("open");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if(event.key === "Escape"){
+    menuWrapper.classList.remove("open");
+  }
+});
+
 // COUNTDOWN
 const endDate = new Date("2026-06-03T00:00:00+03:00").getTime();
 const timer = document.getElementById("timer");
