@@ -163,7 +163,7 @@ footer a:hover{color:white;}
 
 <!-- Countdown -->
 <section class="countdown">
-  <h3>A mai rămas până la Anul Nou:</h3>
+  <h3>A mai rămas până la recrutări:</h3>
   <div class="timer-container" id="timer">
     <div class="time-block"><div class="time" id="days">00</div><div class="label">Zile</div></div>
     <div class="time-block"><div class="time" id="hours">00</div><div class="label">Ore</div></div>
@@ -234,7 +234,7 @@ video.addEventListener('ended', () => {
 
 // COUNTDOWN
 function updateCountdown(){
-  const endDate=new Date("2025-12-31T00:00:00").getTime();
+  const endDate=new Date("2026-06-03T00:00:00+03:00").getTime();
   const now=new Date().getTime();
   const diff=endDate-now;
   if(diff<0)return;
