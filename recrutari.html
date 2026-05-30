@@ -234,6 +234,51 @@ a{
   font-style:italic;
 }
 
+.hero-actions{
+  margin-top:34px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  transition:0.3s ease;
+  min-width:155px;
+  font-size:1rem;
+}
+
+.hero-btn.primary{
+  background:#b80606;
+  color:white;
+  box-shadow:0 0 28px rgba(184,6,6,0.42);
+}
+
+.hero-btn.secondary{
+  border:1px solid rgba(255,255,255,0.25);
+  color:white;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(8px);
+}
+
+.hero-btn:hover{
+  transform:translateY(-4px) scale(1.02);
+}
+
+#festival-info,
+#festival-formular,
+#club-info,
+#club-formular{
+  scroll-margin-top:90px;
+}
+
 /* ---------- Reveal & Transition Animations ---------- */
 .reveal{
   opacity:0;
@@ -765,6 +810,21 @@ footer{
     margin-top:16px;
   }
 
+  .hero-actions{
+    margin-top:26px;
+    gap:10px;
+    flex-wrap:nowrap;
+  }
+
+  .hero-btn{
+    min-width:auto;
+    width:auto;
+    flex:1;
+    padding:13px 10px;
+    font-size:0.86rem;
+    white-space:nowrap;
+  }
+
   .prezentare{
     padding:35px 15px 15px;
   }
@@ -866,14 +926,21 @@ footer{
     <div class="hero-label">FESTIVAL</div>
     <h1>Overthink Film Fest</h1>
     <p>„Filme, creativitate și oameni pasionați — totul începe cu tine.”</p>
+
+    <div class="hero-actions">
+      <a href="#festival-formular" class="hero-btn primary">Înscrie-te</a>
+      <a href="#festival-info" class="hero-btn secondary">Află mai multe</a>
+    </div>
   </div>
 </header>
 
-<section class="sectiune-continut reveal" style="padding-top:0; padding-bottom:10px;">
-  <h2>Pentru cine este clubul?</h2>
-  <p class="sectiune-descriere" style="margin-bottom:15px;">Căutăm elevi de liceu care vor să își transforme pasiunea pentru film în proiecte reale. Nu trebuie să ai experiență, clubul este locul unde înveți, experimentezi și crești alături de echipă. Dacă ai idei, creativitate și chef să te implici în filme, scurtmetraje și activități din culisele cinematografiei, atunci ești exact genul de persoană pe care îl căutăm.</p>
-
-</section>
+<section class="sectiune-continut reveal" id="festival-info">
+  <h2>Overthink Junior Film Festival</h2>
+  <p class="sectiune-motto">„Filme, creativitate și oameni pasionați — totul începe cu tine.”</p>
+  <p class="sectiune-descriere">
+    Overthink Junior Film Festival aduce împreună filmul, arta și energia noii generații într-o experiență plină de creativitate. Te așteaptă proiecții de film, ateliere cu profesioniști din cinematografie, standuri de artă, muzică și fotografie, concursuri, activități interactive și o atmosferă care transformă festivalul într-un loc unde ideile prind viață. Un spațiu creat de tineri, pentru tineri, unde pasiunea pentru film devine comunitate. Dacă vrei să faci parte din culisele festivalului și să trăiești experiența alături de noi, dă scroll până la formularul de înscriere de mai jos și alătură-te echipei de voluntari.
+  </p>
+  
   <div class="festival-meta">
     <div class="meta-item">📅 7 - 9 August</div>
     <div class="meta-item">📍 Insula de Agrement, Hub Orizont & Teatrul Bacovia</div>
@@ -921,11 +988,13 @@ footer{
 <section class="prezentare reveal">
   <div class="prezentare-container">
     <h2>Pentru cine este festivalul?</h2>
-    <p>Căutăm voluntari, în special elevi, care vor să facă parte din echipa din spatele unui eveniment de asemenea amploare. Nu ai nevoie de experiență, te învățăm noi tot ce trebuie. Căutăm oameni serioși, implicați și gata să lucreze în echipă, să se implice în organizare și să pună umărul la un proiect real, care prinde viață pas cu pas. Dacă vrei să fii în mijlocul acțiunii și să vezi cum se construiește ceva mare de la zero, atunci ești exact omul pe care îl căutăm.</p>
+    <p>
+      Căutăm voluntari, în special elevi, care vor să facă parte din echipa din spatele unui eveniment de asemenea amploare. Nu ai nevoie de experiență, te învățăm noi tot ce trebuie. Căutăm oameni serioși, implicați și gata să lucreze în echipă, să se implice în organizare și să pună umărul la un proiect real, care prinde viață pas cu pas. Dacă vrei să fii în mijlocul acțiunii și să vezi cum se construiește ceva mare de la zero, atunci ești exact omul pe care îl căutăm.
+    </p>
   </div>
 </section>
 
-<section class="actiuni-sectiune reveal">
+<section class="actiuni-sectiune reveal" id="festival-formular">
   <div class="btn-grid-recrutari">
     <a href="#" target="_blank" class="btn-recrutare festival">
       Voluntar la Festival
@@ -935,13 +1004,18 @@ footer{
 
 <header class="hero-banner club-bg">
   <div class="hero-content">
-    <div class="hero-label">CLUBUL DE FILM</div>
+    <div class="hero-label">CLUB DE FILM</div>
     <h1>Overthink Junior</h1>
     <p>„Overthinking movies since day one.”</p>
+
+    <div class="hero-actions">
+      <a href="#club-formular" class="hero-btn primary">Înscrie-te</a>
+      <a href="#club-info" class="hero-btn secondary">Află mai multe</a>
+    </div>
   </div>
 </header>
 
-<section class="sectiune-continut reveal">
+<section class="sectiune-continut reveal" id="club-info">
   <div class="bule-sectiune" style="padding:0 0 30px 0;">
     <div class="bule-container">
       <div class="bula">Mențiune Specială la Boovie</div>
@@ -1019,11 +1093,12 @@ footer{
 
 <section class="sectiune-continut reveal" style="padding-top:0; padding-bottom:10px;">
   <h2>Pentru cine este clubul?</h2>
-  <p class="sectiune-motto">„Overthinking movies since day one.”</p>
-  <p class="sectiune-descriere" style="margin-bottom:15px;">Căutăm elevi de liceu care vor să își transforme pasiunea pentru film în proiecte reale. Nu trebuie să ai experiență, clubul este locul unde înveți, experimentezi și crești alături de echipă. Dacă ai idei, creativitate și chef să te implici în filme, scurtmetraje și activități din culisele cinematografiei, atunci ești exact genul de persoană pe care îl căutăm.</p>
+  <p class="sectiune-descriere" style="margin-bottom:15px;">
+    Căutăm elevi de liceu care vor să își transforme pasiunea pentru film în proiecte reale. Nu trebuie să ai experiență, clubul este locul unde înveți, experimentezi și crești alături de echipă. Dacă ai idei, creativitate și chef să te implici în filme, scurtmetraje și activități din culisele cinematografiei, atunci ești exact genul de persoană pe care îl căutăm.
+  </p>
 </section>
 
-<section class="actiuni-sectiune reveal" style="padding-bottom:50px;">
+<section class="actiuni-sectiune reveal" id="club-formular" style="padding-bottom:50px;">
   <div class="btn-grid-recrutari">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScFQJsghbDcXdpnJcqS-iI01KW6esVldxbobWFYmwmbKSAtaQ/viewform?usp=publish-editor" target="_blank" class="btn-recrutare club">
       Aplică în Clubul de Film
