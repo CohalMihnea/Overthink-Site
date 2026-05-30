@@ -52,7 +52,6 @@ a{
 .topbar-logo{
   display:flex;
   align-items:center;
-  text-decoration:none;
 }
 
 .topbar-logo img{
@@ -131,7 +130,6 @@ a{
 .dropdown-menu a{
   display:block;
   color:white;
-  text-decoration:none;
   font-weight:700;
   padding:12px 14px;
   border-radius:12px;
@@ -232,7 +230,6 @@ a{
   justify-content:center;
   padding:15px 24px;
   border-radius:999px;
-  text-decoration:none;
   font-weight:800;
   transition:0.3s ease;
   min-width:155px;
@@ -303,7 +300,7 @@ a{
   border:1px solid rgba(255,255,255,0.08);
   box-shadow:0 16px 50px rgba(0,0,0,0.35);
   transition:0.3s ease;
-  min-height:190px;
+  min-height:215px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -327,7 +324,16 @@ a{
   color:#d6d6d6;
   line-height:1.65;
   font-size:0.95rem;
-  margin-bottom:18px;
+  margin-bottom:12px;
+}
+
+.contact-data{
+  display:block;
+  color:#fff;
+  font-weight:800;
+  font-size:1rem;
+  margin:12px 0 16px;
+  word-break:break-word;
 }
 
 .contact-link{
@@ -384,6 +390,29 @@ a{
   color:#d7d7d7;
   line-height:1.75;
   margin-bottom:20px;
+}
+
+.direct-contact-box{
+  margin-top:22px;
+  padding:20px;
+  border-radius:18px;
+  background:rgba(146,4,4,0.10);
+  border:1px solid rgba(146,4,4,0.28);
+}
+
+.direct-contact-box strong{
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+  font-size:1.02rem;
+}
+
+.direct-contact-box a,
+.direct-contact-box span{
+  display:block;
+  color:#e9e9e9;
+  margin-top:6px;
+  line-height:1.6;
 }
 
 .contact-list{
@@ -497,7 +526,6 @@ footer{
 
 footer a{
   color:#d30707;
-  text-decoration:none;
   margin:0 10px;
   font-weight:700;
 }
@@ -652,39 +680,44 @@ footer a:hover{
   <div class="section-shell">
     <h2 class="section-title reveal">Unde ne găsești</h2>
     <p class="section-subtitle reveal">
-      Pentru întrebări rapide, recrutări sau colaborări, ne poți contacta prin una dintre variantele de mai jos.
+      Pentru întrebări rapide, colaborări sau informații despre recrutări, ne poți contacta direct prin email, telefon sau social media.
     </p>
 
     <div class="contact-grid">
 
       <div class="contact-card reveal">
         <div>
+          <h3>Email oficial</h3>
+          <p>Pentru colaborări, întrebări oficiale, propuneri de proiecte sau parteneriate.</p>
+          <span class="contact-data">staff@overthink-jr.com</span>
+        </div>
+        <a class="contact-link" href="mailto:staff@overthink-jr.com?subject=Contact%20site%20Overthink%20JR.">Trimite email</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div>
+          <h3>Telefon</h3>
+          <p>Pentru situații urgente, organizare, evenimente sau discuții directe.</p>
+          <span class="contact-data">NUMAR_TELEFON_1</span>
+          <span class="contact-data">NUMAR_TELEFON_2</span>
+        </div>
+        <a class="contact-link" href="tel:NUMAR_TELEFON_1">Sună-ne</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div>
           <h3>Instagram</h3>
-          <p>Cel mai rapid mod de a vedea activitatea noastră și de a ne scrie direct.</p>
+          <p>Pentru mesaje rapide, noutăți, story-uri, anunțuri și activitatea zilnică a clubului.</p>
+          <span class="contact-data">@overthink.jr</span>
         </div>
         <a class="contact-link" href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Deschide Instagram</a>
       </div>
 
       <div class="contact-card reveal">
         <div>
-          <h3>Facebook</h3>
-          <p>Urmărește noutățile, evenimentele și anunțurile oficiale ale clubului.</p>
-        </div>
-        <a class="contact-link" href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Deschide Facebook</a>
-      </div>
-
-      <div class="contact-card reveal">
-        <div>
-          <h3>Email</h3>
-          <p>Pentru propuneri, parteneriate, întrebări oficiale sau colaborări.</p>
-        </div>
-        <a class="contact-link" href="mailto:EMAIL_CLUB_AICI">Trimite email</a>
-      </div>
-
-      <div class="contact-card reveal">
-        <div>
           <h3>Recrutări</h3>
-          <p>Vrei să intri în club sau să devii voluntar la festival? Intră pe pagina dedicată.</p>
+          <p>Pentru înscrierea în club sau pentru voluntariat la festival, folosește pagina dedicată.</p>
+          <span class="contact-data">Club & Festival</span>
         </div>
         <a class="contact-link" href="recrutari.html">Vezi recrutările</a>
       </div>
@@ -699,25 +732,36 @@ footer a:hover{
     <div class="message-layout">
 
       <div class="info-panel reveal">
-        <h2>Scrie-ne</h2>
+        <h2>Date de contact</h2>
         <p>
-          Folosește formularul pentru a ne trimite rapid un mesaj. După completare, se va deschide aplicația ta de email cu mesajul pregătit.
+          Pentru o comunicare mai rapidă, te rugăm să alegi metoda potrivită în funcție de subiect. Pentru propuneri oficiale, colaborări sau parteneriate, recomandăm contactul prin email.
         </p>
+
+        <div class="direct-contact-box">
+          <strong>Email oficial</strong>
+          <a href="mailto:staff@overthink-jr.com">staff@overthink-jr.com</a>
+        </div>
+
+        <div class="direct-contact-box">
+          <strong>Telefon</strong>
+          <a href="tel:NUMAR_TELEFON_1">NUMAR_TELEFON_1</a>
+          <a href="tel:NUMAR_TELEFON_2">NUMAR_TELEFON_2</a>
+        </div>
 
         <div class="contact-list">
           <div class="contact-list-item">
-            <strong>Pentru recrutări</strong>
-            <span>Întrebări despre departamente, înscrieri, voluntariat sau activitățile clubului.</span>
+            <strong>Recrutări și voluntariat</strong>
+            <span>Întrebări despre înscrierea în club, departamente sau implicarea ca voluntar la festival.</span>
           </div>
 
           <div class="contact-list-item">
-            <strong>Pentru colaborări</strong>
-            <span>Propuneri de proiecte video, evenimente, aftermovies, campanii sau parteneriate locale.</span>
+            <strong>Colaborări și proiecte video</strong>
+            <span>Propuneri de videoclipuri, aftermovies, campanii, evenimente sau proiecte creative.</span>
           </div>
 
           <div class="contact-list-item">
-            <strong>Pentru festival</strong>
-            <span>Întrebări despre Overthink Film Fest, voluntari, program sau implicare.</span>
+            <strong>Parteneriate și festival</strong>
+            <span>Discuții despre Overthink Film Fest, sponsorizări, parteneriate sau implicarea în organizare.</span>
           </div>
         </div>
       </div>
@@ -765,7 +809,7 @@ footer a:hover{
 <footer>
   <p>
     © 2026 Clubul de Film Overthink JR. |
-    <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> |
+    <a href="mailto:staff@overthink-jr.com">staff@overthink-jr.com</a> |
     <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a>
   </p>
 </footer>
@@ -818,7 +862,7 @@ contactForm.addEventListener("submit", function(event){
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value.trim();
 
-  const destinationEmail = "EMAIL_CLUB_AICI";
+  const destinationEmail = "staff@overthink-jr.com";
 
   const mailSubject = encodeURIComponent("Contact site Overthink JR. - " + subject);
   const mailBody = encodeURIComponent(
