@@ -5,96 +5,284 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Promo-uri - Clubul de Film Overthink JR.</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:black;color:white;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter', Arial, sans-serif;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
 /* ---------- TOP BAR ---------- */
 .topbar{
   position:fixed;
-  top:0; left:0;
+  top:0;
+  left:0;
   width:100%;
-  background:#222;
+  height:56px;
+  background:rgba(10,10,10,0.82);
+  backdrop-filter:blur(12px);
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 20px;
+  padding:0 22px;
   z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.topbar img{height:35px;}
-
-.topbar-nav{
+.topbar-logo{
   display:flex;
-  gap:15px;
-}
-
-.topbar-nav a{
-  color:white;
-  background:#920404;
+  align-items:center;
   text-decoration:none;
-  font-weight:bold;
-  border-radius:6px;
-  padding:6px 12px;
-  transition:0.3s;
-  white-space:nowrap;
 }
 
-.topbar-nav a:hover{background:#b00606;}
+.topbar-logo img{
+  height:36px;
+  width:auto;
+  display:block;
+  transition:0.3s ease;
+}
+
+.topbar-logo:hover img{
+  opacity:0.85;
+  transform:scale(1.03);
+}
+
+/* Dropdown menu */
+.menu-wrapper{
+  position:relative;
+}
+
+.menu-toggle{
+  border:none;
+  outline:none;
+  cursor:pointer;
+  color:white;
+  background:rgba(146,4,4,0.9);
+  font-family:'Inter', Arial, sans-serif;
+  font-weight:800;
+  font-size:0.92rem;
+  border-radius:999px;
+  padding:9px 18px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:0.3s ease;
+  box-shadow:0 0 20px rgba(146,4,4,0.2);
+}
+
+.menu-toggle:hover{
+  background:#c00606;
+  transform:translateY(-2px);
+}
+
+.menu-arrow{
+  font-size:0.8rem;
+  transition:0.3s ease;
+}
+
+.menu-wrapper.open .menu-arrow{
+  transform:rotate(180deg);
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:calc(100% + 12px);
+  right:0;
+  min-width:220px;
+  padding:10px;
+  border-radius:18px;
+  background:rgba(15,15,15,0.92);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55),
+    0 0 35px rgba(146,4,4,0.18);
+  opacity:0;
+  transform:translateY(-10px) scale(0.96);
+  pointer-events:none;
+  transition:0.25s ease;
+}
+
+.menu-wrapper.open .dropdown-menu{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+.dropdown-menu a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  padding:12px 14px;
+  border-radius:12px;
+  transition:0.25s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active{
+  background:rgba(146,4,4,0.78);
+  transform:translateX(3px);
+}
 
 /* ---------- HERO ---------- */
 .hero{
-  height:70vh;
-  background:#111 url('Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg') no-repeat center/cover;
+  position:relative;
+  min-height:72vh;
   display:flex;
-  justify-content:flex-start;
+  justify-content:center;
   align-items:center;
-  padding-top:100px;
+  text-align:center;
+  padding:120px 20px 80px;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.44), rgba(0,0,0,0.88)),
+    url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg") center/cover no-repeat;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(146,4,4,0.34), transparent 30%),
+    radial-gradient(circle at 20% 75%, rgba(255,255,255,0.03), transparent 20%);
+  z-index:1;
+  pointer-events:none;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle, transparent 35%, rgba(0,0,0,0.92) 100%);
+  z-index:1;
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:950px;
+  animation:heroFadeUp 1.05s ease forwards;
+}
+
+.hero-label{
+  margin-bottom:18px;
+  color:#d8d8d8;
+  font-size:0.95rem;
+  font-weight:800;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0;
+  animation:fadeIn 1s ease forwards;
+  animation-delay:0.2s;
+  white-space:nowrap;
+  text-shadow:0 0 14px rgba(146,4,4,0.35);
 }
 
 .hero h1{
-  width:100%;
-  text-align:center;
-  font-size:clamp(2.1rem,5vw,3.6rem);
-  line-height:1.05;
-  font-weight:900;
-  letter-spacing:0.02em;
-  color:#920404;
-  text-shadow:0 3px 18px rgba(0,0,0,0.85);
-  animation:fadeIn 1.2s forwards;
-  opacity:0;
-  padding:0 12px;
+  font-family:'Bebas Neue', Impact, sans-serif;
+  font-size:clamp(3.6rem, 9vw, 7rem);
+  letter-spacing:0.06em;
+  line-height:0.92;
+  text-transform:uppercase;
+  color:#fff;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.14),
+    0 0 26px rgba(146,4,4,0.58),
+    0 8px 38px rgba(0,0,0,0.9);
 }
 
-.hero h1 span{display:block;}
-
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(6px);}
-  to{opacity:1;transform:translateY(0);}
+.hero p{
+  max-width:760px;
+  margin:24px auto 0;
+  color:#e5e5e5;
+  font-size:1.05rem;
+  line-height:1.75;
 }
 
 /* ---------- VIDEO SECTION ---------- */
 .video-section{
-  padding:50px 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:40px;
+  padding:75px 20px 90px;
+  background:
+    radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 36%),
+    #000;
+}
+
+.video-shell{
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:14px;
+  font-family:'Bebas Neue', Impact, sans-serif;
+  letter-spacing:0.08em;
+  font-size:clamp(2.2rem, 5vw, 3.3rem);
+  color:#fff;
+  text-shadow:0 0 20px rgba(146,4,4,0.28);
+}
+
+.section-subtitle{
+  max-width:760px;
+  margin:0 auto 42px;
+  text-align:center;
+  color:#d2d2d2;
+  line-height:1.75;
+  font-size:1rem;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:34px;
 }
 
 .video-container{
   width:100%;
-  max-width:960px;
-  background:#111;
-  border-radius:14px;
+  background:rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
   overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+  box-shadow:0 18px 55px rgba(0,0,0,0.42);
+  transition:0.35s ease;
+}
+
+.video-container:hover{
+  transform:translateY(-6px);
+  border-color:rgba(146,4,4,0.34);
+  box-shadow:
+    0 22px 65px rgba(0,0,0,0.55),
+    0 0 34px rgba(146,4,4,0.18);
 }
 
 .video-ratio{
   position:relative;
   width:100%;
   aspect-ratio:16/9;
+  background:#111;
 }
 
 .video-ratio iframe{
@@ -105,38 +293,146 @@ body{font-family:Arial,sans-serif;background:black;color:white;}
   border:0;
 }
 
+.video-info{
+  padding:18px 20px 20px;
+}
+
+.video-info h3{
+  font-size:1.15rem;
+  margin-bottom:6px;
+  color:#fff;
+}
+
+.video-info p{
+  color:#cfcfcf;
+  line-height:1.6;
+  font-size:0.95rem;
+}
+
+/* ---------- REVEAL ---------- */
+.reveal{
+  opacity:0;
+  transform:translateY(42px);
+  transition:opacity 0.85s ease, transform 0.85s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
 /* ---------- FOOTER ---------- */
 footer{
-  padding:20px;
+  padding:24px;
   background:#111;
   text-align:center;
   font-size:0.9rem;
+  border-top:1px solid rgba(255,255,255,0.06);
 }
 
 footer a{
-  color:#920404;
+  color:#d30707;
   text-decoration:none;
   margin:0 10px;
+  font-weight:700;
 }
 
-footer a:hover{color:white;}
+footer a:hover{
+  color:white;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes heroFadeUp{
+  from{
+    opacity:0;
+    transform:translateY(28px) scale(0.98);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(16px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
 /* ---------- MOBILE ---------- */
 @media(max-width:768px){
   .topbar{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
+    padding:8px 12px;
+    height:auto;
+    min-height:56px;
   }
-  .topbar img{height:30px;}
-  .hero{height:60vh;padding-top:90px;}
+
+  .topbar-logo img{
+    height:32px;
+  }
+
+  .menu-toggle{
+    padding:8px 14px;
+    font-size:0.84rem;
+  }
+
+  .dropdown-menu{
+    min-width:190px;
+  }
+
+  .hero{
+    min-height:62vh;
+    padding:105px 16px 65px;
+  }
+
+  .hero-label{
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+  }
+
   .hero h1{
-    font-size:clamp(1.9rem,7vw,2.6rem);
-    line-height:1.08;
+    font-size:clamp(3rem, 15vw, 4.8rem);
   }
+
+  .hero p{
+    font-size:0.95rem;
+    line-height:1.65;
+  }
+
   .video-section{
-    padding:35px 15px;
-    gap:28px;
+    padding:55px 15px 65px;
+  }
+
+  .section-subtitle{
+    margin-bottom:30px;
+  }
+
+  .video-grid{
+    gap:26px;
+  }
+
+  .video-container{
+    border-radius:20px;
+  }
+
+  .video-info{
+    padding:16px;
+  }
+
+  footer{
+    line-height:1.8;
+  }
+}
+
+@media(max-width:430px){
+  .hero-label{
+    font-size:0.68rem;
+    letter-spacing:0.14em;
   }
 }
 </style>
@@ -146,68 +442,145 @@ footer a:hover{color:white;}
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
-  <nav class="topbar-nav">
-    <a href="despre.html">Despre Noi</a>
-    <a href="index.html">Acasa</a>
-  </nav>
+  <a href="index.html" class="topbar-logo" aria-label="Înapoi la pagina principală">
+    <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+  </a>
+
+  <div class="menu-wrapper" id="menuWrapper">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Deschide meniul">
+      Meniu <span class="menu-arrow">▾</span>
+    </button>
+
+    <nav class="dropdown-menu" id="dropdownMenu">
+      <a href="index.html">Acasă</a>
+      <a href="despre.html">Despre Noi</a>
+      <a href="promo.html" class="active">Promo-uri</a>
+    </nav>
+  </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>
-    <span>MATERIALE</span>
-    <span>PROMOTIONALE</span>
-  </h1>
+  <div class="hero-content">
+    <div class="hero-label">CLUB DE FILM</div>
+    <h1>Materiale Promoționale</h1>
+    <p>
+      O selecție de materiale video realizate pentru proiectele, evenimentele și campaniile Overthink Jr.
+    </p>
+  </div>
 </section>
 
 <!-- VIDEO-URI -->
 <section class="video-section">
+  <div class="video-shell">
 
-  <!-- 1. Crăciunul Overthink -->
-  <div class="video-container">
-    <div class="video-ratio">
-      <iframe src="https://www.youtube.com/embed/787tjYLo65E?rel=0&modestbranding=1" allowfullscreen></iframe>
+    <h2 class="section-title reveal">Promo-uri</h2>
+    <p class="section-subtitle reveal">
+      De la campanii de promovare până la materiale de atmosferă, aici sunt câteva dintre videoclipurile realizate de echipa noastră.
+    </p>
+
+    <div class="video-grid">
+
+      <div class="video-container reveal">
+        <div class="video-ratio">
+          <iframe src="https://www.youtube.com/embed/787tjYLo65E?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Crăciunul Overthink</h3>
+          <p>Un material video de atmosferă realizat în stilul clubului.</p>
+        </div>
+      </div>
+
+      <div class="video-container reveal">
+        <div class="video-ratio">
+          <iframe src="https://www.youtube.com/embed/udtjx7Eh6aY?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Material promoțional</h3>
+          <p>Un videoclip realizat pentru promovarea activității și energiei echipei.</p>
+        </div>
+      </div>
+
+      <div class="video-container reveal">
+        <div class="video-ratio">
+          <iframe src="https://www.youtube.com/embed/VHMAdbzu9sU?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Proiect Overthink</h3>
+          <p>Un material video din portofoliul nostru de proiecte.</p>
+        </div>
+      </div>
+
+      <div class="video-container reveal">
+        <div class="video-ratio">
+          <iframe src="https://www.youtube.com/embed/sx8RAWRWpE0?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Promo video</h3>
+          <p>Un exemplu de material realizat pentru comunicare vizuală și promovare.</p>
+        </div>
+      </div>
+
+      <div class="video-container reveal">
+        <div class="video-ratio">
+          <iframe src="https://www.youtube.com/embed/PE0EpYphIwk?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Material video</h3>
+          <p>Un alt videoclip din selecția noastră de materiale promoționale.</p>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <!-- 2. NOU (sub Crăciunul) -->
-  <div class="video-container">
-    <div class="video-ratio">
-      <iframe src="https://www.youtube.com/embed/udtjx7Eh6aY?rel=0&modestbranding=1" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- 3 -->
-  <div class="video-container">
-    <div class="video-ratio">
-      <iframe src="https://www.youtube.com/embed/VHMAdbzu9sU?rel=0&modestbranding=1" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- 4 -->
-  <div class="video-container">
-    <div class="video-ratio">
-      <iframe src="https://www.youtube.com/embed/sx8RAWRWpE0?rel=0&modestbranding=1" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- 5 -->
-  <div class="video-container">
-    <div class="video-ratio">
-      <iframe src="https://www.youtube.com/embed/PE0EpYphIwk?rel=0&modestbranding=1" allowfullscreen></iframe>
-    </div>
-  </div>
-
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Clubul de Film Overthink JR. |
+  <p>
+    © 2025 Clubul de Film Overthink JR. |
     <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> |
     <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a>
   </p>
 </footer>
+
+<script>
+// DROPDOWN MENU
+const menuWrapper = document.getElementById("menuWrapper");
+const menuToggle = document.getElementById("menuToggle");
+
+menuToggle.addEventListener("click", (event) => {
+  event.stopPropagation();
+  menuWrapper.classList.toggle("open");
+});
+
+document.addEventListener("click", (event) => {
+  if(!menuWrapper.contains(event.target)){
+    menuWrapper.classList.remove("open");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if(event.key === "Escape"){
+    menuWrapper.classList.remove("open");
+  }
+});
+
+// REVEAL ON SCROLL
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold:0.15
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+</script>
 
 </body>
 </html>
