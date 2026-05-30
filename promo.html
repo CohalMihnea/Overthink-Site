@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Promo-uri - Clubul de Film Overthink JR.</title>
+<title>Recrutări - Overthink JR.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -23,7 +23,7 @@ html{
 body{
   font-family:'Inter', Arial, sans-serif;
   background:#000;
-  color:white;
+  color:#fff;
   overflow-x:hidden;
 }
 
@@ -32,11 +32,7 @@ a{
   color:inherit;
 }
 
-.nowrap{
-  white-space:nowrap;
-}
-
-/* ---------- TOP BAR ---------- */
+/* ---------- Top Bar ---------- */
 .topbar{
   position:fixed;
   top:0;
@@ -71,6 +67,7 @@ a{
   transform:scale(1.03);
 }
 
+/* Dropdown menu */
 .menu-wrapper{
   position:relative;
 }
@@ -148,324 +145,552 @@ a{
   transform:translateX(3px);
 }
 
-/* ---------- HERO ---------- */
-.hero{
+/* ---------- Hero Banner ---------- */
+.hero-banner{
   position:relative;
-  min-height:72vh;
+  min-height:78vh;
+  overflow:hidden;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   padding:120px 20px 80px;
-  overflow:hidden;
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.88)),
-    url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg") center/cover no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
 
-.hero::before{
+.hero-banner.festival-bg{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.88)),
+    url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg");
+}
+
+.hero-banner.club-bg{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.92)),
+    url("Foto/logo 1 blurv2.png");
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.hero-banner::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 50% 45%, rgba(146,4,4,0.34), transparent 30%),
-    radial-gradient(circle at 20% 75%, rgba(255,255,255,0.03), transparent 20%);
+    radial-gradient(circle at 50% 45%, rgba(146,4,4,0.38), transparent 34%),
+    radial-gradient(circle at 20% 70%, rgba(255,255,255,0.04), transparent 24%);
   z-index:1;
   pointer-events:none;
 }
 
-.hero::after{
+.hero-banner::after{
   content:"";
   position:absolute;
   inset:0;
-  background:radial-gradient(circle, transparent 35%, rgba(0,0,0,0.92) 100%);
-  z-index:1;
+  background:radial-gradient(circle, transparent 36%, rgba(0,0,0,0.92) 100%);
+  z-index:2;
   pointer-events:none;
 }
 
 .hero-content{
   position:relative;
-  z-index:2;
-  max-width:900px;
-  animation:heroFadeUp 1.05s ease forwards;
+  z-index:3;
+  max-width:980px;
+  animation:heroFadeUp 1.1s ease forwards;
 }
 
 .hero-label{
-  margin-bottom:16px;
+  margin-bottom:18px;
   color:#d8d8d8;
-  font-size:0.92rem;
+  font-size:0.95rem;
   font-weight:800;
-  letter-spacing:0.24em;
+  letter-spacing:0.28em;
   text-transform:uppercase;
-  opacity:0;
-  animation:fadeIn 1s ease forwards;
-  animation-delay:0.2s;
-  white-space:nowrap;
   text-shadow:0 0 14px rgba(146,4,4,0.35);
 }
 
-.hero h1{
+.hero-content h1{
   font-family:'Bebas Neue', Impact, sans-serif;
-  font-size:clamp(3.1rem, 8vw, 5.9rem);
-  letter-spacing:0.05em;
-  line-height:0.92;
+  font-size:clamp(4rem, 10vw, 8rem);
+  line-height:0.86;
+  letter-spacing:0.04em;
+  color:white;
   text-transform:uppercase;
-  color:#fff;
   text-shadow:
-    0 0 10px rgba(255,255,255,0.14),
-    0 0 24px rgba(146,4,4,0.54),
-    0 8px 38px rgba(0,0,0,0.9);
+    0 0 16px rgba(255,255,255,0.12),
+    0 0 28px rgba(184,6,6,0.78),
+    0 0 60px rgba(184,6,6,0.28),
+    0 8px 40px rgba(0,0,0,0.95);
+  animation:titleReveal 1.3s ease forwards;
 }
 
-.hero p{
+.hero-content p{
   max-width:760px;
-  margin:22px auto 0;
-  color:#e5e5e5;
-  font-size:1.03rem;
-  line-height:1.72;
+  margin:24px auto 0;
+  font-size:clamp(0.95rem, 1.8vw, 1.12rem);
+  color:#e8e8e8;
+  line-height:1.65;
+  font-style:italic;
 }
 
-/* ---------- GENERAL ---------- */
-.section-shell{
-  max-width:1160px;
-  margin:0 auto;
-  padding:0 20px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:14px;
-  font-family:'Bebas Neue', Impact, sans-serif;
-  letter-spacing:0.08em;
-  font-size:clamp(2.2rem, 5vw, 3.2rem);
-  color:#fff;
-  text-shadow:0 0 20px rgba(146,4,4,0.28);
-}
-
-.section-subtitle{
-  max-width:760px;
-  margin:0 auto 38px;
-  text-align:center;
-  color:#d2d2d2;
-  line-height:1.75;
-  font-size:1rem;
-}
-
-/* ---------- WHAT WE MAKE ---------- */
-.what-we-make{
-  padding:70px 0 55px;
-  background:
-    radial-gradient(circle at center, rgba(146,4,4,0.16), transparent 35%),
-    #000;
-}
-
-.what-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:20px;
-}
-
-.what-card{
-  padding:26px 22px;
-  border-radius:22px;
-  background:rgba(255,255,255,0.045);
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 16px 50px rgba(0,0,0,0.35);
-  transition:0.3s ease;
-}
-
-.what-card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(146,4,4,0.36);
-  box-shadow:
-    0 18px 55px rgba(0,0,0,0.45),
-    0 0 28px rgba(146,4,4,0.18);
-}
-
-.what-card h3{
-  font-size:1.2rem;
-  margin-bottom:10px;
-  color:#fff;
-}
-
-.what-card p{
-  color:#d6d6d6;
-  line-height:1.7;
-  font-size:0.95rem;
-}
-
-/* ---------- VIDEO SECTION ---------- */
-.video-section{
-  padding:25px 0 80px;
-  background:
-    radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 36%),
-    #000;
-}
-
-.video-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:28px;
-}
-
-.video-container{
-  width:100%;
-  background:rgba(255,255,255,0.045);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 18px 55px rgba(0,0,0,0.42);
-  transition:0.35s ease;
-}
-
-.video-container:hover{
-  transform:translateY(-6px);
-  border-color:rgba(146,4,4,0.34);
-  box-shadow:
-    0 22px 65px rgba(0,0,0,0.55),
-    0 0 34px rgba(146,4,4,0.18);
-}
-
-.featured-video{
-  margin-bottom:34px;
-}
-
-.video-ratio{
-  position:relative;
-  width:100%;
-  aspect-ratio:16/9;
-  background:#111;
-}
-
-.video-ratio iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:0;
-}
-
-.video-info{
-  padding:18px 20px 20px;
-}
-
-.video-info h3{
-  font-size:1.15rem;
-  margin-bottom:6px;
-  color:#fff;
-}
-
-.video-info p{
-  color:#cfcfcf;
-  line-height:1.6;
-  font-size:0.95rem;
-}
-
-.video-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:14px;
-}
-
-.video-tags span{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(146,4,4,0.14);
-  border:1px solid rgba(146,4,4,0.32);
-  color:#fff;
-  font-weight:600;
-  font-size:0.84rem;
-}
-
-/* ---------- CTA ---------- */
-.cta-section{
-  padding:10px 0 90px;
-  background:#000;
-}
-
-.cta-card{
-  max-width:880px;
-  margin:0 auto;
-  padding:34px 26px;
-  text-align:center;
-  border-radius:26px;
-  background:rgba(255,255,255,0.045);
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 18px 55px rgba(0,0,0,0.4);
-}
-
-.cta-card h3{
-  font-size:2rem;
-  margin-bottom:12px;
-  color:#fff;
-}
-
-.cta-card p{
-  max-width:650px;
-  margin:0 auto 22px;
-  color:#d5d5d5;
-  line-height:1.75;
-}
-
-.cta-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 24px;
-  border-radius:999px;
-  background:#b80606;
-  color:#fff;
-  font-weight:800;
-  transition:0.3s ease;
-  box-shadow:0 0 24px rgba(184,6,6,0.34);
-}
-
-.cta-btn:hover{
-  background:#d30707;
-  transform:translateY(-3px);
-}
-
-/* ---------- REVEAL ---------- */
+/* ---------- Reveal & Transition Animations ---------- */
 .reveal{
   opacity:0;
-  transform:translateY(42px);
-  transition:opacity 0.85s ease, transform 0.85s ease;
+  transform:translateY(45px);
+  filter:blur(8px);
+  transition:opacity 1s ease, transform 1s ease, filter 1s ease;
 }
 
 .reveal.visible{
   opacity:1;
   transform:translateY(0);
+  filter:blur(0);
 }
 
-/* ---------- FOOTER ---------- */
-footer{
-  padding:24px;
-  background:#111;
+/* ---------- Prezentare Generală ---------- */
+.prezentare{
+  background:
+    radial-gradient(circle at center, rgba(146,4,4,0.16), transparent 38%),
+    #000;
+  padding:48px 20px 24px;
+  display:flex;
+  justify-content:center;
+}
+
+.prezentare-container{
+  max-width:900px;
+  width:100%;
+  padding:40px;
   text-align:center;
-  font-size:0.9rem;
-  border-top:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
+  box-shadow:0 20px 70px rgba(0,0,0,0.4);
 }
 
-footer a{
-  color:#d30707;
-  text-decoration:none;
-  margin:0 10px;
-  font-weight:700;
-}
-
-footer a:hover{
+.prezentare h2{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:3rem;
+  letter-spacing:0.06em;
+  margin-bottom:20px;
   color:white;
+  text-shadow:0 0 20px rgba(146,4,4,0.25);
 }
 
-/* ---------- ANIMATIONS ---------- */
+.prezentare p{
+  font-size:1.08rem;
+  line-height:1.75;
+  color:#e9e9e9;
+}
+
+/* ---------- Bule ---------- */
+.bule-sectiune{
+  padding:20px 20px;
+  background:
+    radial-gradient(circle at center, rgba(146,4,4,0.15), transparent 45%),
+    #000;
+}
+
+.bule-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.bula{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:12px 28px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:1rem;
+  color:#fff;
+  transition:0.3s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.bula:hover{
+  background:#b80606;
+  border-color:#b80606;
+  transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(184,6,6,0.45);
+}
+
+/* ---------- Structură Secțiuni ---------- */
+.sectiune-continut{
+  padding:65px 20px 45px;
+  max-width:1050px;
+  margin:0 auto;
+  background:transparent;
+}
+
+.sectiune-continut h2{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(2.7rem, 6vw, 3.8rem);
+  letter-spacing:0.05em;
+  color:white;
+  text-align:center;
+  margin-bottom:5px;
+  text-shadow:0 0 20px rgba(146,4,4,0.25);
+}
+
+.sectiune-motto{
+  text-align:center;
+  font-style:italic;
+  color:#d30707;
+  margin-bottom:25px;
+  font-size:1.05rem;
+  font-weight:600;
+}
+
+.sectiune-descriere{
+  text-align:center;
+  font-size:1.12rem;
+  line-height:1.75;
+  color:#e0e0e0;
+  margin-bottom:30px;
+}
+
+/* ---------- Beneficii Festival ---------- */
+.festival-benefits-layout{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  margin-top:40px;
+}
+
+.benefit-row{
+  display:flex;
+  align-items:center;
+  background:rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:24px 32px;
+  transition:all 0.35s ease;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 16px 45px rgba(0,0,0,0.32);
+}
+
+.benefit-row::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:4px;
+  height:100%;
+  background:#b80606;
+  opacity:0.45;
+  transition:opacity 0.3s;
+}
+
+.benefit-row:hover{
+  transform:translateY(-4px);
+  border-color:rgba(184,6,6,0.34);
+  background:rgba(255,255,255,0.06);
+  box-shadow:
+    0 18px 55px rgba(0,0,0,0.5),
+    0 0 24px rgba(184,6,6,0.16);
+}
+
+.benefit-row:hover::before{
+  opacity:1;
+  box-shadow:0 0 12px #b80606;
+}
+
+.benefit-index{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:2.7rem;
+  color:rgba(255,255,255,0.12);
+  margin-right:30px;
+  min-width:44px;
+  transition:color 0.3s;
+}
+
+.benefit-row:hover .benefit-index{
+  color:#b80606;
+  text-shadow:0 0 10px rgba(184,6,6,0.6);
+}
+
+.benefit-text{
+  font-size:1.12rem;
+  color:#e0e0e0;
+  line-height:1.5;
+}
+
+/* ---------- Beneficii Club Bento ---------- */
+.club-benefits-bento{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.bento-card{
+  background:rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  min-height:160px;
+  transition:all 0.35s ease;
+  box-shadow:0 16px 45px rgba(0,0,0,0.32);
+}
+
+.bento-card.w-4{grid-column:span 4;}
+.bento-card.w-2{grid-column:span 2;}
+.bento-card.w-3{grid-column:span 3;}
+
+.bento-card p{
+  font-size:1.08rem;
+  color:#dcdcdc;
+  line-height:1.55;
+  font-weight:500;
+}
+
+.bento-card:hover{
+  background:rgba(146,4,4,0.08);
+  border-color:rgba(184,6,6,0.48);
+  transform:translateY(-4px);
+  box-shadow:
+    0 18px 55px rgba(0,0,0,0.55),
+    0 0 28px rgba(184,6,6,0.26);
+}
+
+/* ---------- Timeline Festival ---------- */
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  margin-bottom:35px;
+}
+
+.timeline-day{
+  background:rgba(255,255,255,0.045);
+  padding:30px;
+  border-radius:18px;
+  border-left:4px solid #b80606;
+  border-top:1px solid rgba(255,255,255,0.08);
+  border-right:1px solid rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 16px 45px rgba(0,0,0,0.3);
+}
+
+.timeline-day h4{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:1.6rem;
+  letter-spacing:0.05em;
+  color:white;
+  margin-bottom:10px;
+}
+
+.timeline-day p{
+  color:#cfcfcf;
+  line-height:1.6;
+}
+
+.festival-meta{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+}
+
+.meta-item{
+  background:rgba(146,4,4,0.18);
+  padding:12px 24px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid rgba(184,6,6,0.38);
+  font-size:0.95rem;
+}
+
+/* ---------- Departamente Grid ---------- */
+.departamente-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  gap:15px;
+}
+
+.card-departament{
+  background:rgba(255,255,255,0.045);
+  padding:25px 16px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-top:4px solid #b80606;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:0 16px 45px rgba(0,0,0,0.28);
+}
+
+.card-departament:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    0 18px 55px rgba(0,0,0,0.45),
+    0 0 24px rgba(184,6,6,0.16);
+}
+
+.card-departament h3{
+  font-family:'Bebas Neue', sans-serif;
+  margin-bottom:15px;
+  color:#fff;
+  font-size:1.8rem;
+  letter-spacing:0.05em;
+}
+
+.card-departament ul{
+  list-style:none;
+  color:#cfcfcf;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.card-departament ul li{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  font-size:clamp(0.85rem, 1.1vw, 1rem);
+  line-height:1.4;
+}
+
+.card-departament .linie-rosie{
+  width:10px;
+  height:2px;
+  background-color:#b80606;
+  margin-top:10px;
+  flex-shrink:0;
+}
+
+/* ---------- Butoane ---------- */
+.actiuni-sectiune{
+  padding:20px 20px 60px;
+  text-align:center;
+  background:#000;
+}
+
+.btn-grid-recrutari{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  max-width:750px;
+  margin:0 auto;
+  flex-wrap:wrap;
+}
+
+.btn-recrutare{
+  display:inline-block;
+  padding:16px 45px;
+  text-decoration:none;
+  font-weight:800;
+  border-radius:999px;
+  transition:0.3s ease;
+  font-size:1.05rem;
+  text-align:center;
+}
+
+.btn-recrutare.club,
+.btn-recrutare.festival{
+  background:#b80606;
+  color:white;
+  box-shadow:0 0 35px rgba(184,6,6,0.42);
+}
+
+.btn-recrutare.club:hover,
+.btn-recrutare.festival:hover{
+  background:#d30707;
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 0 45px rgba(211,7,7,0.62);
+}
+
+/* ---------- Galerie ---------- */
+.gallery{
+  padding:45px 20px 70px;
+  text-align:center;
+  background:#000;
+}
+
+.gallery h3{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:3rem;
+  letter-spacing:0.06em;
+  margin-bottom:30px;
+  color:white;
+  text-shadow:0 0 20px rgba(146,4,4,0.28);
+}
+
+.gallery .slider{
+  position:relative;
+  max-width:930px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:16px;
+}
+
+.gallery .slides{
+  display:flex;
+  transition:transform 0.6s ease;
+}
+
+.gallery .slides img{
+  width:300px;
+  height:169px;
+  object-fit:cover;
+  margin-right:10px;
+  border-radius:14px;
+  transition:transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  filter:brightness(0.85);
+}
+
+.gallery .slides img:hover{
+  transform:scale(1.05);
+  opacity:0.95;
+  filter:brightness(1.1);
+}
+
+.gallery button{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.65);
+  color:white;
+  border:1px solid rgba(255,255,255,0.18);
+  font-size:2rem;
+  padding:10px 14px;
+  cursor:pointer;
+  z-index:10;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.gallery button:hover{
+  background:#920404;
+}
+
+.gallery .prev{left:18px;}
+.gallery .next{right:18px;}
+
+/* ---------- Footer ---------- */
+footer{
+  padding:30px 24px;
+  background:#111;
+  border-top:1px solid rgba(255,255,255,0.06);
+  font-size:0.9rem;
+  text-align:center;
+  color:#d8d8d8;
+}
+
+/* ---------- Keyframes ---------- */
 @keyframes heroFadeUp{
   from{
     opacity:0;
-    transform:translateY(28px) scale(0.98);
+    transform:translateY(30px) scale(0.98);
   }
   to{
     opacity:1;
@@ -473,33 +698,38 @@ footer a:hover{
   }
 }
 
-@keyframes fadeIn{
+@keyframes titleReveal{
   from{
     opacity:0;
-    transform:translateY(16px);
+    transform:translateY(35px);
+    filter:blur(12px);
   }
   to{
     opacity:1;
     transform:translateY(0);
+    filter:blur(0);
   }
 }
 
-/* ---------- MOBILE ---------- */
-@media(max-width:980px){
-  .what-grid{
-    grid-template-columns:1fr;
+/* ---------- Responsive ---------- */
+@media(max-width:992px){
+  .club-benefits-bento{
+    grid-template-columns:repeat(2, 1fr);
   }
 
-  .video-grid{
-    grid-template-columns:1fr;
+  .bento-card.w-4,
+  .bento-card.w-2,
+  .bento-card.w-3{
+    grid-column:span 2;
   }
 }
 
 @media(max-width:768px){
   .topbar{
-    padding:8px 12px;
     height:auto;
-    min-height:56px;
+    min-height:54px;
+    padding:8px 12px;
+    gap:10px;
   }
 
   .topbar-logo img{
@@ -515,9 +745,10 @@ footer a:hover{
     min-width:190px;
   }
 
-  .hero{
-    min-height:62vh;
-    padding:105px 16px 65px;
+  .hero-banner{
+    min-height:64vh;
+    padding:105px 16px 70px;
+    background-attachment:scroll;
   }
 
   .hero-label{
@@ -525,40 +756,84 @@ footer a:hover{
     letter-spacing:0.18em;
   }
 
-  .hero h1{
-    font-size:clamp(2.8rem, 14vw, 4.5rem);
+  .hero-content h1{
+    font-size:clamp(3.4rem, 16vw, 5.5rem);
   }
 
-  .hero p{
-    font-size:0.95rem;
-    line-height:1.65;
+  .hero-content p{
+    font-size:0.92rem;
+    margin-top:16px;
   }
 
-  .what-we-make{
-    padding:55px 0 40px;
+  .prezentare{
+    padding:35px 15px 15px;
   }
 
-  .video-section{
-    padding:15px 0 60px;
+  .prezentare-container{
+    padding:25px 20px;
   }
 
-  .cta-section{
-    padding:0 0 60px;
+  .sectiune-continut{
+    padding:45px 15px 24px;
   }
 
-  .cta-card h3{
-    font-size:1.55rem;
+  .sectiune-continut h2{
+    font-size:2.8rem;
   }
 
-  footer{
-    line-height:1.8;
+  .club-benefits-bento{
+    grid-template-columns:1fr;
+    gap:15px;
   }
-}
 
-@media(max-width:430px){
-  .hero-label{
-    font-size:0.68rem;
-    letter-spacing:0.14em;
+  .bento-card.w-4,
+  .bento-card.w-2,
+  .bento-card.w-3{
+    grid-column:span 1;
+  }
+
+  .benefit-row{
+    padding:20px;
+  }
+
+  .benefit-index{
+    margin-right:15px;
+  }
+
+  .btn-grid-recrutari{
+    flex-direction:column;
+    width:100%;
+    max-width:280px;
+  }
+
+  .btn-recrutare{
+    width:100%;
+  }
+
+  .gallery{
+    padding:30px 15px 45px;
+  }
+
+  .gallery h3{
+    font-size:2.2rem;
+  }
+
+  .gallery .slides{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .gallery .slides img{
+    flex:0 0 auto;
+    width:250px;
+    height:140px;
+    margin-right:10px;
+  }
+
+  .gallery button{
+    display:none;
   }
 }
 </style>
@@ -566,10 +841,9 @@ footer a:hover{
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <a href="index.html" class="topbar-logo" aria-label="Înapoi la pagina principală">
-    <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+    <img src="Foto/LOGOtaiat.svg" alt="Logo Overthink">
   </a>
 
   <div class="menu-wrapper" id="menuWrapper">
@@ -580,163 +854,219 @@ footer a:hover{
     <nav class="dropdown-menu" id="dropdownMenu">
       <a href="index.html">Acasă</a>
       <a href="despre.html">Despre Noi</a>
-      <a href="promo.html" class="active">Promo-uri</a>
+      <a href="promo.html">Promo-uri</a>
+      <a href="recrutari.html" class="active">Recrutări</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
+<header class="hero-banner festival-bg">
+  <div class="hero-content">
+    <div class="hero-label">FESTIVAL</div>
+    <h1>Overthink Film Fest</h1>
+    <p>„Filme, creativitate și oameni pasionați — totul începe cu tine.”</p>
+  </div>
+</header>
+
+<section class="sectiune-continut reveal">
+  <h2>Overthink Junior Film Festival</h2>
+  <p class="sectiune-motto">„Filme, creativitate și oameni pasionați — totul începe cu tine.”</p>
+  <p class="sectiune-descriere">Overthink Junior Film Festival aduce împreună filmul, arta și energia noii generații într-o experiență plină de creativitate. Te așteaptă proiecții de film, ateliere cu profesioniști din cinematografie, standuri de artă, muzică și fotografie, concursuri, activități interactive și o atmosferă care transformă festivalul într-un loc unde ideile prind viață. Un spațiu creat de tineri, pentru tineri, unde pasiunea pentru film devine comunitate. Dacă vrei să faci parte din culisele festivalului și să trăiești experiența alături de noi, dă scroll până la formularul de înscriere de mai jos și alătură-te echipei de voluntari.</p>
+  
+  <div class="festival-meta">
+    <div class="meta-item">📅 7 - 9 August</div>
+    <div class="meta-item">📍 Insula de Agrement, Hub Orizont & Teatrul Bacovia</div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-day">
+      <h4>Ziua 1 — Deschiderea Oficială</h4>
+      <p>Festivitatea de deschidere completată de momente artistice speciale și proiecțiile nocturne de film programate pe insulița mică.</p>
+    </div>
+    <div class="timeline-day">
+      <h4>Ziua 2 — Ateliere & Scurtmetraje</h4>
+      <p>Prima serie de ateliere practice, urmată de proiecții de scurtmetraje de ficțiune studențești și liceene și o serie de documentare inedite.</p>
+    </div>
+    <div class="timeline-day">
+      <h4>Ziua 3 — Corturile Interactive & Finalul</h4>
+      <p>O începem în forță cu noi ateliere. Ca spectatori, vă puteți bucura zilnic de corturile tematice de pe insulă: Artă, Muzică, Foto, Video și Literatură.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sectiune-continut reveal" style="padding-top:0;">
+  <h3 style="text-align:center; font-family:'Bebas Neue', sans-serif; font-size:2.5rem; letter-spacing:0.05em; color:white;">Beneficii festival</h3>
+  
+  <div class="festival-benefits-layout">
+    <div class="benefit-row">
+      <div class="benefit-index">01</div>
+      <div class="benefit-text">Vei acumula experiență practică utilă pentru proiecte viitoare</div>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-index">02</div>
+      <div class="benefit-text">Vei dezvolta abilități de organizare și coordonare</div>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-index">03</div>
+      <div class="benefit-text">Vei învăța să gestionezi situații rapide și să găsești soluții</div>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-index">04</div>
+      <div class="benefit-text">Vei înțelege cum funcționează promovarea și logistica unui eveniment</div>
+    </div>
+  </div>
+</section>
+
+<section class="prezentare reveal">
+  <div class="prezentare-container">
+    <h2>Pentru cine este festivalul?</h2>
+    <p>Căutăm voluntari, în special elevi, care vor să facă parte din echipa din spatele unui eveniment de asemenea amploare. Nu ai nevoie de experiență, te învățăm noi tot ce trebuie. Căutăm oameni serioși, implicați și gata să lucreze în echipă, să se implice în organizare și să pună umărul la un proiect real, care prinde viață pas cu pas. Dacă vrei să fii în mijlocul acțiunii și să vezi cum se construiește ceva mare de la zero, atunci ești exact omul pe care îl căutăm.</p>
+  </div>
+</section>
+
+<section class="actiuni-sectiune reveal">
+  <div class="btn-grid-recrutari">
+    <a href="#" target="_blank" class="btn-recrutare festival">
+      Voluntar la Festival
+    </a>
+  </div>
+</section>
+
+<header class="hero-banner club-bg">
   <div class="hero-content">
     <div class="hero-label">CLUB DE FILM</div>
-    <h1>Materiale Promoționale</h1>
-    <p>
-      O selecție de materiale video realizate pentru proiectele, evenimentele și campaniile
-      <span class="nowrap">Overthink Jr.</span>
-    </p>
+    <h1>Overthink Junior</h1>
+    <p>„Overthinking movies since day one.”</p>
   </div>
-</section>
+</header>
 
-<!-- WHAT WE MAKE -->
-<section class="what-we-make">
-  <div class="section-shell">
-    <h2 class="section-title reveal">Ce producem</h2>
-    <p class="section-subtitle reveal">
-      Realizăm materiale video diferite, în funcție de proiect, context și public.
-    </p>
+<section class="sectiune-continut reveal">
+  <div class="bule-sectiune" style="padding:0 0 30px 0;">
+    <div class="bule-container">
+      <div class="bula">Mențiune Specială la Boovie</div>
+      <div class="bula">Cea mai bună interpretare feminină la Cinedrama</div>
+      <div class="bula">Echipamente Profesionale Proprii</div>
+      <div class="bula">Comunitate strânsă & Prietenii adevărate</div>
+    </div>
+  </div>
 
-    <div class="what-grid">
-      <div class="what-card reveal">
-        <h3>Reels & social media</h3>
-        <p>
-          Videoclipuri scurte, dinamice și adaptate pentru promovare online, Instagram, TikTok sau campanii digitale.
-        </p>
-      </div>
-
-      <div class="what-card reveal">
-        <h3>Aftermovies & evenimente</h3>
-        <p>
-          Materiale care surprind energia unui eveniment și transformă cele mai importante momente într-o poveste vizuală.
-        </p>
-      </div>
-
-            <div class="what-card reveal">
-        <h3>Scurtmetraje & producții de cinema</h3>
-        <p>
-          Proiecte narative dezvoltate de la idee și scenariu până la filmare, montaj și post-producție, cu accent pe poveste, imagine și atmosferă cinematografică.
-        </p>
-      </div>
+  <div class="departamente-grid">
+    <div class="card-departament">
+      <h3>Creativ</h3>
+      <ul>
+        <li><span class="linie-rosie"></span><span>Regizori</span></li>
+        <li><span class="linie-rosie"></span><span>Scenariști</span></li>
+      </ul>
+    </div>
+    <div class="card-departament">
+      <h3>Cast</h3>
+      <ul>
+        <li><span class="linie-rosie"></span><span>Actori</span></li>
+        <li><span class="linie-rosie"></span><span>Interpretare</span></li>
+      </ul>
+    </div>
+    <div class="card-departament">
+      <h3>Tehnic</h3>
+      <ul>
+        <li><span class="linie-rosie"></span><span>Filmare & Lumini</span></li>
+        <li><span class="linie-rosie"></span><span>Sunet</span></li>
+        <li><span class="linie-rosie"></span><span>Editare & Montaj</span></li>
+      </ul>
+    </div>
+    <div class="card-departament">
+      <h3>Producție & Marketing</h3>
+      <ul>
+        <li><span class="linie-rosie"></span><span>Responsabil de promovare</span></li>
+        <li><span class="linie-rosie"></span><span>Organizarea resurselor</span></li>
+      </ul>
+    </div>
+    <div class="card-departament">
+      <h3>Estetic</h3>
+      <ul>
+        <li><span class="linie-rosie"></span><span>Decoruri</span></li>
+        <li><span class="linie-rosie"></span><span>Costume</span></li>
+        <li><span class="linie-rosie"></span><span>Machiaj (Make-up)</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- VIDEO-URI -->
-<section class="video-section">
-  <div class="section-shell">
-    <h2 class="section-title reveal">Portofoliu video</h2>
-    <p class="section-subtitle reveal">
-      Câteva dintre videoclipurile realizate de echipa noastră, de la materiale de atmosferă până la promo-uri și proiecte vizuale.
-    </p>
-
-    <!-- Featured video -->
-    <div class="video-container featured-video reveal">
-      <div class="video-ratio">
-        <iframe src="https://www.youtube.com/embed/787tjYLo65E?rel=0&modestbranding=1" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <h3>Crăciunul Overthink</h3>
-        <p>
-          Un material video de atmosferă, gândit ca un proiect cu identitate vizuală clară și energie specifică echipei noastre.
-        </p>
-        <div class="video-tags">
-          <span>Promo</span>
-          <span>Social Media</span>
-          <span>Atmosferă</span>
-        </div>
-      </div>
+<section class="sectiune-continut reveal" style="padding-top:0;">
+  <h3 style="text-align:center; font-family:'Bebas Neue', sans-serif; font-size:2.5rem; letter-spacing:0.05em; color:white;">Beneficii club</h3>
+  
+  <div class="club-benefits-bento">
+    <div class="bento-card w-4">
+      <p>Vei învăța cum se creează un film de la zero și vei lucra în echipă pe proiecte reale de scurtmetraj.</p>
     </div>
-
-    <!-- Restul videourilor -->
-    <div class="video-grid">
-      <div class="video-container reveal">
-        <div class="video-ratio">
-          <iframe src="https://www.youtube.com/embed/udtjx7Eh6aY?rel=0&modestbranding=1" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Material promoțional</h3>
-          <p>Un videoclip realizat pentru promovarea activității și energiei echipei.</p>
-          <div class="video-tags">
-            <span>Promo</span>
-            <span>Club</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-container reveal">
-        <div class="video-ratio">
-          <iframe src="https://www.youtube.com/embed/VHMAdbzu9sU?rel=0&modestbranding=1" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Proiect Overthink</h3>
-          <p>Un material video din portofoliul nostru de proiecte vizuale.</p>
-          <div class="video-tags">
-            <span>Video</span>
-            <span>Proiect</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-container reveal">
-        <div class="video-ratio">
-          <iframe src="https://www.youtube.com/embed/sx8RAWRWpE0?rel=0&modestbranding=1" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Promo video</h3>
-          <p>Un exemplu de material realizat pentru comunicare vizuală și promovare.</p>
-          <div class="video-tags">
-            <span>Promo</span>
-            <span>Campanie</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-container reveal">
-        <div class="video-ratio">
-          <iframe src="https://www.youtube.com/embed/PE0EpYphIwk?rel=0&modestbranding=1" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Material video</h3>
-          <p>Un alt videoclip din selecția noastră de materiale promoționale.</p>
-          <div class="video-tags">
-            <span>Video</span>
-            <span>Portofoliu</span>
-          </div>
-        </div>
-      </div>
+    <div class="bento-card w-2">
+      <p>Șansa de a participa direct la concursuri mari de film.</p>
+    </div>
+    <div class="bento-card w-3">
+      <p>Descoperi cum funcționează logica din spatele tuturor etapelor unei producții cinematografice.</p>
+    </div>
+    <div class="bento-card w-3">
+      <p>Alegi exact departamentul care te pasionează și experimentezi pe echipamente reale.</p>
+    </div>
+    <div class="bento-card w-2">
+      <p>Dezvolți abilități rapide de comunicare, organizare și lead.</p>
+    </div>
+    <div class="bento-card w-4">
+      <p>Faci parte dintr-o comunitate strânsă de tineri pasionați, unde teoria e înlocuită complet de practică și proiecte pe care le pui direct în portofoliu.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="section-shell">
-    <div class="cta-card reveal">
-      <h3>Ai un proiect video?</h3>
-      <p>
-        Suntem deschiși la colaborări, materiale promoționale, videoclipuri pentru evenimente și proiecte creative realizate împreună cu echipa noastră.
-      </p>
-      <a href="contact.html" class="cta-btn">Contactează-ne</a>
-    </div>
+<section class="sectiune-continut reveal" style="padding-top:0; padding-bottom:10px;">
+  <h2>Pentru cine este clubul?</h2>
+  <p class="sectiune-motto">„Overthinking movies since day one.”</p>
+  <p class="sectiune-descriere" style="margin-bottom:15px;">Căutăm elevi de liceu care vor să își transforme pasiunea pentru film în proiecte reale. Nu trebuie să ai experiență, clubul este locul unde înveți, experimentezi și crești alături de echipă. Dacă ai idei, creativitate și chef să te implici în filme, scurtmetraje și activități din culisele cinematografiei, atunci ești exact genul de persoană pe care îl căutăm.</p>
+</section>
+
+<section class="actiuni-sectiune reveal" style="padding-bottom:50px;">
+  <div class="btn-grid-recrutari">
+    <a href="#" target="_blank" class="btn-recrutare club">
+      Aplică în Clubul de Film
+    </a>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="gallery reveal">
+  <h3>GALERIE PROIECTE</h3>
+  <div class="slider">
+    <div class="slides" id="gallerySlides">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.25.33.jpeg" alt="Poza 1">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.26.03.jpeg" alt="Poza 2">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.26.25.jpeg" alt="Poza 3">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.29.11.jpeg" alt="Poza 4">
+      <img src="Foto/cast1.jpeg" alt="Poza 5">
+      <img src="Foto/logistica1.jpeg" alt="Poza 6">
+      <img src="Foto/logistica2.jpg" alt="Poza 7">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.29.32 (1).jpeg" alt="Poza 8">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.29.32 (2).jpeg" alt="Poza 9">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.29.32.jpeg" alt="Poza 10">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.29.51.jpeg" alt="Poza 11">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.30.07 (1).jpeg" alt="Poza 12">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.30.07 (2).jpeg" alt="Poza 13">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.30.51.jpeg" alt="Poza 14">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.41.jpeg" alt="Poza 15">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.42 (1).jpeg" alt="Poza 16">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.42 (2).jpeg" alt="Poza 17">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.42 (4).jpeg" alt="Poza 18">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.42 (5).jpeg" alt="Poza 19">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.42 (8).jpeg" alt="Poza 20">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.42.jpeg" alt="Poza 21">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.33.32(33).jpeg" alt="Poza 22">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.33.56(44).jpeg" alt="Poza 23">
+      <img src="Foto/WhatsApp Image 2025-08-30 at 19.35.21(55).jpeg" alt="Poza 24">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
 <footer>
-  <p>
-    © 2025 Clubul de Film Overthink JR. |
-    <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> |
-    <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a>
-  </p>
+  <p>&copy; 2026 Clubul de Film Overthink Junior. Toate drepturile rezervate.</p>
 </footer>
 
 <script>
@@ -761,20 +1091,82 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// REVEAL ON SCROLL
-const revealElements = document.querySelectorAll(".reveal");
+// GALERIE
+const gallerySlides = document.getElementById("gallerySlides");
+const prevBtn = document.querySelector(".gallery .prev");
+const nextBtn = document.querySelector(".gallery .next");
+let galleryIndex = 0;
+let allowTransition = true;
+let slideWidth = 310;
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
+if(window.innerWidth > 768 && gallerySlides){
+  gallerySlides.innerHTML += gallerySlides.innerHTML;
+
+  function calcSlideWidth(){
+    const firstImg = gallerySlides.querySelector("img");
+    if(firstImg){
+      const computedStyle = window.getComputedStyle(firstImg);
+      const marginRight = parseFloat(computedStyle.marginRight) || 0;
+      slideWidth = firstImg.getBoundingClientRect().width + marginRight;
+    }
+  }
+
+  window.addEventListener("load", calcSlideWidth);
+  window.addEventListener("resize", calcSlideWidth);
+  setTimeout(calcSlideWidth, 200);
+
+  function moveGallery(step){
+    if(!allowTransition) return;
+
+    galleryIndex += step;
+    gallerySlides.style.transition = "transform 0.6s ease";
+    gallerySlides.style.transform = `translateX(${-galleryIndex * slideWidth}px)`;
+
+    allowTransition = false;
+
+    setTimeout(() => {
+      allowTransition = true;
+      const totalElements = gallerySlides.children.length;
+
+      if(galleryIndex >= totalElements / 2){
+        gallerySlides.style.transition = "none";
+        galleryIndex = 0;
+        gallerySlides.style.transform = `translateX(0px)`;
+      }
+
+      if(galleryIndex < 0){
+        gallerySlides.style.transition = "none";
+        galleryIndex = (totalElements / 2) - 1;
+        gallerySlides.style.transform = `translateX(${-galleryIndex * slideWidth}px)`;
+      }
+    }, 650);
+  }
+
+  if(nextBtn) nextBtn.addEventListener("click", () => moveGallery(1));
+  if(prevBtn) prevBtn.addEventListener("click", () => moveGallery(-1));
+
+  setInterval(() => moveGallery(1), 4000);
+}
+
+// REVEAL
+function revealSections(){
+  const reveals = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+  const revealPoint = 80;
+
+  reveals.forEach(reveal => {
+    const revealTop = reveal.getBoundingClientRect().top;
+
+    if(revealTop < windowHeight - revealPoint){
+      reveal.classList.add("visible");
     }
   });
-}, {
-  threshold:0.15
-});
+}
 
-revealElements.forEach(el => revealObserver.observe(el));
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+document.addEventListener("DOMContentLoaded", revealSections);
+setTimeout(revealSections, 300);
 </script>
 
 </body>
