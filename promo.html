@@ -32,6 +32,10 @@ a{
   color:inherit;
 }
 
+.nowrap{
+  white-space:nowrap;
+}
+
 /* ---------- TOP BAR ---------- */
 .topbar{
   position:fixed;
@@ -67,7 +71,6 @@ a{
   transform:scale(1.03);
 }
 
-/* Dropdown menu */
 .menu-wrapper{
   position:relative;
 }
@@ -156,7 +159,7 @@ a{
   padding:120px 20px 80px;
   overflow:hidden;
   background:
-    linear-gradient(rgba(0,0,0,0.44), rgba(0,0,0,0.88)),
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.88)),
     url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg") center/cover no-repeat;
 }
 
@@ -183,16 +186,16 @@ a{
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:950px;
+  max-width:900px;
   animation:heroFadeUp 1.05s ease forwards;
 }
 
 .hero-label{
-  margin-bottom:18px;
+  margin-bottom:16px;
   color:#d8d8d8;
-  font-size:0.95rem;
+  font-size:0.92rem;
   font-weight:800;
-  letter-spacing:0.28em;
+  letter-spacing:0.24em;
   text-transform:uppercase;
   opacity:0;
   animation:fadeIn 1s ease forwards;
@@ -203,36 +206,30 @@ a{
 
 .hero h1{
   font-family:'Bebas Neue', Impact, sans-serif;
-  font-size:clamp(3.6rem, 9vw, 7rem);
-  letter-spacing:0.06em;
+  font-size:clamp(3.1rem, 8vw, 5.9rem);
+  letter-spacing:0.05em;
   line-height:0.92;
   text-transform:uppercase;
   color:#fff;
   text-shadow:
     0 0 10px rgba(255,255,255,0.14),
-    0 0 26px rgba(146,4,4,0.58),
+    0 0 24px rgba(146,4,4,0.54),
     0 8px 38px rgba(0,0,0,0.9);
 }
 
 .hero p{
   max-width:760px;
-  margin:24px auto 0;
+  margin:22px auto 0;
   color:#e5e5e5;
-  font-size:1.05rem;
-  line-height:1.75;
+  font-size:1.03rem;
+  line-height:1.72;
 }
 
-/* ---------- VIDEO SECTION ---------- */
-.video-section{
-  padding:75px 20px 90px;
-  background:
-    radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 36%),
-    #000;
-}
-
-.video-shell{
-  max-width:1120px;
+/* ---------- GENERAL ---------- */
+.section-shell{
+  max-width:1160px;
   margin:0 auto;
+  padding:0 20px;
 }
 
 .section-title{
@@ -240,24 +237,75 @@ a{
   margin-bottom:14px;
   font-family:'Bebas Neue', Impact, sans-serif;
   letter-spacing:0.08em;
-  font-size:clamp(2.2rem, 5vw, 3.3rem);
+  font-size:clamp(2.2rem, 5vw, 3.2rem);
   color:#fff;
   text-shadow:0 0 20px rgba(146,4,4,0.28);
 }
 
 .section-subtitle{
   max-width:760px;
-  margin:0 auto 42px;
+  margin:0 auto 38px;
   text-align:center;
   color:#d2d2d2;
   line-height:1.75;
   font-size:1rem;
 }
 
+/* ---------- WHAT WE MAKE ---------- */
+.what-we-make{
+  padding:70px 0 55px;
+  background:
+    radial-gradient(circle at center, rgba(146,4,4,0.16), transparent 35%),
+    #000;
+}
+
+.what-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+
+.what-card{
+  padding:26px 22px;
+  border-radius:22px;
+  background:rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 16px 50px rgba(0,0,0,0.35);
+  transition:0.3s ease;
+}
+
+.what-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(146,4,4,0.36);
+  box-shadow:
+    0 18px 55px rgba(0,0,0,0.45),
+    0 0 28px rgba(146,4,4,0.18);
+}
+
+.what-card h3{
+  font-size:1.2rem;
+  margin-bottom:10px;
+  color:#fff;
+}
+
+.what-card p{
+  color:#d6d6d6;
+  line-height:1.7;
+  font-size:0.95rem;
+}
+
+/* ---------- VIDEO SECTION ---------- */
+.video-section{
+  padding:25px 0 80px;
+  background:
+    radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 36%),
+    #000;
+}
+
 .video-grid{
   display:grid;
-  grid-template-columns:1fr;
-  gap:34px;
+  grid-template-columns:repeat(2, 1fr);
+  gap:28px;
 }
 
 .video-container{
@@ -276,6 +324,10 @@ a{
   box-shadow:
     0 22px 65px rgba(0,0,0,0.55),
     0 0 34px rgba(146,4,4,0.18);
+}
+
+.featured-video{
+  margin-bottom:34px;
 }
 
 .video-ratio{
@@ -307,6 +359,74 @@ a{
   color:#cfcfcf;
   line-height:1.6;
   font-size:0.95rem;
+}
+
+.video-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.video-tags span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(146,4,4,0.14);
+  border:1px solid rgba(146,4,4,0.32);
+  color:#fff;
+  font-weight:600;
+  font-size:0.84rem;
+}
+
+/* ---------- CTA ---------- */
+.cta-section{
+  padding:10px 0 90px;
+  background:#000;
+}
+
+.cta-card{
+  max-width:880px;
+  margin:0 auto;
+  padding:34px 26px;
+  text-align:center;
+  border-radius:26px;
+  background:rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 18px 55px rgba(0,0,0,0.4);
+}
+
+.cta-card h3{
+  font-size:2rem;
+  margin-bottom:12px;
+  color:#fff;
+}
+
+.cta-card p{
+  max-width:650px;
+  margin:0 auto 22px;
+  color:#d5d5d5;
+  line-height:1.75;
+}
+
+.cta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 24px;
+  border-radius:999px;
+  background:#b80606;
+  color:#fff;
+  font-weight:800;
+  transition:0.3s ease;
+  box-shadow:0 0 24px rgba(184,6,6,0.34);
+}
+
+.cta-btn:hover{
+  background:#d30707;
+  transform:translateY(-3px);
 }
 
 /* ---------- REVEAL ---------- */
@@ -365,6 +485,16 @@ footer a:hover{
 }
 
 /* ---------- MOBILE ---------- */
+@media(max-width:980px){
+  .what-grid{
+    grid-template-columns:1fr;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 @media(max-width:768px){
   .topbar{
     padding:8px 12px;
@@ -396,7 +526,7 @@ footer a:hover{
   }
 
   .hero h1{
-    font-size:clamp(3rem, 15vw, 4.8rem);
+    font-size:clamp(2.8rem, 14vw, 4.5rem);
   }
 
   .hero p{
@@ -404,24 +534,20 @@ footer a:hover{
     line-height:1.65;
   }
 
+  .what-we-make{
+    padding:55px 0 40px;
+  }
+
   .video-section{
-    padding:55px 15px 65px;
+    padding:15px 0 60px;
   }
 
-  .section-subtitle{
-    margin-bottom:30px;
+  .cta-section{
+    padding:0 0 60px;
   }
 
-  .video-grid{
-    gap:26px;
-  }
-
-  .video-container{
-    border-radius:20px;
-  }
-
-  .video-info{
-    padding:16px;
+  .cta-card h3{
+    font-size:1.55rem;
   }
 
   footer{
@@ -465,32 +591,73 @@ footer a:hover{
     <div class="hero-label">CLUB DE FILM</div>
     <h1>Materiale Promoționale</h1>
     <p>
-      O selecție de materiale video realizate pentru proiectele, evenimentele și campaniile Overthink Jr.
+      O selecție de materiale video realizate pentru proiectele, evenimentele și campaniile
+      <span class="nowrap">Overthink Jr.</span>
     </p>
+  </div>
+</section>
+
+<!-- WHAT WE MAKE -->
+<section class="what-we-make">
+  <div class="section-shell">
+    <h2 class="section-title reveal">Ce producem</h2>
+    <p class="section-subtitle reveal">
+      Realizăm materiale video diferite, în funcție de proiect, context și public.
+    </p>
+
+    <div class="what-grid">
+      <div class="what-card reveal">
+        <h3>Reels & social media</h3>
+        <p>
+          Videoclipuri scurte, dinamice și adaptate pentru promovare online, Instagram, TikTok sau campanii digitale.
+        </p>
+      </div>
+
+      <div class="what-card reveal">
+        <h3>Aftermovies & evenimente</h3>
+        <p>
+          Materiale care surprind energia unui eveniment și transformă cele mai importante momente într-o poveste vizuală.
+        </p>
+      </div>
+
+      <div class="what-card reveal">
+        <h3>Promo-uri cinematice</h3>
+        <p>
+          Videoclipuri de prezentare, teasere și materiale cu o identitate vizuală mai puternică, construite atent și creativ.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- VIDEO-URI -->
 <section class="video-section">
-  <div class="video-shell">
-
-    <h2 class="section-title reveal">Promo-uri</h2>
+  <div class="section-shell">
+    <h2 class="section-title reveal">Portofoliu video</h2>
     <p class="section-subtitle reveal">
-      De la campanii de promovare până la materiale de atmosferă, aici sunt câteva dintre videoclipurile realizate de echipa noastră.
+      Câteva dintre videoclipurile realizate de echipa noastră, de la materiale de atmosferă până la promo-uri și proiecte vizuale.
     </p>
 
-    <div class="video-grid">
-
-      <div class="video-container reveal">
-        <div class="video-ratio">
-          <iframe src="https://www.youtube.com/embed/787tjYLo65E?rel=0&modestbranding=1" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Crăciunul Overthink</h3>
-          <p>Un material video de atmosferă realizat în stilul clubului.</p>
+    <!-- Featured video -->
+    <div class="video-container featured-video reveal">
+      <div class="video-ratio">
+        <iframe src="https://www.youtube.com/embed/787tjYLo65E?rel=0&modestbranding=1" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Crăciunul Overthink</h3>
+        <p>
+          Un material video de atmosferă, gândit ca un proiect cu identitate vizuală clară și energie specifică echipei noastre.
+        </p>
+        <div class="video-tags">
+          <span>Promo</span>
+          <span>Social Media</span>
+          <span>Atmosferă</span>
         </div>
       </div>
+    </div>
 
+    <!-- Restul videourilor -->
+    <div class="video-grid">
       <div class="video-container reveal">
         <div class="video-ratio">
           <iframe src="https://www.youtube.com/embed/udtjx7Eh6aY?rel=0&modestbranding=1" allowfullscreen></iframe>
@@ -498,6 +665,10 @@ footer a:hover{
         <div class="video-info">
           <h3>Material promoțional</h3>
           <p>Un videoclip realizat pentru promovarea activității și energiei echipei.</p>
+          <div class="video-tags">
+            <span>Promo</span>
+            <span>Club</span>
+          </div>
         </div>
       </div>
 
@@ -507,7 +678,11 @@ footer a:hover{
         </div>
         <div class="video-info">
           <h3>Proiect Overthink</h3>
-          <p>Un material video din portofoliul nostru de proiecte.</p>
+          <p>Un material video din portofoliul nostru de proiecte vizuale.</p>
+          <div class="video-tags">
+            <span>Video</span>
+            <span>Proiect</span>
+          </div>
         </div>
       </div>
 
@@ -518,6 +693,10 @@ footer a:hover{
         <div class="video-info">
           <h3>Promo video</h3>
           <p>Un exemplu de material realizat pentru comunicare vizuală și promovare.</p>
+          <div class="video-tags">
+            <span>Promo</span>
+            <span>Campanie</span>
+          </div>
         </div>
       </div>
 
@@ -528,9 +707,25 @@ footer a:hover{
         <div class="video-info">
           <h3>Material video</h3>
           <p>Un alt videoclip din selecția noastră de materiale promoționale.</p>
+          <div class="video-tags">
+            <span>Video</span>
+            <span>Portofoliu</span>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-shell">
+    <div class="cta-card reveal">
+      <h3>Ai un proiect video?</h3>
+      <p>
+        Suntem deschiși la colaborări, materiale promoționale, videoclipuri pentru evenimente și proiecte creative realizate împreună cu echipa noastră.
+      </p>
+      <a href="contact.html" class="cta-btn">Contactează-ne</a>
     </div>
   </div>
 </section>
