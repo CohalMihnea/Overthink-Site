@@ -273,10 +273,13 @@ a{
 }
 
 #festival-info,
-#festival-formular,
-#club-info,
-#club-formular{
+#club-info{
   scroll-margin-top:90px;
+}
+
+#festival-formular,
+#club-formular{
+  scroll-margin-top:calc(50vh - 35px);
 }
 
 /* ---------- Reveal & Transition Animations ---------- */
@@ -994,9 +997,9 @@ footer{
   </div>
 </section>
 
-<section class="actiuni-sectiune reveal" id="festival-formular">
+<section class="actiuni-sectiune reveal">
   <div class="btn-grid-recrutari">
-    <a href="#" target="_blank" class="btn-recrutare festival">
+    <a href="#" target="_blank" class="btn-recrutare festival" id="festival-formular">
       Voluntar la Festival
     </a>
   </div>
@@ -1098,9 +1101,9 @@ footer{
   </p>
 </section>
 
-<section class="actiuni-sectiune reveal" id="club-formular" style="padding-bottom:50px;">
+<section class="actiuni-sectiune reveal" style="padding-bottom:50px;">
   <div class="btn-grid-recrutari">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScFQJsghbDcXdpnJcqS-iI01KW6esVldxbobWFYmwmbKSAtaQ/viewform?usp=publish-editor" target="_blank" class="btn-recrutare club">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScFQJsghbDcXdpnJcqS-iI01KW6esVldxbobWFYmwmbKSAtaQ/viewform?usp=publish-editor" target="_blank" class="btn-recrutare club" id="club-formular">
       Aplică în Clubul de Film
     </a>
   </div>
