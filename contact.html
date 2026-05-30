@@ -1,0 +1,852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ro"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Contact - Clubul de Film Overthink JR.&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1">&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">*{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-sizing:border-box;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">html{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>scroll-behavior:smooth;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Inter', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#000;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow-x:hidden;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">a{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:inherit;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- TOP BAR ---------- */</p>
+<p class="p1">.topbar{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:fixed;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>top:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>left:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height:56px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(10,10,10,0.82);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>backdrop-filter:blur(12px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:0 22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index:1000;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom:1px solid rgba(255,255,255,0.08);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.topbar-logo{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.topbar-logo img{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height:36px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.topbar-logo:hover img{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:0.85;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:scale(1.03);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.menu-wrapper{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.menu-toggle{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>outline:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(146,4,4,0.9);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Inter', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.92rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:9px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap:8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 0 20px rgba(146,4,4,0.2);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.menu-toggle:hover{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#c00606;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(-2px);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.menu-arrow{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.menu-wrapper.open .menu-arrow{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:rotate(180deg);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dropdown-menu{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>top:calc(100% + 12px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>right:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-width:220px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(15,15,15,0.92);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>backdrop-filter:blur(18px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 20px 60px rgba(0,0,0,0.55),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 0 35px rgba(146,4,4,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(-10px) scale(0.96);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pointer-events:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.25s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.menu-wrapper.open .dropdown-menu{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(0) scale(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pointer-events:auto;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dropdown-menu a{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.25s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dropdown-menu a:hover,</p>
+<p class="p1">.dropdown-menu a.active{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(146,4,4,0.78);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateX(3px);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- HERO ---------- */</p>
+<p class="p1">.hero{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height:78vh;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:120px 20px 80px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.88)),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg") center/cover no-repeat;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero::before{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:"";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(circle at 50% 45%, rgba(146,4,4,0.38), transparent 34%),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(circle at 20% 70%, rgba(255,255,255,0.04), transparent 24%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index:1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pointer-events:none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero::after{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:"";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:radial-gradient(circle, transparent 36%, rgba(0,0,0,0.92) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index:2;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pointer-events:none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-content{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index:3;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:980px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>animation:heroFadeUp 1.1s ease forwards;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-label{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#d8d8d8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.95rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:0.28em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-shadow:0 0 14px rgba(146,4,4,0.35);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero h1{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue', Impact, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(4rem, 10vw, 7.5rem);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:0.9;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:0.05em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-shadow:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 0 16px rgba(255,255,255,0.12),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 0 28px rgba(184,6,6,0.72),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 0 60px rgba(184,6,6,0.28),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 8px 40px rgba(0,0,0,0.95);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero p{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:760px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:24px auto 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(0.98rem, 1.8vw, 1.12rem);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#e8e8e8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.7;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-actions{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top:34px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-wrap:wrap;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:15px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-width:155px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-btn.primary{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#b80606;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 0 28px rgba(184,6,6,0.42);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-btn.secondary{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>backdrop-filter:blur(8px);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-btn:hover{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(-4px) scale(1.02);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- GENERAL ---------- */</p>
+<p class="p1">.section-shell{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:1150px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:0 20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.section-title{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue', Impact, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:0.08em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(2.4rem, 5vw, 3.4rem);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-shadow:0 0 20px rgba(146,4,4,0.28);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.section-subtitle{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:760px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:0 auto 42px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#d2d2d2;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.75;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- CONTACT CARDS ---------- */</p>
+<p class="p1">.contact-section{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:75px 0 60px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 36%),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#000;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-grid{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns:repeat(4, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-card{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:26px 22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,0.045);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 16px 50px rgba(0,0,0,0.35);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height:190px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction:column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content:space-between;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-card:hover{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(-6px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color:rgba(146,4,4,0.38);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 18px 55px rgba(0,0,0,0.45),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>0 0 30px rgba(146,4,4,0.18);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-card h3{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-card p{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#d6d6d6;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.65;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.95rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:18px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-link{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:11px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(146,4,4,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(146,4,4,0.36);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-link:hover{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#b80606;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(-2px);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- MESSAGE SECTION ---------- */</p>
+<p class="p1">.message-section{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:35px 0 90px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#000;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.message-layout{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns:0.9fr 1.1fr;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap:28px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:stretch;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.info-panel,</p>
+<p class="p1">.form-panel{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:26px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,0.045);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 18px 55px rgba(0,0,0,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:32px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.info-panel h2,</p>
+<p class="p1">.form-panel h2{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue', Impact, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:2.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:0.06em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.info-panel p{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#d7d7d7;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.75;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-list{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction:column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-list-item{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,0.045);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,0.08);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-list-item strong{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:5px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-list-item span{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#cfcfcf;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.5;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:16px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group label{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group input,</p>
+<p class="p1">.form-group textarea,</p>
+<p class="p1">.form-group select{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:14px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Inter', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.95rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>outline:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.25s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group input:focus,</p>
+<p class="p1">.form-group textarea:focus,</p>
+<p class="p1">.form-group select:focus{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color:rgba(184,6,6,0.65);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 0 22px rgba(184,6,6,0.18);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group textarea{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height:140px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>resize:vertical;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group select option{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#111;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.submit-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:16px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#b80606;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:1rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 0 30px rgba(184,6,6,0.38);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.submit-btn:hover{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#d30707;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(-3px);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- REVEAL ---------- */</p>
+<p class="p1">.reveal{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(42px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:opacity 0.85s ease, transform 0.85s ease;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.reveal.visible{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(0);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- FOOTER ---------- */</p>
+<p class="p1">footer{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#111;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-top:1px solid rgba(255,255,255,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#d8d8d8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">footer a{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#d30707;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:0 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:700;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">footer a:hover{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- ANIMATIONS ---------- */</p>
+<p class="p1">@keyframes heroFadeUp{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>from{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opacity:0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transform:translateY(28px) scale(0.98);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>to{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opacity:1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transform:translateY(0) scale(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ---------- MOBILE ---------- */</p>
+<p class="p1">@media(max-width:1000px){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-grid{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns:repeat(2, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.message-layout{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns:1fr;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">@media(max-width:768px){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.topbar{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:8px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height:auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height:56px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.topbar-logo img{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height:32px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.menu-toggle{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:8px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:0.84rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dropdown-menu{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-width:190px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height:70vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:105px 16px 65px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-label{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:0.72rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing:0.18em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero h1{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:clamp(3.2rem, 16vw, 5rem);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-actions{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top:26px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap:10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-wrap:nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-btn{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-width:auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width:auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex:1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:13px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:0.86rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>white-space:nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-section{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:55px 0 40px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-grid{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns:1fr;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.message-section{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:20px 0 65px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.info-panel,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-panel{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:24px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius:22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.info-panel h2,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-panel h2{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:2.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>footer{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line-height:1.8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- TOP BAR --&gt;</p>
+<p class="p1">&lt;div class="topbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="index.html" class="topbar-logo" aria-label="Înapoi la pagina principală"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/a&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="menu-wrapper" id="menuWrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="menu-toggle" id="menuToggle" type="button" aria-label="Deschide meniul"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Meniu &lt;span class="menu-arrow"&gt;▾&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="dropdown-menu" id="dropdownMenu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="index.html"&gt;Acasă&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="despre.html"&gt;Despre Noi&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="promo.html"&gt;Promo-uri&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="recrutari.html"&gt;Recrutări&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="contact.html" class="active"&gt;Contact&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- HERO --&gt;</p>
+<p class="p1">&lt;section class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-label"&gt;OVERTHINK JR.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Contact&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Ai o întrebare, o propunere de colaborare sau vrei să afli mai multe despre club, festival ori proiectele noastre? Scrie-ne.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#contact-form" class="hero-btn primary"&gt;Trimite mesaj&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#contact-links" class="hero-btn secondary"&gt;Vezi contactele&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- CONTACT LINKS --&gt;</p>
+<p class="p1">&lt;section class="contact-section" id="contact-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-shell"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title reveal"&gt;Unde ne găsești&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-subtitle reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Pentru întrebări rapide, recrutări sau colaborări, ne poți contacta prin una dintre variantele de mai jos.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="contact-grid"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contact-card reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Instagram&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Cel mai rapid mod de a vedea activitatea noastră și de a ne scrie direct.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="contact-link" href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank"&gt;Deschide Instagram&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contact-card reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Facebook&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Urmărește noutățile, evenimentele și anunțurile oficiale ale clubului.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="contact-link" href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank"&gt;Deschide Facebook&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contact-card reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Email&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Pentru propuneri, parteneriate, întrebări oficiale sau colaborări.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="contact-link" href="mailto:EMAIL_CLUB_AICI"&gt;Trimite email&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contact-card reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Recrutări&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Vrei să intri în club sau să devii voluntar la festival? Intră pe pagina dedicată.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="contact-link" href="recrutari.html"&gt;Vezi recrutările&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- MESSAGE --&gt;</p>
+<p class="p1">&lt;section class="message-section" id="contact-form"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-shell"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="message-layout"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="info-panel reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Scrie-ne&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Folosește formularul pentru a ne trimite rapid un mesaj. După completare, se va deschide aplicația ta de email cu mesajul pregătit.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contact-list-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Pentru recrutări&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Întrebări despre departamente, înscrieri, voluntariat sau activitățile clubului.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contact-list-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Pentru colaborări&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Propuneri de proiecte video, evenimente, aftermovies, campanii sau parteneriate locale.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contact-list-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Pentru festival&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Întrebări despre Overthink Film Fest, voluntari, program sau implicare.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-panel reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Formular contact&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="contactForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="name"&gt;Nume&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="name" name="name" placeholder="Numele tău" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="email"&gt;Email&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="email" id="email" name="email" placeholder="adresa@email.com" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="subject"&gt;Subiect&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="subject" name="subject" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value=""&gt;Alege un subiect&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Recrutări club"&gt;Recrutări club&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Voluntariat festival"&gt;Voluntariat festival&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Colaborare video"&gt;Colaborare video&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Parteneriat"&gt;Parteneriat&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="Altă întrebare"&gt;Altă întrebare&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="message"&gt;Mesaj&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea id="message" name="message" placeholder="Scrie mesajul tău aici..." required&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button type="submit" class="submit-btn"&gt;Trimite mesajul&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- FOOTER --&gt;</p>
+<p class="p1">&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>© 2026 Clubul de Film Overthink JR. |</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank"&gt;Facebook&lt;/a&gt; |</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank"&gt;Instagram&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/p&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// DROPDOWN MENU</p>
+<p class="p1">const menuWrapper = document.getElementById("menuWrapper");</p>
+<p class="p1">const menuToggle = document.getElementById("menuToggle");</p>
+<p class="p2"><br></p>
+<p class="p1">menuToggle.addEventListener("click", (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>event.stopPropagation();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>menuWrapper.classList.toggle("open");</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">document.addEventListener("click", (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(!menuWrapper.contains(event.target)){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>menuWrapper.classList.remove("open");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">document.addEventListener("keydown", (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(event.key === "Escape"){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>menuWrapper.classList.remove("open");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">// REVEAL ON SCROLL</p>
+<p class="p1">const revealElements = document.querySelectorAll(".reveal");</p>
+<p class="p2"><br></p>
+<p class="p1">const revealObserver = new IntersectionObserver((entries) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>entries.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(entry.isIntersecting){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>entry.target.classList.add("visible");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">}, {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>threshold:0.15</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">revealElements.forEach(el =&gt; revealObserver.observe(el));</p>
+<p class="p2"><br></p>
+<p class="p1">// CONTACT FORM MAILTO</p>
+<p class="p1">const contactForm = document.getElementById("contactForm");</p>
+<p class="p2"><br></p>
+<p class="p1">contactForm.addEventListener("submit", function(event){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>event.preventDefault();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const name = document.getElementById("name").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const email = document.getElementById("email").value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const subject = document.getElementById("subject").value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const message = document.getElementById("message").value.trim();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const destinationEmail = "EMAIL_CLUB_AICI";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const mailSubject = encodeURIComponent("Contact site Overthink JR. - " + subject);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const mailBody = encodeURIComponent(</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Nume: " + name + "\n" +</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Email: " + email + "\n" +</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Subiect: " + subject + "\n\n" +</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Mesaj:\n" + message</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.location.href = "mailto:" + destinationEmail + "?subject=" + mailSubject + "&amp;body=" + mailBody;</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
