@@ -159,7 +159,7 @@
       padding:120px 20px 90px;
       overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.86)),
         url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg") center/cover no-repeat;
     }
 
@@ -191,17 +191,15 @@
     }
 
     .hero-label{
-      display:inline-block;
       margin-bottom:18px;
-      padding:8px 18px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.14);
-      background:rgba(255,255,255,0.04);
-      color:#e9e9e9;
-      font-size:0.88rem;
+      color:#d8d8d8;
+      font-size:0.95rem;
       font-weight:800;
-      letter-spacing:0.18em;
+      letter-spacing:0.34em;
       text-transform:uppercase;
+      opacity:0;
+      animation:fadeIn 1s ease forwards;
+      animation-delay:0.2s;
     }
 
     .hero h1{
@@ -226,11 +224,7 @@
       color:#ececec;
     }
 
-    /* ---------- General Sections ---------- */
-    section{
-      position:relative;
-    }
-
+    /* ---------- General ---------- */
     .section-shell{
       max-width:1250px;
       margin:0 auto;
@@ -244,12 +238,12 @@
       letter-spacing:0.08em;
       font-size:clamp(2.2rem, 5vw, 3.3rem);
       color:#fff;
-      text-shadow:0 0 20px rgba(146,4,4,0.2);
+      text-shadow:0 0 20px rgba(146,4,4,0.28);
     }
 
     .section-subtitle{
       max-width:860px;
-      margin:0 auto 38px;
+      margin:0 auto 42px;
       text-align:center;
       color:#d2d2d2;
       line-height:1.75;
@@ -258,7 +252,7 @@
 
     /* ---------- Origini ---------- */
     .origini{
-      padding:85px 0 40px;
+      padding:85px 0 50px;
       background:
         radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 35%),
         #000;
@@ -281,9 +275,164 @@
       color:#ebebeb;
     }
 
+    /* ---------- Timeline ---------- */
+    .timeline-section{
+      padding:70px 0 75px;
+      background:
+        radial-gradient(circle at center, rgba(146,4,4,0.16), transparent 38%),
+        #000;
+    }
+
+    .timeline{
+      position:relative;
+      max-width:1050px;
+      margin:0 auto;
+      padding:20px 0;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:50%;
+      width:2px;
+      transform:translateX(-50%);
+      background:linear-gradient(
+        transparent,
+        rgba(146,4,4,0.75),
+        rgba(255,255,255,0.18),
+        rgba(146,4,4,0.75),
+        transparent
+      );
+      box-shadow:0 0 22px rgba(146,4,4,0.45);
+    }
+
+    .timeline-item{
+      position:relative;
+      width:50%;
+      padding:18px 34px;
+    }
+
+    .timeline-item.left{
+      left:0;
+      text-align:right;
+    }
+
+    .timeline-item.right{
+      left:50%;
+      text-align:left;
+    }
+
+    .timeline-dot{
+      position:absolute;
+      top:34px;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:#b80606;
+      box-shadow:0 0 22px rgba(184,6,6,0.8);
+      z-index:2;
+    }
+
+    .timeline-item.left .timeline-dot{
+      right:-8px;
+    }
+
+    .timeline-item.right .timeline-dot{
+      left:-8px;
+    }
+
+    .timeline-card{
+      padding:20px 22px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.045);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 16px 50px rgba(0,0,0,0.35);
+      transition:0.3s ease;
+    }
+
+    .timeline-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(146,4,4,0.36);
+      box-shadow:
+        0 18px 55px rgba(0,0,0,0.45),
+        0 0 28px rgba(146,4,4,0.16);
+    }
+
+    .timeline-date{
+      color:#d30707;
+      font-weight:800;
+      font-size:0.92rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .timeline-card h3{
+      font-size:1.15rem;
+      margin-bottom:8px;
+      color:#fff;
+    }
+
+    .timeline-card p{
+      color:#d8d8d8;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    /* ---------- Values ---------- */
+    .values{
+      padding:70px 0 65px;
+      background:
+        radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 35%),
+        #000;
+    }
+
+    .values-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:18px;
+      margin-top:32px;
+    }
+
+    .value-card{
+      padding:26px 22px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.045);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 16px 50px rgba(0,0,0,0.35);
+      transition:0.3s ease;
+    }
+
+    .value-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(146,4,4,0.36);
+      box-shadow:
+        0 18px 55px rgba(0,0,0,0.45),
+        0 0 28px rgba(146,4,4,0.18);
+    }
+
+    .value-icon{
+      font-size:2rem;
+      margin-bottom:14px;
+    }
+
+    .value-card h3{
+      font-size:1.2rem;
+      margin-bottom:10px;
+      color:#fff;
+    }
+
+    .value-card p{
+      color:#d8d8d8;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
     /* ---------- Departments ---------- */
     .departments{
-      padding:50px 0 90px;
+      padding:65px 0 90px;
       background:
         radial-gradient(circle at center, rgba(146,4,4,0.15), transparent 38%),
         #000;
@@ -483,7 +632,24 @@
       }
     }
 
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(16px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
     /* ---------- Responsive ---------- */
+    @media(max-width:1000px){
+      .values-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
     @media(max-width:900px){
       .department-card,
       .department-card.reverse{
@@ -493,6 +659,26 @@
       .department-card.reverse .department-media,
       .department-card.reverse .department-text{
         order:unset;
+      }
+
+      .timeline::before{
+        left:18px;
+      }
+
+      .timeline-item,
+      .timeline-item.left,
+      .timeline-item.right{
+        width:100%;
+        left:0;
+        text-align:left;
+        padding-left:48px;
+        padding-right:0;
+      }
+
+      .timeline-item.left .timeline-dot,
+      .timeline-item.right .timeline-dot{
+        left:10px;
+        right:auto;
       }
     }
 
@@ -524,7 +710,7 @@
 
       .hero-label{
         font-size:0.75rem;
-        letter-spacing:0.14em;
+        letter-spacing:0.25em;
       }
 
       .hero p{
@@ -532,7 +718,7 @@
       }
 
       .origini{
-        padding:65px 0 30px;
+        padding:65px 0 35px;
       }
 
       .origini-card{
@@ -543,8 +729,20 @@
         font-size:0.98rem;
       }
 
+      .timeline-section{
+        padding:55px 0 55px;
+      }
+
+      .values{
+        padding:55px 0 50px;
+      }
+
+      .values-grid{
+        grid-template-columns:1fr;
+      }
+
       .departments{
-        padding:35px 0 65px;
+        padding:50px 0 65px;
       }
 
       .department-card{
@@ -579,7 +777,9 @@
         font-size:clamp(3rem, 16vw, 4.7rem);
       }
 
-      .origini-card{
+      .origini-card,
+      .timeline-card,
+      .value-card{
         border-radius:20px;
       }
 
@@ -637,7 +837,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-label">Clubul de Film Overthink JR.</div>
+      <div class="hero-label">CLUB DE FILM</div>
       <h1>Despre Noi</h1>
       <p>
         Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în 5 departamente: tehnic, creativ, estetic, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill poate fi căpătată alături de noi.
@@ -653,6 +853,166 @@
         <p>
           Înainte de noi, a fost echipa Overthink (sau cum o mai numim, Overthink-ul Mare), fondată de Matei Elesei și Răzvan Marin în C.N. „Vasile Alecsandri” Bacău. Totul a început cu o idee, o ambiție de a face ceva nou și inedit în cadrul unei campanii antidrog, unde în loc de o poză sau un afiș, Matei a decis să facă un film. După, aceștia au continuat să creeze scurtmetraje din ce în ce mai ambițioase, de la cascadorii călare sau chiar aviatice, alături de o echipă schimbătoare, dar cu același nucleu. În prezent, sub îndrumarea acestora, dar mai ales a lui Matei, noi ne creăm propria poveste spunând-o pe a lor.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="section-shell">
+      <h2 class="section-title reveal">Timeline</h2>
+      <p class="section-subtitle reveal">
+        Povestea Overthink a crescut de la o idee de film într-un liceu din Bacău până la o echipă nouă, proiecte premiate și planuri tot mai mari.
+      </p>
+
+      <div class="timeline">
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2021</div>
+            <h3>Fondarea Overthink</h3>
+            <p>Overthink este fondat de Matei Elesei și Răzvan Marin în C.N. „Vasile Alecsandri” Bacău.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">Mai 2021</div>
+            <h3>Primul scurtmetraj</h3>
+            <p>Apare primul scurtmetraj al echipei, momentul care transformă ideea inițială într-un proiect cinematografic real.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">Septembrie 2021</div>
+            <h3>Prima ediție de recrutări</h3>
+            <p>La începutul anului școlar are loc prima etapă de recrutări, prin care echipa începe să crească.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2022</div>
+            <h3>Participare la Boovie</h3>
+            <p>Overthink participă la ediția Boovie din 2022, intrând într-un circuit important de concursuri dedicate filmului realizat de elevi.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2023</div>
+            <h3>Overthink în juriul Boovie</h3>
+            <p>Unul dintre membrii Overthink ajunge jurat la Boovie, confirmând creșterea echipei și experiența acumulată.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">Ianuarie 2025</div>
+            <h3>„Ultima Cascadă”</h3>
+            <p>Apare documentarul „Ultima Cascadă”, proiect premiat la multiple concursuri și unul dintre cele mai importante filme ale clubului.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2025</div>
+            <h3>Prima apariție Overthink Jr.</h3>
+            <p>Echipa participă pentru prima dată sub forma Overthink Jr. la Boovie, marcând începutul noii generații.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">25 August 2025</div>
+            <h3>Lansarea oficială Overthink Jr.</h3>
+            <p>Overthink Jr. este lansat oficial ca nouă echipă de liceeni pasionați de film, fotografie, scris și producție.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">Septembrie 2025</div>
+            <h3>Prima etapă de recrutări Overthink Jr.</h3>
+            <p>Are loc prima etapă de recrutări pentru noua echipă, moment prin care clubul își extinde departamentele și membrii.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">Martie 2026</div>
+            <h3>CineDrama 2026</h3>
+            <p>Noua echipă participă la CineDrama 2026 și obține premiul pentru cea mai bună interpretare feminină.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2026</div>
+            <h3>Boovie 2026</h3>
+            <p>Overthink Jr. participă din nou la Boovie, continuând tradiția clubului în concursurile de film pentru elevi.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2026</div>
+            <h3>Overthink Film Fest</h3>
+            <p>Clubul anunță cel mai mare proiect de până acum: Overthink Film Fest, un festival dedicat filmului independent și tinerilor cineaști.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values">
+    <div class="section-shell">
+      <h2 class="section-title reveal">Valorile noastre</h2>
+      <p class="section-subtitle reveal">
+        Nu căutăm oameni perfecți. Căutăm oameni implicați, curioși și dispuși să învețe lucrând alături de ceilalți.
+      </p>
+
+      <div class="values-grid">
+
+        <div class="value-card reveal">
+          <div class="value-icon">🔥</div>
+          <h3>Pasiune</h3>
+          <p>Credem că pasiunea este punctul de plecare pentru orice proiect bun. Experiența se poate construi, dar dorința de a crea trebuie să existe.</p>
+        </div>
+
+        <div class="value-card reveal">
+          <div class="value-icon">🎬</div>
+          <h3>Învățare prin practică</h3>
+          <p>Învățăm făcând: pe platou, în editare, în repetiții, în ședințe de producție și prin sprijinul colegilor din echipă.</p>
+        </div>
+
+        <div class="value-card reveal">
+          <div class="value-icon">🤝</div>
+          <h3>Echipă și responsabilitate</h3>
+          <p>Un film nu se face singur. Fiecare rol contează, iar fiecare membru are responsabilitatea de a contribui la proiectul comun.</p>
+        </div>
+
+        <div class="value-card reveal">
+          <div class="value-icon">⚡</div>
+          <h3>Curaj creativ</h3>
+          <p>Încurajăm ideile îndrăznețe, încercările noi și proiectele care ies din zona de confort. Așa crește o echipă creativă.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -733,7 +1093,6 @@
         <div class="department-card reverse reveal">
           <div class="department-media">
             <div class="photo-stack duo-left">
-              <!-- Înlocuiești mai târziu cu denumirile finale ale pozelor -->
               <img src="Foto/placeholder-estetic-1.jpg" alt="Estetic 1">
               <img src="Foto/placeholder-estetic-2.jpg" alt="Estetic 2">
             </div>
