@@ -1,351 +1,829 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Despre Noi - Clubul de Film Overthink JR.</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:black;color:white;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despre Noi - Clubul de Film Overthink JR.</title>
 
-/* ---------- Top Bar (Modificat) ---------- */
-.topbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:50px;
-  background:#222;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0; 
-  z-index:1000;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-/* Adăugăm spațiere DOAR pe elementele din topbar, menținând logo-ul la marginea 0 */
-.topbar img{
-  height:35px;
-  margin-right: 70%; /* Adaugă spațiu doar în jurul logo-ului */
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-.topbar-nav {
-  display: flex;
-  gap: 15px;
-  margin-right: 20px; /* Adaugă spațiu doar în jurul link-urilor */
-}
-/* ... restul codului CSS pentru .topbar-nav a este OK ... */
+    html{
+      scroll-behavior:smooth;
+    }
 
-/* Container pentru link-urile din bara de sus */
-.topbar-nav {
-  display: flex; /* Face ca link-urile să fie aliniate orizontal */
-  gap: 15px; /* Adaugă spațiu între link-uri */
-}
+    body{
+      font-family:'Inter', Arial, sans-serif;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
+    }
 
-.topbar-nav a{ /* Selectăm link-urile din noul container */
-  color:white;
-  background:#920404;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
-  display:inline-block;
-  border-radius:6px;
-  padding:4px 10px;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
+    img{
+      max-width:100%;
+      display:block;
+    }
 
-/* ---------- Hero Section ---------- */
-.hero{
-  position:relative;height:70vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:#111 url('Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg') no-repeat center/cover;
-}
-.hero h1{
-  color:#920404;
-  font-size:3rem;
-  text-align:center;
-  opacity:0;
-  animation: fadeInText 1.2s forwards;
-}
-.hero p{
-  max-width:800px;
-  margin-top:20px;
-  text-align:center;
-  line-height:1.6;
-  font-size:1.1rem;
-  opacity:0;
-  animation: fadeInText 1.2s forwards 0.5s;
-}
+    /* ---------- Topbar ---------- */
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:56px;
+      background:rgba(10,10,10,0.82);
+      backdrop-filter:blur(12px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 22px;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
 
-/* ---------- Fade-in Animation ---------- */
-@keyframes fadeInText{
-  to{opacity:1;}
-}
+    .topbar-logo{
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+    }
 
-/* ---------- Origini Section ---------- */
-.origini {
-  background:#000;
-  padding:40px 20px;
-  max-width:1000px;
-  margin:0 auto;
-  text-align:center;
-}
-.origini h2 {
-  font-size:2rem;
-  margin-bottom:20px;
-  color:#920404;
-  opacity:0;
-  animation: fadeInText 1.2s forwards;
-}
-.origini p {
-  font-size:1.1rem;
-  line-height:1.6;
-  margin:0 auto;
-  max-width:900px;
-  opacity:0;
-  animation: fadeInText 1.2s forwards 0.5s;
-}
+    .topbar-logo img{
+      height:36px;
+      width:auto;
+      transition:0.3s ease;
+    }
 
-/* ---------- Content Section ---------- */
-.content{padding:40px 20px 50px 20px;max-width:1000px;margin:0 auto;}
-.content h2{font-size:2rem;margin-bottom:20px;color:#920404;text-align:center;}
-.content p{margin-bottom:20px;line-height:1.6;text-align:justify;}
-.content ul{margin-bottom:30px;line-height:1.6;list-style:disc inside;}
+    .topbar-logo:hover img{
+      opacity:0.85;
+      transform:scale(1.03);
+    }
 
-/* ---------- Department Boxes ---------- */
-.department{background:#222;padding:20px;border-radius:10px;margin-bottom:30px;}
-.department h3{color:#920404;margin-bottom:10px;}
-.department ul{list-style:circle inside;}
+    .menu-wrapper{
+      position:relative;
+    }
 
-/* ---------- Layout Creativ / Cast / Producție ---------- */
-.department.creativ, .department.cast, .department.producție{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-}
-.department.creativ .text, .department.cast .text, .department.producție .text{
-  flex:1;
-  min-width:250px;
-  padding-right:20px;
-}
+    .menu-toggle{
+      border:none;
+      outline:none;
+      cursor:pointer;
+      color:white;
+      background:rgba(146,4,4,0.9);
+      font-family:'Inter', Arial, sans-serif;
+      font-weight:800;
+      font-size:0.92rem;
+      border-radius:999px;
+      padding:9px 18px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:0.3s ease;
+      box-shadow:0 0 20px rgba(146,4,4,0.2);
+    }
 
-/* ---------- Departament Tehnic ---------- */
-.department.tehnic{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:flex-start;
-  gap:20px;
-}
-.department.tehnic .images{
-  flex:1;
-  min-width:250px;
-  max-height:280px;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.department.tehnic .images img{
-  width:100%;
-  max-height:100%;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.6);
-  object-fit:contain;
-}
-.department.tehnic .text{
-  flex:1;
-  min-width:250px;
-  padding:0;
-  box-sizing:border-box;
-}
+    .menu-toggle:hover{
+      background:#c00606;
+      transform:translateY(-2px);
+    }
 
-/* ---------- Images Layout Desktop ---------- */
-.department.creativ .images, .department.cast .images, .department.producție .images{
-  flex:1;
-  min-width:250px;
-  position:relative;
-  height:300px;
-}
-.department.creativ .images img, .department.cast .images img, .department.producție .images img{
-  position:absolute;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.6);
-  object-fit:cover;
-}
+    .menu-arrow{
+      font-size:0.8rem;
+      transition:0.3s ease;
+    }
 
-/* Creativ */
-.department.creativ .images img:first-child{width:70%; height:80%; top:0; left:15%; z-index:1;}
-.department.creativ .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
+    .menu-wrapper.open .menu-arrow{
+      transform:rotate(180deg);
+    }
 
-/* Cast */
-.department.cast .images img:first-child{width:70%; height:80%; top:0; right:15%; z-index:1;}
-.department.cast .images img:last-child{width:60%; height:70%; bottom:0; right:10%; z-index:2; transform:rotate(-2deg);}
+    .dropdown-menu{
+      position:absolute;
+      top:calc(100% + 12px);
+      right:0;
+      min-width:220px;
+      padding:10px;
+      border-radius:18px;
+      background:rgba(15,15,15,0.92);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.55),
+        0 0 35px rgba(146,4,4,0.18);
+      opacity:0;
+      transform:translateY(-10px) scale(0.96);
+      pointer-events:none;
+      transition:0.25s ease;
+    }
 
-/* Producție */
-.department.producție .images img:first-child{width:65%; height:75%; top:5%; left:10%; z-index:1;}
-.department.producție .images img:last-child{width:65%; height:75%; bottom:5%; right:10%; z-index:2; transform:rotate(-2deg);}
+    .menu-wrapper.open .dropdown-menu{
+      opacity:1;
+      transform:translateY(0) scale(1);
+      pointer-events:auto;
+    }
 
-/* ---------- Footer ---------- */
-footer{padding:20px;background:#111;font-size:0.9rem;text-align:center;}
-footer a{color:#920404;margin:0 10px;text-decoration:none;}
-footer a:hover{color:white;}
+    .dropdown-menu a{
+      display:block;
+      color:white;
+      text-decoration:none;
+      font-weight:700;
+      padding:12px 14px;
+      border-radius:12px;
+      transition:0.25s ease;
+    }
 
-/* ---------- Responsive Mobile ---------- */
-@media(max-width:768px){
-  .topbar{flex-direction:column;height:auto;padding:10px;}
-  .hero{height:60vh;padding:20px;text-align:center;}
-  .hero h1{font-size:2rem;}
-  .hero p{font-size:1rem;}
-  .content{padding:80px 15px 50px 15px;}
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active{
+      background:rgba(146,4,4,0.78);
+      transform:translateX(3px);
+    }
 
-  .origini p {font-size:1rem;padding:0 10px;}
+    /* ---------- Hero ---------- */
+    .hero{
+      position:relative;
+      min-height:88vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px 90px;
+      overflow:hidden;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
+        url("Foto/WhatsApp Image 2025-09-05 at 12.53.59.jpeg") center/cover no-repeat;
+    }
 
-  /* mobil: text + poze fiecare sub departament, centrate */
-  .department.creativ,
-  .department.tehnic,
-  .department.cast,
-  .department.producție{
-    flex-direction:column;
-  }
-  .department.creativ .text,
-  .department.tehnic .text,
-  .department.cast .text,
-  .department.producție .text{
-    padding:0;
-    margin-bottom:10px;
-    text-align:center;
-  }
-  .department.creativ .images,
-  .department.tehnic .images,
-  .department.cast .images,
-  .department.producție .images{
-    height:auto;
-    position:static;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-    margin-top:10px;
-  }
-  .department.creativ .images img,
-  .department.tehnic .images img,
-  .department.cast .images img,
-  .department.producție .images img{
-    position:relative;
-    width:90%;
-    height:auto;
-    transform:none;
-    margin:0 auto;
-  }
-}
-</style>
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(146,4,4,0.34), transparent 30%),
+        radial-gradient(circle at 20% 75%, rgba(255,255,255,0.03), transparent 20%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle, transparent 34%, rgba(0,0,0,0.92) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:1050px;
+      animation:heroFadeUp 1.05s ease forwards;
+    }
+
+    .hero-label{
+      display:inline-block;
+      margin-bottom:18px;
+      padding:8px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.04);
+      color:#e9e9e9;
+      font-size:0.88rem;
+      font-weight:800;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      font-family:'Bebas Neue', Impact, sans-serif;
+      font-size:clamp(3.5rem, 10vw, 7rem);
+      letter-spacing:0.05em;
+      line-height:0.95;
+      margin-bottom:22px;
+      text-transform:uppercase;
+      color:#fff;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.12),
+        0 0 24px rgba(146,4,4,0.55),
+        0 8px 36px rgba(0,0,0,0.85);
+    }
+
+    .hero p{
+      max-width:950px;
+      margin:0 auto;
+      font-size:clamp(1rem, 1.7vw, 1.14rem);
+      line-height:1.85;
+      color:#ececec;
+    }
+
+    /* ---------- General Sections ---------- */
+    section{
+      position:relative;
+    }
+
+    .section-shell{
+      max-width:1250px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:16px;
+      font-family:'Bebas Neue', Impact, sans-serif;
+      letter-spacing:0.08em;
+      font-size:clamp(2.2rem, 5vw, 3.3rem);
+      color:#fff;
+      text-shadow:0 0 20px rgba(146,4,4,0.2);
+    }
+
+    .section-subtitle{
+      max-width:860px;
+      margin:0 auto 38px;
+      text-align:center;
+      color:#d2d2d2;
+      line-height:1.75;
+      font-size:1rem;
+    }
+
+    /* ---------- Origini ---------- */
+    .origini{
+      padding:85px 0 40px;
+      background:
+        radial-gradient(circle at center, rgba(146,4,4,0.18), transparent 35%),
+        #000;
+    }
+
+    .origini-card{
+      max-width:1020px;
+      margin:0 auto;
+      padding:34px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 18px 60px rgba(0,0,0,0.35);
+      text-align:center;
+    }
+
+    .origini-card p{
+      font-size:1.05rem;
+      line-height:1.85;
+      color:#ebebeb;
+    }
+
+    /* ---------- Departments ---------- */
+    .departments{
+      padding:50px 0 90px;
+      background:
+        radial-gradient(circle at center, rgba(146,4,4,0.15), transparent 38%),
+        #000;
+    }
+
+    .department-grid{
+      display:grid;
+      gap:28px;
+    }
+
+    .department-card{
+      display:grid;
+      grid-template-columns:1.05fr 1fr;
+      gap:28px;
+      align-items:center;
+      padding:28px;
+      border-radius:28px;
+      background:rgba(255,255,255,0.045);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 18px 55px rgba(0,0,0,0.38);
+      overflow:hidden;
+    }
+
+    .department-card.reverse{
+      grid-template-columns:1fr 1.05fr;
+    }
+
+    .department-card.reverse .department-media{
+      order:2;
+    }
+
+    .department-card.reverse .department-text{
+      order:1;
+    }
+
+    .department-media{
+      position:relative;
+      min-height:340px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:22px;
+      background:
+        radial-gradient(circle at center, rgba(146,4,4,0.20), transparent 45%),
+        rgba(255,255,255,0.02);
+      overflow:hidden;
+    }
+
+    .department-media.single{
+      padding:18px;
+    }
+
+    .department-media.single img{
+      width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 12px 35px rgba(0,0,0,0.45);
+    }
+
+    .photo-stack{
+      position:relative;
+      width:100%;
+      height:100%;
+      min-height:340px;
+    }
+
+    .photo-stack img{
+      position:absolute;
+      border-radius:20px;
+      object-fit:cover;
+      box-shadow:0 18px 40px rgba(0,0,0,0.45);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:transform 0.35s ease;
+    }
+
+    .department-card:hover .photo-stack img:first-child{
+      transform:rotate(-4deg) translateY(-4px);
+    }
+
+    .department-card:hover .photo-stack img:last-child{
+      transform:rotate(5deg) translateY(4px);
+    }
+
+    .photo-stack.duo-left img:first-child{
+      width:62%;
+      height:72%;
+      left:6%;
+      top:10%;
+      transform:rotate(-3deg);
+      z-index:1;
+    }
+
+    .photo-stack.duo-left img:last-child{
+      width:52%;
+      height:64%;
+      right:7%;
+      bottom:8%;
+      transform:rotate(4deg);
+      z-index:2;
+    }
+
+    .photo-stack.duo-right img:first-child{
+      width:60%;
+      height:72%;
+      right:8%;
+      top:8%;
+      transform:rotate(3deg);
+      z-index:1;
+    }
+
+    .photo-stack.duo-right img:last-child{
+      width:54%;
+      height:64%;
+      left:8%;
+      bottom:8%;
+      transform:rotate(-4deg);
+      z-index:2;
+    }
+
+    .department-text h3{
+      font-size:1.8rem;
+      margin-bottom:14px;
+      color:#fff;
+      text-shadow:0 0 18px rgba(146,4,4,0.22);
+    }
+
+    .department-text p{
+      color:#e6e6e6;
+      line-height:1.8;
+      margin-bottom:18px;
+      font-size:1rem;
+    }
+
+    .dept-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .dept-tags span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(146,4,4,0.14);
+      border:1px solid rgba(146,4,4,0.32);
+      color:#fff;
+      font-weight:600;
+      font-size:0.94rem;
+    }
+
+    /* ---------- Reveal ---------- */
+    .reveal{
+      opacity:0;
+      transform:translateY(42px);
+      transition:opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ---------- Footer ---------- */
+    footer{
+      padding:24px;
+      background:#111;
+      font-size:0.9rem;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    footer a{
+      color:#d30707;
+      margin:0 10px;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    footer a:hover{
+      color:white;
+    }
+
+    /* ---------- Animations ---------- */
+    @keyframes heroFadeUp{
+      from{
+        opacity:0;
+        transform:translateY(28px) scale(0.98);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:900px){
+      .department-card,
+      .department-card.reverse{
+        grid-template-columns:1fr;
+      }
+
+      .department-card.reverse .department-media,
+      .department-card.reverse .department-text{
+        order:unset;
+      }
+    }
+
+    @media(max-width:768px){
+      .topbar{
+        padding:8px 12px;
+        height:auto;
+        min-height:56px;
+      }
+
+      .topbar-logo img{
+        height:32px;
+      }
+
+      .menu-toggle{
+        padding:8px 14px;
+        font-size:0.84rem;
+      }
+
+      .dropdown-menu{
+        min-width:190px;
+      }
+
+      .hero{
+        min-height:85vh;
+        padding:110px 16px 70px;
+        background-attachment:scroll;
+      }
+
+      .hero-label{
+        font-size:0.75rem;
+        letter-spacing:0.14em;
+      }
+
+      .hero p{
+        line-height:1.75;
+      }
+
+      .origini{
+        padding:65px 0 30px;
+      }
+
+      .origini-card{
+        padding:24px 18px;
+      }
+
+      .origini-card p{
+        font-size:0.98rem;
+      }
+
+      .departments{
+        padding:35px 0 65px;
+      }
+
+      .department-card{
+        padding:20px;
+        gap:20px;
+      }
+
+      .department-media{
+        min-height:290px;
+      }
+
+      .photo-stack{
+        min-height:290px;
+      }
+
+      .department-text h3{
+        font-size:1.45rem;
+      }
+
+      .department-text p{
+        font-size:0.97rem;
+      }
+
+      .dept-tags span{
+        font-size:0.88rem;
+        padding:9px 12px;
+      }
+    }
+
+    @media(max-width:520px){
+      .hero h1{
+        font-size:clamp(3rem, 16vw, 4.7rem);
+      }
+
+      .origini-card{
+        border-radius:20px;
+      }
+
+      .department-card{
+        border-radius:22px;
+      }
+
+      .department-media{
+        min-height:240px;
+      }
+
+      .photo-stack{
+        min-height:240px;
+      }
+
+      .photo-stack.duo-left img:first-child,
+      .photo-stack.duo-right img:first-child{
+        width:66%;
+        height:72%;
+      }
+
+      .photo-stack.duo-left img:last-child,
+      .photo-stack.duo-right img:last-child{
+        width:56%;
+        height:60%;
+      }
+
+      footer{
+        line-height:1.8;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Top Bar -->
-<div class="topbar">
-    <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+  <!-- Top Bar -->
+  <div class="topbar">
+    <a href="index.html" class="topbar-logo" aria-label="Înapoi la pagina principală">
+      <img src="Foto/LOGOtaiat.svg" alt="Logo Clubul de Film Overthink Junior">
+    </a>
 
-    <nav class="topbar-nav">
-    <a href="index.html">Acasa</a>
-    <a href="promo.html">Promo-uri</a>
-  </nav>
-</div>
+    <div class="menu-wrapper" id="menuWrapper">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Deschide meniul">
+        Meniu <span class="menu-arrow">▾</span>
+      </button>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Despre Noi</h1>
-  <p>Overthink jr. este un club de film înființat în C.N. „Ferdinand I” și coordonat de doamna profesoară Cristina Frânculescu. Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în patru departamente: tehnic, creativ, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill poate fi căpătată alături de noi.</p>
-</section>
-
-<!-- Origini Section -->
-<section class="origini">
-  <h2>Origini</h2>
-  <p>Înainte de noi, a fost echipa Overthink (sau cum o mai numim, Overthink-ul Mare) fondată de Matei Elesei și Răzvan Marin în C.N. „Vasile Alecsandri” Bacău. Totul a început cu o idee, o ambiție de a face ceva nou și inedit în cadrul unei campanii antidrog, unde în loc de o poză sau un afiș, Matei a decis să facă un film. După, aceștia au continuat să creeze scurtmetraje din ce în ce mai ambițioase, de la cascadorii călare sau chiar aviatice alături de o echipă schimbătoare, dar cu același nucleu. În prezent, sub îndrumarea acestora, dar mai ales a lui Matei, noi ne creăm propria poveste spunând-o pe a lor.</p>
-</section>
-
-<!-- Content -->
-<section class="content">
-
-  <!-- Departament Creativ -->
-  <div class="department creativ">
-    <div class="text">
-      <h3>Departamentul Creativ 🎬</h3>
-      <p>Se ocupă de concepte vizuale și crearea lor. Dacă ești o persoană creativă pasionată de scris sau orice formă de bricolaj de la modelat, pictat, cusut etc., te așteptăm să faci parte din echipă.</p>
-      <ul>
-        <li>Regie</li>
-        <li>Scenariu</li>
-        <li>Scenografie</li>
-        <li>Costume</li>
-        <li>Machiaj</li>
-      </ul>
-    </div>
-    <div class="images">
-      <img src="Foto/Timeline 1_01_00_54_15.jpg" alt="Creativ 1">
-      <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.41.jpeg" alt="Creativ 2">
+      <nav class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Acasă</a>
+        <a href="despre.html" class="active">Despre Noi</a>
+        <a href="promo.html">Promo-uri</a>
+      </nav>
     </div>
   </div>
 
-  <!-- Departament Tehnic -->
-  <div class="department tehnic">
-    <div class="images">
-      <img src="Foto/tehnicfrjpg.jpg" alt="Tehnic">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-label">Clubul de Film Overthink JR.</div>
+      <h1>Despre Noi</h1>
+      <p>
+        Scopul nostru este de a ne aduce ideile la viață prin orice formă de conținut, indiferent că e film, fotografie sau creație literară. Mai mult, ne dorim să participăm la diverse concursuri și festivaluri de film. Echipa noastră este împărțită în 5 departamente: tehnic, creativ, estetic, cast și producție. Cerința minimă pentru a ni te alătura, indiferent de gradul de experiență, este să fii pasionat de ceea ce faci, pentru că noi credem că orice skill poate fi căpătată alături de noi.
+      </p>
     </div>
-    <div class="text">
-      <h3>Departamentul Tehnic 📹</h3>
-      <p>Transformă viziunea artistică în realitate. Aici tot ce înseamnă partea vizuală și audio trece prin mâinile tale. Dacă ești pasionat de filmare, editare video, sunet și fotografie, te așteptăm să faci parte din acest departament.</p>
-      <ul>
-        <li>Imagine</li>
-        <li>Lumini</li>
-        <li>Sunet</li>
-        <li>Montaj</li>
-        <li>SFX si Coloana Sonora</li>
-      </ul>
-    </div>
-  </div>
+  </section>
 
-  <!-- Departament Cast -->
-  <div class="department cast">
-    <div class="text">
-      <h3>Departamentul Cast 🎭</h3>
-      <p>Aduce personajele la viață prin talent actoricesc cu ajutorul mentorului nostru în actorie, doamna profesoară Frânculescu Cristina.</p>
-      <ul>
-        <li>Actori</li>
-      </ul>
+  <!-- Origini -->
+  <section class="origini reveal">
+    <div class="section-shell">
+      <h2 class="section-title">Origini</h2>
+      <div class="origini-card">
+        <p>
+          Înainte de noi, a fost echipa Overthink (sau cum o mai numim, Overthink-ul Mare), fondată de Matei Elesei și Răzvan Marin în C.N. „Vasile Alecsandri” Bacău. Totul a început cu o idee, o ambiție de a face ceva nou și inedit în cadrul unei campanii antidrog, unde în loc de o poză sau un afiș, Matei a decis să facă un film. După, aceștia au continuat să creeze scurtmetraje din ce în ce mai ambițioase, de la cascadorii călare sau chiar aviatice, alături de o echipă schimbătoare, dar cu același nucleu. În prezent, sub îndrumarea acestora, dar mai ales a lui Matei, noi ne creăm propria poveste spunând-o pe a lor.
+        </p>
+      </div>
     </div>
-    <div class="images">
-      <img src="Foto/cast1.jpeg" alt="Cast 1">
-      <img src="Foto/cast2.jpeg" alt="Cast 2">
-    </div>
-  </div>
+  </section>
 
-  <!-- Departament Producție / Logistică -->
-  <div class="department producție">
-    <div class="images">
-      <img src="Foto/logistica2.jpg" alt="Logistica 2">
-      <img src="Foto/logistica1.jpeg" alt="Logistica 1">
-    </div>
-    <div class="text">
-      <h3>Departamentul Producție</h3>
-      <p>Este motorul practic al clubului de film, coordonând organizarea și logistica fiecărui proiect. De la planificarea filmărilor până la gestionarea resurselor, aici se transformă ideile creative în pași concreți. Este echipa care se asigură că visul cinematografic prinde viață în cele mai bune condiții.</p>
-      <ul>
-        <li>Logistica</li>
-        <li>Resurse</li>
-        <li>Marketing</li>
-      </ul>
-    </div>
-  </div>
+  <!-- Departamente -->
+  <section class="departments">
+    <div class="section-shell">
+      <h2 class="section-title reveal">Departamente</h2>
+      <p class="section-subtitle reveal">
+        Fiecare departament are un rol esențial în procesul de creație. Împreună, ele transformă o idee într-un proiect complet, de la concept și imagine până la interpretare și organizare.
+      </p>
 
-</section>
+      <div class="department-grid">
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Clubul de Film Overthink JR. | <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> | <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a></p>
-</footer>
+        <!-- Creativ -->
+        <div class="department-card reveal">
+          <div class="department-media">
+            <div class="photo-stack duo-left">
+              <img src="Foto/Timeline 1_01_00_54_15.jpg" alt="Creativ 1">
+              <img src="Foto/WhatsApp Image 2025-08-30 at 19.31.41.jpeg" alt="Creativ 2">
+            </div>
+          </div>
+
+          <div class="department-text">
+            <h3>Departamentul Creativ 🎬</h3>
+            <p>
+              Se ocupă de concepte vizuale și crearea lor. Dacă ești o persoană creativă pasionată de scris și de construirea poveștilor cinematografice, te așteptăm să faci parte din echipă.
+            </p>
+            <div class="dept-tags">
+              <span>Regie</span>
+              <span>Scenariu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tehnic -->
+        <div class="department-card reverse reveal">
+          <div class="department-media single">
+            <img src="Foto/tehnicfrjpg.jpg" alt="Departamentul Tehnic">
+          </div>
+
+          <div class="department-text">
+            <h3>Departamentul Tehnic 📹</h3>
+            <p>
+              Transformă viziunea artistică în realitate. Aici tot ce înseamnă partea vizuală și audio trece prin mâinile tale. Dacă ești pasionat de filmare, editare video, sunet și fotografie, te așteptăm să faci parte din acest departament.
+            </p>
+            <div class="dept-tags">
+              <span>Imagine</span>
+              <span>Lumini</span>
+              <span>Sunet</span>
+              <span>Montaj</span>
+              <span>SFX &amp; Coloană Sonoră</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cast -->
+        <div class="department-card reveal">
+          <div class="department-media">
+            <div class="photo-stack duo-right">
+              <img src="Foto/cast1.jpeg" alt="Cast 1">
+              <img src="Foto/cast2.jpeg" alt="Cast 2">
+            </div>
+          </div>
+
+          <div class="department-text">
+            <h3>Departamentul Cast 🎭</h3>
+            <p>
+              Aduce personajele la viață prin talent actoricesc cu ajutorul mentorului nostru în actorie, doamna profesoară Cristina Frânculescu.
+            </p>
+            <div class="dept-tags">
+              <span>Actori</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estetic -->
+        <div class="department-card reverse reveal">
+          <div class="department-media">
+            <div class="photo-stack duo-left">
+              <!-- Înlocuiești mai târziu cu denumirile finale ale pozelor -->
+              <img src="Foto/placeholder-estetic-1.jpg" alt="Estetic 1">
+              <img src="Foto/placeholder-estetic-2.jpg" alt="Estetic 2">
+            </div>
+          </div>
+
+          <div class="department-text">
+            <h3>Departamentul Estetic 🎨</h3>
+            <p>
+              Dă viață universului vizual al filmului prin detalii care construiesc atmosfera și identitatea personajelor. Dacă îți place să creezi decoruri, să lucrezi cu machiaj artistic sau să imaginezi costume memorabile, acest departament este pentru tine.
+            </p>
+            <div class="dept-tags">
+              <span>Scenografie</span>
+              <span>Costume</span>
+              <span>Machiaj</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Productie -->
+        <div class="department-card reveal">
+          <div class="department-media">
+            <div class="photo-stack duo-right">
+              <img src="Foto/logistica2.jpg" alt="Producție 1">
+              <img src="Foto/logistica1.jpeg" alt="Producție 2">
+            </div>
+          </div>
+
+          <div class="department-text">
+            <h3>Departamentul Producție 📋</h3>
+            <p>
+              Este motorul practic al clubului de film, coordonând organizarea și logistica fiecărui proiect. De la planificarea filmărilor până la gestionarea resurselor, aici se transformă ideile creative în pași concreți. Este echipa care se asigură că visul cinematografic prinde viață în cele mai bune condiții.
+            </p>
+            <div class="dept-tags">
+              <span>Logistică</span>
+              <span>Resurse</span>
+              <span>Marketing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      © 2025 Clubul de Film Overthink JR. |
+      <a href="https://www.facebook.com/profile.php?id=61580111952857" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/overthink.jr?igsh=amF6ODl6Nnk5ZWhh" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+  <script>
+    // DROPDOWN MENU
+    const menuWrapper = document.getElementById("menuWrapper");
+    const menuToggle = document.getElementById("menuToggle");
+
+    menuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      menuWrapper.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (event) => {
+      if(!menuWrapper.contains(event.target)){
+        menuWrapper.classList.remove("open");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if(event.key === "Escape"){
+        menuWrapper.classList.remove("open");
+      }
+    });
+
+    // REVEAL ON SCROLL
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold:0.15
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
 
 </body>
 </html>
-
-
-
