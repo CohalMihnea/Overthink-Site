@@ -363,6 +363,38 @@ a{
   box-shadow:0 0 20px rgba(184,6,6,0.45);
 }
 
+/* Premiile Boovie */
+.premii-boovie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 10px auto 30px;
+}
+
+.premii-boovie img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.premii-boovie img:hover {
+  transform: scale(1.05);
+}
+
+/* Telefon */
+@media (max-width: 768px) {
+  .premii-boovie {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    gap: 20px;
+  }
+}
+
 /* ---------- Structură Secțiuni ---------- */
 .sectiune-continut{
   padding:65px 20px 45px;
@@ -809,13 +841,28 @@ footer{
 
 <section class="sectiune-continut reveal" id="club-info">
   <div class="bule-sectiune" style="padding:0 0 30px 0;">
-    <div class="bule-container">
-      <div class="bula">Locul I — Boovie Rookie 2026</div>
-      <div class="bula">Nominalizări Boovie 2026 — Cea mai bună imagine &amp; Cea mai bună coloană sonoră</div>
-      <div class="bula">Mențiune specială — Boovie 2025</div>
-      <div class="bula">Cea mai bună interpretare feminină — Cinedrama</div>
-      <div class="bula">Organizatorii Festivalului Național de Film „Overthink Film Fest 2026”</div>
-    </div>
+    
+<div class="bule-container">
+
+  <div class="premii-boovie">
+    <img src="Foto/Winner_Boovie_Rookie_2026.png"
+         alt="Locul I Boovie Rookie 2026">
+
+    <img src="Foto/Nominee_Best_Cinematography_2026.png"
+         alt="Nominalizare Best Cinematography Boovie 2026">
+
+    <img src="Foto/Nominee_Best_Original_Score_2026.png"
+         alt="Nominalizare Best Original Score Boovie 2026">
+  </div>
+
+  <div class="bula">Mențiune specială — Boovie 2025</div>
+
+  <div class="bula">Cea mai bună interpretare feminină — Cinedrama</div>
+
+  <div class="bula">Organizatorii Festivalului Național de Film „Overthink Film Fest 2026”</div>
+
+</div>
+
   </div>
 
   <div class="departamente-grid">
